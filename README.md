@@ -6,7 +6,6 @@
 
 [`TriggerIFTTTWebhookApplet.GitHubAction`](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction)
 
-![GitHub Action](https://img.shields.io/badge/GitHub%20Action-2088FF?logo=github-actions&logoColor=ffffff&style=flat-square "GitHub Action")
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&style=flat-square "License")
 [![GitHub Stars](https://img.shields.io/github/stars/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Stars&logo=github&logoColor=ffffff&style=flat-square "GitHub Stars")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/stargazers)
 [![GitHub Contributors](https://img.shields.io/github/contributors/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Contributors&logo=github&logoColor=ffffff&style=flat-square "GitHub Contributors")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/graphs/contributors)
@@ -25,7 +24,7 @@ A GitHub Action to trigger IFTTT webhook applet.
 
 ## 📚 Documentation
 
-> **⚠ Important:** This documentation is v5.0.0 based; To view other release's/tag's/version's documentation, please visit the [releases/tags/versions list](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/tags) and select the correct release/tag/version.
+> **⚠ Important:** This documentation is v5.0.0 based; To view other version's documentation, please visit the [versions list](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/tags) and select the correct version.
 
 ### Getting Started
 
@@ -41,7 +40,7 @@ jobs:
   job_id:
     runs-on: "________" # Any
     steps:
-      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@<tag/version>"
+      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@<Version>"
 ```
 
 ### 📥 Input

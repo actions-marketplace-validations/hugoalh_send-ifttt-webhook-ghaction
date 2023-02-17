@@ -1,7 +1,7 @@
 import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
 /******/ var __webpack_modules__ = ({
 
-/***/ 7351:
+/***/ 9483:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -27,7 +27,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
 const os = __importStar(__nccwpck_require__(2037));
-const utils_1 = __nccwpck_require__(5278);
+const utils_1 = __nccwpck_require__(2994);
 /**
  * Commands
  *
@@ -99,7 +99,7 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 2186:
+/***/ 7733:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -133,12 +133,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
-const command_1 = __nccwpck_require__(7351);
-const file_command_1 = __nccwpck_require__(717);
-const utils_1 = __nccwpck_require__(5278);
+const command_1 = __nccwpck_require__(9483);
+const file_command_1 = __nccwpck_require__(8541);
+const utils_1 = __nccwpck_require__(2994);
 const os = __importStar(__nccwpck_require__(2037));
 const path = __importStar(__nccwpck_require__(1017));
-const oidc_utils_1 = __nccwpck_require__(8041);
+const oidc_utils_1 = __nccwpck_require__(2422);
 /**
  * The code to exit an action
  */
@@ -423,17 +423,17 @@ exports.getIDToken = getIDToken;
 /**
  * Summary exports
  */
-var summary_1 = __nccwpck_require__(1327);
+var summary_1 = __nccwpck_require__(513);
 Object.defineProperty(exports, "summary", ({ enumerable: true, get: function () { return summary_1.summary; } }));
 /**
  * @deprecated use core.summary
  */
-var summary_2 = __nccwpck_require__(1327);
+var summary_2 = __nccwpck_require__(513);
 Object.defineProperty(exports, "markdownSummary", ({ enumerable: true, get: function () { return summary_2.markdownSummary; } }));
 /**
  * Path exports
  */
-var path_utils_1 = __nccwpck_require__(2981);
+var path_utils_1 = __nccwpck_require__(3084);
 Object.defineProperty(exports, "toPosixPath", ({ enumerable: true, get: function () { return path_utils_1.toPosixPath; } }));
 Object.defineProperty(exports, "toWin32Path", ({ enumerable: true, get: function () { return path_utils_1.toWin32Path; } }));
 Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: function () { return path_utils_1.toPlatformPath; } }));
@@ -441,7 +441,7 @@ Object.defineProperty(exports, "toPlatformPath", ({ enumerable: true, get: funct
 
 /***/ }),
 
-/***/ 717:
+/***/ 8541:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -471,8 +471,8 @@ exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const fs = __importStar(__nccwpck_require__(7147));
 const os = __importStar(__nccwpck_require__(2037));
-const uuid_1 = __nccwpck_require__(5840);
-const utils_1 = __nccwpck_require__(5278);
+const uuid_1 = __nccwpck_require__(2033);
+const utils_1 = __nccwpck_require__(2994);
 function issueFileCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -505,7 +505,7 @@ exports.prepareKeyValueMessage = prepareKeyValueMessage;
 
 /***/ }),
 
-/***/ 8041:
+/***/ 2422:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -520,9 +520,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(6255);
-const auth_1 = __nccwpck_require__(5526);
-const core_1 = __nccwpck_require__(2186);
+const http_client_1 = __nccwpck_require__(3569);
+const auth_1 = __nccwpck_require__(6931);
+const core_1 = __nccwpck_require__(7733);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
         const requestOptions = {
@@ -588,7 +588,7 @@ exports.OidcClient = OidcClient;
 
 /***/ }),
 
-/***/ 2981:
+/***/ 3084:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -652,7 +652,7 @@ exports.toPlatformPath = toPlatformPath;
 
 /***/ }),
 
-/***/ 1327:
+/***/ 513:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -941,7 +941,7 @@ exports.summary = _summary;
 
 /***/ }),
 
-/***/ 5278:
+/***/ 2994:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -987,7 +987,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 5526:
+/***/ 6931:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -1074,7 +1074,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 6255:
+/***/ 3569:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1111,8 +1111,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
 const http = __importStar(__nccwpck_require__(3685));
 const https = __importStar(__nccwpck_require__(5687));
-const pm = __importStar(__nccwpck_require__(9835));
-const tunnel = __importStar(__nccwpck_require__(4294));
+const pm = __importStar(__nccwpck_require__(2242));
+const tunnel = __importStar(__nccwpck_require__(4249));
 var HttpCodes;
 (function (HttpCodes) {
     HttpCodes[HttpCodes["OK"] = 200] = "OK";
@@ -1685,7 +1685,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 9835:
+/***/ 2242:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -1752,7 +1752,7 @@ exports.checkBypass = checkBypass;
 
 /***/ }),
 
-/***/ 7760:
+/***/ 1351:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /*! node-domexception. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
@@ -1775,15 +1775,15 @@ module.exports = globalThis.DOMException
 
 /***/ }),
 
-/***/ 4294:
+/***/ 4249:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-module.exports = __nccwpck_require__(4219);
+module.exports = __nccwpck_require__(709);
 
 
 /***/ }),
 
-/***/ 4219:
+/***/ 709:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2054,7 +2054,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 5840:
+/***/ 2033:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2117,29 +2117,29 @@ Object.defineProperty(exports, "parse", ({
   }
 }));
 
-var _v = _interopRequireDefault(__nccwpck_require__(8628));
+var _v = _interopRequireDefault(__nccwpck_require__(9370));
 
-var _v2 = _interopRequireDefault(__nccwpck_require__(6409));
+var _v2 = _interopRequireDefault(__nccwpck_require__(8638));
 
-var _v3 = _interopRequireDefault(__nccwpck_require__(5122));
+var _v3 = _interopRequireDefault(__nccwpck_require__(3519));
 
-var _v4 = _interopRequireDefault(__nccwpck_require__(9120));
+var _v4 = _interopRequireDefault(__nccwpck_require__(8239));
 
-var _nil = _interopRequireDefault(__nccwpck_require__(5332));
+var _nil = _interopRequireDefault(__nccwpck_require__(680));
 
-var _version = _interopRequireDefault(__nccwpck_require__(1595));
+var _version = _interopRequireDefault(__nccwpck_require__(3609));
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6900));
+var _validate = _interopRequireDefault(__nccwpck_require__(6009));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(8950));
+var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
 
-var _parse = _interopRequireDefault(__nccwpck_require__(2746));
+var _parse = _interopRequireDefault(__nccwpck_require__(8951));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
 
-/***/ 4569:
+/***/ 7276:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2168,7 +2168,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 5332:
+/***/ 680:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -2182,7 +2182,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 2746:
+/***/ 8951:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2192,7 +2192,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6900));
+var _validate = _interopRequireDefault(__nccwpck_require__(6009));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2233,7 +2233,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 814:
+/***/ 646:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -2247,7 +2247,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 807:
+/***/ 7548:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2277,7 +2277,7 @@ function rng() {
 
 /***/ }),
 
-/***/ 5274:
+/***/ 3557:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2306,7 +2306,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 8950:
+/***/ 9729:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2316,7 +2316,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6900));
+var _validate = _interopRequireDefault(__nccwpck_require__(6009));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2351,7 +2351,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 8628:
+/***/ 9370:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2361,9 +2361,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(807));
+var _rng = _interopRequireDefault(__nccwpck_require__(7548));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(8950));
+var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2464,7 +2464,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6409:
+/***/ 8638:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2474,9 +2474,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _v = _interopRequireDefault(__nccwpck_require__(5998));
+var _v = _interopRequireDefault(__nccwpck_require__(6694));
 
-var _md = _interopRequireDefault(__nccwpck_require__(4569));
+var _md = _interopRequireDefault(__nccwpck_require__(7276));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2486,7 +2486,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 5998:
+/***/ 6694:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2497,9 +2497,9 @@ Object.defineProperty(exports, "__esModule", ({
 exports["default"] = _default;
 exports.URL = exports.DNS = void 0;
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(8950));
+var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
 
-var _parse = _interopRequireDefault(__nccwpck_require__(2746));
+var _parse = _interopRequireDefault(__nccwpck_require__(8951));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2570,7 +2570,7 @@ function _default(name, version, hashfunc) {
 
 /***/ }),
 
-/***/ 5122:
+/***/ 3519:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2580,9 +2580,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(807));
+var _rng = _interopRequireDefault(__nccwpck_require__(7548));
 
-var _stringify = _interopRequireDefault(__nccwpck_require__(8950));
+var _stringify = _interopRequireDefault(__nccwpck_require__(9729));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2613,7 +2613,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 9120:
+/***/ 8239:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2623,9 +2623,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _v = _interopRequireDefault(__nccwpck_require__(5998));
+var _v = _interopRequireDefault(__nccwpck_require__(6694));
 
-var _sha = _interopRequireDefault(__nccwpck_require__(5274));
+var _sha = _interopRequireDefault(__nccwpck_require__(3557));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2635,7 +2635,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 6900:
+/***/ 6009:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2645,7 +2645,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _regex = _interopRequireDefault(__nccwpck_require__(814));
+var _regex = _interopRequireDefault(__nccwpck_require__(646));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2658,7 +2658,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 1595:
+/***/ 3609:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
@@ -2668,7 +2668,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports["default"] = void 0;
 
-var _validate = _interopRequireDefault(__nccwpck_require__(6900));
+var _validate = _interopRequireDefault(__nccwpck_require__(6009));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2685,7 +2685,7 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 1452:
+/***/ 6484:
 /***/ (function(__unused_webpack_module, exports) {
 
 /**
@@ -7016,16 +7016,16 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("worker_threa
 
 /***/ }),
 
-/***/ 8109:
+/***/ 796:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Scalar = __nccwpck_require__(9338);
-var resolveBlockMap = __nccwpck_require__(2986);
-var resolveBlockSeq = __nccwpck_require__(2289);
-var resolveFlowCollection = __nccwpck_require__(45);
+var Node = __nccwpck_require__(240);
+var Scalar = __nccwpck_require__(5461);
+var resolveBlockMap = __nccwpck_require__(5697);
+var resolveBlockSeq = __nccwpck_require__(5966);
+var resolveFlowCollection = __nccwpck_require__(1451);
 
 function composeCollection(CN, ctx, token, tagToken, onError) {
     let coll;
@@ -7084,15 +7084,15 @@ exports.composeCollection = composeCollection;
 
 /***/ }),
 
-/***/ 5050:
+/***/ 9594:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Document = __nccwpck_require__(42);
-var composeNode = __nccwpck_require__(8676);
-var resolveEnd = __nccwpck_require__(1250);
-var resolveProps = __nccwpck_require__(6985);
+var Document = __nccwpck_require__(9954);
+var composeNode = __nccwpck_require__(1903);
+var resolveEnd = __nccwpck_require__(4685);
+var resolveProps = __nccwpck_require__(7754);
 
 function composeDoc(options, directives, { offset, start, value, end }, onError) {
     const opts = Object.assign({ _directives: directives }, options);
@@ -7133,16 +7133,16 @@ exports.composeDoc = composeDoc;
 
 /***/ }),
 
-/***/ 8676:
+/***/ 1903:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Alias = __nccwpck_require__(5639);
-var composeCollection = __nccwpck_require__(8109);
-var composeScalar = __nccwpck_require__(4766);
-var resolveEnd = __nccwpck_require__(1250);
-var utilEmptyScalarPosition = __nccwpck_require__(8781);
+var Alias = __nccwpck_require__(5163);
+var composeCollection = __nccwpck_require__(796);
+var composeScalar = __nccwpck_require__(7919);
+var resolveEnd = __nccwpck_require__(4685);
+var utilEmptyScalarPosition = __nccwpck_require__(2466);
 
 const CN = { composeNode, composeEmptyNode };
 function composeNode(ctx, token, props, onError) {
@@ -7235,15 +7235,15 @@ exports.composeNode = composeNode;
 
 /***/ }),
 
-/***/ 4766:
+/***/ 7919:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Scalar = __nccwpck_require__(9338);
-var resolveBlockScalar = __nccwpck_require__(9485);
-var resolveFlowScalar = __nccwpck_require__(7578);
+var Node = __nccwpck_require__(240);
+var Scalar = __nccwpck_require__(5461);
+var resolveBlockScalar = __nccwpck_require__(5504);
+var resolveFlowScalar = __nccwpck_require__(5164);
 
 function composeScalar(ctx, token, tagToken, onError) {
     const { value, type, comment, range } = token.type === 'block-scalar'
@@ -7324,17 +7324,17 @@ exports.composeScalar = composeScalar;
 
 /***/ }),
 
-/***/ 9493:
+/***/ 6426:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var directives = __nccwpck_require__(5400);
-var Document = __nccwpck_require__(42);
-var errors = __nccwpck_require__(4236);
-var Node = __nccwpck_require__(1399);
-var composeDoc = __nccwpck_require__(5050);
-var resolveEnd = __nccwpck_require__(1250);
+var directives = __nccwpck_require__(8516);
+var Document = __nccwpck_require__(9954);
+var errors = __nccwpck_require__(2983);
+var Node = __nccwpck_require__(240);
+var composeDoc = __nccwpck_require__(9594);
+var resolveEnd = __nccwpck_require__(4685);
 
 function getErrorPos(src) {
     if (typeof src === 'number')
@@ -7552,17 +7552,17 @@ exports.Composer = Composer;
 
 /***/ }),
 
-/***/ 2986:
+/***/ 5697:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Pair = __nccwpck_require__(246);
-var YAMLMap = __nccwpck_require__(6011);
-var resolveProps = __nccwpck_require__(6985);
-var utilContainsNewline = __nccwpck_require__(976);
-var utilFlowIndentCheck = __nccwpck_require__(3669);
-var utilMapIncludes = __nccwpck_require__(6899);
+var Pair = __nccwpck_require__(9200);
+var YAMLMap = __nccwpck_require__(163);
+var resolveProps = __nccwpck_require__(7754);
+var utilContainsNewline = __nccwpck_require__(4601);
+var utilFlowIndentCheck = __nccwpck_require__(445);
+var utilMapIncludes = __nccwpck_require__(6381);
 
 const startColMsg = 'All mapping items must start at the same column';
 function resolveBlockMap({ composeNode, composeEmptyNode }, ctx, bm, onError) {
@@ -7671,12 +7671,12 @@ exports.resolveBlockMap = resolveBlockMap;
 
 /***/ }),
 
-/***/ 9485:
+/***/ 5504:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
+var Scalar = __nccwpck_require__(5461);
 
 function resolveBlockScalar(scalar, strict, onError) {
     const start = scalar.offset;
@@ -7874,14 +7874,14 @@ exports.resolveBlockScalar = resolveBlockScalar;
 
 /***/ }),
 
-/***/ 2289:
+/***/ 5966:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var YAMLSeq = __nccwpck_require__(5161);
-var resolveProps = __nccwpck_require__(6985);
-var utilFlowIndentCheck = __nccwpck_require__(3669);
+var YAMLSeq = __nccwpck_require__(7225);
+var resolveProps = __nccwpck_require__(7754);
+var utilFlowIndentCheck = __nccwpck_require__(445);
 
 function resolveBlockSeq({ composeNode, composeEmptyNode }, ctx, bs, onError) {
     const seq = new YAMLSeq.YAMLSeq(ctx.schema);
@@ -7928,7 +7928,7 @@ exports.resolveBlockSeq = resolveBlockSeq;
 
 /***/ }),
 
-/***/ 1250:
+/***/ 4685:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -7974,19 +7974,19 @@ exports.resolveEnd = resolveEnd;
 
 /***/ }),
 
-/***/ 45:
+/***/ 1451:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var YAMLMap = __nccwpck_require__(6011);
-var YAMLSeq = __nccwpck_require__(5161);
-var resolveEnd = __nccwpck_require__(1250);
-var resolveProps = __nccwpck_require__(6985);
-var utilContainsNewline = __nccwpck_require__(976);
-var utilMapIncludes = __nccwpck_require__(6899);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var YAMLMap = __nccwpck_require__(163);
+var YAMLSeq = __nccwpck_require__(7225);
+var resolveEnd = __nccwpck_require__(4685);
+var resolveProps = __nccwpck_require__(7754);
+var utilContainsNewline = __nccwpck_require__(4601);
+var utilMapIncludes = __nccwpck_require__(6381);
 
 const blockMsg = 'Block collections are not allowed within flow collections';
 const isBlock = (token) => token && (token.type === 'block-map' || token.type === 'block-seq');
@@ -8183,13 +8183,13 @@ exports.resolveFlowCollection = resolveFlowCollection;
 
 /***/ }),
 
-/***/ 7578:
+/***/ 5164:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
-var resolveEnd = __nccwpck_require__(1250);
+var Scalar = __nccwpck_require__(5461);
+var resolveEnd = __nccwpck_require__(4685);
 
 function resolveFlowScalar(scalar, strict, onError) {
     const { offset, type, source, end } = scalar;
@@ -8415,7 +8415,7 @@ exports.resolveFlowScalar = resolveFlowScalar;
 
 /***/ }),
 
-/***/ 6985:
+/***/ 7754:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8558,7 +8558,7 @@ exports.resolveProps = resolveProps;
 
 /***/ }),
 
-/***/ 976:
+/***/ 4601:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8601,7 +8601,7 @@ exports.containsNewline = containsNewline;
 
 /***/ }),
 
-/***/ 8781:
+/***/ 2466:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -8637,12 +8637,12 @@ exports.emptyScalarPosition = emptyScalarPosition;
 
 /***/ }),
 
-/***/ 3669:
+/***/ 445:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var utilContainsNewline = __nccwpck_require__(976);
+var utilContainsNewline = __nccwpck_require__(4601);
 
 function flowIndentCheck(indent, fc, onError) {
     if (fc?.type === 'flow-collection') {
@@ -8661,12 +8661,12 @@ exports.flowIndentCheck = flowIndentCheck;
 
 /***/ }),
 
-/***/ 6899:
+/***/ 6381:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
+var Node = __nccwpck_require__(240);
 
 function mapIncludes(ctx, items, search) {
     const { uniqueKeys } = ctx.options;
@@ -8687,23 +8687,23 @@ exports.mapIncludes = mapIncludes;
 
 /***/ }),
 
-/***/ 42:
+/***/ 9954:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Alias = __nccwpck_require__(5639);
-var Collection = __nccwpck_require__(3466);
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var toJS = __nccwpck_require__(2463);
-var Schema = __nccwpck_require__(6831);
-var stringify = __nccwpck_require__(8409);
-var stringifyDocument = __nccwpck_require__(5225);
-var anchors = __nccwpck_require__(8459);
-var applyReviver = __nccwpck_require__(3412);
-var createNode = __nccwpck_require__(9652);
-var directives = __nccwpck_require__(5400);
+var Alias = __nccwpck_require__(5163);
+var Collection = __nccwpck_require__(6848);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var toJS = __nccwpck_require__(9001);
+var Schema = __nccwpck_require__(8726);
+var stringify = __nccwpck_require__(1631);
+var stringifyDocument = __nccwpck_require__(8279);
+var anchors = __nccwpck_require__(7626);
+var applyReviver = __nccwpck_require__(6071);
+var createNode = __nccwpck_require__(6822);
+var directives = __nccwpck_require__(8516);
 
 class Document {
     constructor(value, replacer, options) {
@@ -9028,13 +9028,13 @@ exports.Document = Document;
 
 /***/ }),
 
-/***/ 8459:
+/***/ 7626:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var visit = __nccwpck_require__(6796);
+var Node = __nccwpck_require__(240);
+var visit = __nccwpck_require__(8159);
 
 /**
  * Verify that the input string is a valid anchor.
@@ -9112,7 +9112,7 @@ exports.findNewAnchor = findNewAnchor;
 
 /***/ }),
 
-/***/ 3412:
+/***/ 6071:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -9175,14 +9175,14 @@ exports.applyReviver = applyReviver;
 
 /***/ }),
 
-/***/ 9652:
+/***/ 6822:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Alias = __nccwpck_require__(5639);
-var Node = __nccwpck_require__(1399);
-var Scalar = __nccwpck_require__(9338);
+var Alias = __nccwpck_require__(5163);
+var Node = __nccwpck_require__(240);
+var Scalar = __nccwpck_require__(5461);
 
 const defaultTagPrefix = 'tag:yaml.org,2002:';
 function findTagObject(value, tagName, tags) {
@@ -9269,13 +9269,13 @@ exports.createNode = createNode;
 
 /***/ }),
 
-/***/ 5400:
+/***/ 8516:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var visit = __nccwpck_require__(6796);
+var Node = __nccwpck_require__(240);
+var visit = __nccwpck_require__(8159);
 
 const escapeChars = {
     '!': '%21',
@@ -9447,7 +9447,7 @@ exports.Directives = Directives;
 
 /***/ }),
 
-/***/ 4236:
+/***/ 2983:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -9516,27 +9516,27 @@ exports.prettifyError = prettifyError;
 
 /***/ }),
 
-/***/ 4083:
+/***/ 3277:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var composer = __nccwpck_require__(9493);
-var Document = __nccwpck_require__(42);
-var Schema = __nccwpck_require__(6831);
-var errors = __nccwpck_require__(4236);
-var Alias = __nccwpck_require__(5639);
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var Scalar = __nccwpck_require__(9338);
-var YAMLMap = __nccwpck_require__(6011);
-var YAMLSeq = __nccwpck_require__(5161);
-var cst = __nccwpck_require__(9169);
-var lexer = __nccwpck_require__(5976);
-var lineCounter = __nccwpck_require__(1929);
-var parser = __nccwpck_require__(3328);
-var publicApi = __nccwpck_require__(8649);
-var visit = __nccwpck_require__(6796);
+var composer = __nccwpck_require__(6426);
+var Document = __nccwpck_require__(9954);
+var Schema = __nccwpck_require__(8726);
+var errors = __nccwpck_require__(2983);
+var Alias = __nccwpck_require__(5163);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var Scalar = __nccwpck_require__(5461);
+var YAMLMap = __nccwpck_require__(163);
+var YAMLSeq = __nccwpck_require__(7225);
+var cst = __nccwpck_require__(1670);
+var lexer = __nccwpck_require__(8791);
+var lineCounter = __nccwpck_require__(7978);
+var parser = __nccwpck_require__(272);
+var publicApi = __nccwpck_require__(1461);
+var visit = __nccwpck_require__(8159);
 
 
 
@@ -9573,7 +9573,7 @@ exports.visitAsync = visit.visitAsync;
 
 /***/ }),
 
-/***/ 6909:
+/***/ 1829:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -9597,14 +9597,14 @@ exports.warn = warn;
 
 /***/ }),
 
-/***/ 5639:
+/***/ 5163:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var anchors = __nccwpck_require__(8459);
-var visit = __nccwpck_require__(6796);
-var Node = __nccwpck_require__(1399);
+var anchors = __nccwpck_require__(7626);
+var visit = __nccwpck_require__(8159);
+var Node = __nccwpck_require__(240);
 
 class Alias extends Node.NodeBase {
     constructor(source) {
@@ -9700,13 +9700,13 @@ exports.Alias = Alias;
 
 /***/ }),
 
-/***/ 3466:
+/***/ 6848:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var createNode = __nccwpck_require__(9652);
-var Node = __nccwpck_require__(1399);
+var createNode = __nccwpck_require__(6822);
+var Node = __nccwpck_require__(240);
 
 function collectionFromPath(schema, path, value) {
     let v = value;
@@ -9858,7 +9858,7 @@ exports.isEmptyPath = isEmptyPath;
 
 /***/ }),
 
-/***/ 1399:
+/***/ 240:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -9931,15 +9931,15 @@ exports.isSeq = isSeq;
 
 /***/ }),
 
-/***/ 246:
+/***/ 9200:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var createNode = __nccwpck_require__(9652);
-var stringifyPair = __nccwpck_require__(4875);
-var addPairToJSMap = __nccwpck_require__(4676);
-var Node = __nccwpck_require__(1399);
+var createNode = __nccwpck_require__(6822);
+var stringifyPair = __nccwpck_require__(4775);
+var addPairToJSMap = __nccwpck_require__(2021);
+var Node = __nccwpck_require__(240);
 
 function createPair(key, value, ctx) {
     const k = createNode.createNode(key, undefined, ctx);
@@ -9977,13 +9977,13 @@ exports.createPair = createPair;
 
 /***/ }),
 
-/***/ 9338:
+/***/ 5461:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var toJS = __nccwpck_require__(2463);
+var Node = __nccwpck_require__(240);
+var toJS = __nccwpck_require__(9001);
 
 const isScalarValue = (value) => !value || (typeof value !== 'function' && typeof value !== 'object');
 class Scalar extends Node.NodeBase {
@@ -10010,17 +10010,17 @@ exports.isScalarValue = isScalarValue;
 
 /***/ }),
 
-/***/ 6011:
+/***/ 163:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var stringifyCollection = __nccwpck_require__(2466);
-var addPairToJSMap = __nccwpck_require__(4676);
-var Collection = __nccwpck_require__(3466);
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var Scalar = __nccwpck_require__(9338);
+var stringifyCollection = __nccwpck_require__(8949);
+var addPairToJSMap = __nccwpck_require__(2021);
+var Collection = __nccwpck_require__(6848);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var Scalar = __nccwpck_require__(5461);
 
 function findPair(items, key) {
     const k = Node.isScalar(key) ? key.value : key;
@@ -10035,12 +10035,12 @@ function findPair(items, key) {
     return undefined;
 }
 class YAMLMap extends Collection.Collection {
+    static get tagName() {
+        return 'tag:yaml.org,2002:map';
+    }
     constructor(schema) {
         super(Node.MAP, schema);
         this.items = [];
-    }
-    static get tagName() {
-        return 'tag:yaml.org,2002:map';
     }
     /**
      * Adds a value to the collection.
@@ -10136,24 +10136,24 @@ exports.findPair = findPair;
 
 /***/ }),
 
-/***/ 5161:
+/***/ 7225:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var stringifyCollection = __nccwpck_require__(2466);
-var Collection = __nccwpck_require__(3466);
-var Node = __nccwpck_require__(1399);
-var Scalar = __nccwpck_require__(9338);
-var toJS = __nccwpck_require__(2463);
+var stringifyCollection = __nccwpck_require__(8949);
+var Collection = __nccwpck_require__(6848);
+var Node = __nccwpck_require__(240);
+var Scalar = __nccwpck_require__(5461);
+var toJS = __nccwpck_require__(9001);
 
 class YAMLSeq extends Collection.Collection {
+    static get tagName() {
+        return 'tag:yaml.org,2002:seq';
+    }
     constructor(schema) {
         super(Node.SEQ, schema);
         this.items = [];
-    }
-    static get tagName() {
-        return 'tag:yaml.org,2002:seq';
     }
     add(value) {
         this.items.push(value);
@@ -10242,16 +10242,16 @@ exports.YAMLSeq = YAMLSeq;
 
 /***/ }),
 
-/***/ 4676:
+/***/ 2021:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var log = __nccwpck_require__(6909);
-var stringify = __nccwpck_require__(8409);
-var Node = __nccwpck_require__(1399);
-var Scalar = __nccwpck_require__(9338);
-var toJS = __nccwpck_require__(2463);
+var log = __nccwpck_require__(1829);
+var stringify = __nccwpck_require__(1631);
+var Node = __nccwpck_require__(240);
+var Scalar = __nccwpck_require__(5461);
+var toJS = __nccwpck_require__(9001);
 
 const MERGE_KEY = '<<';
 function addPairToJSMap(ctx, map, { key, value }) {
@@ -10355,12 +10355,12 @@ exports.addPairToJSMap = addPairToJSMap;
 
 /***/ }),
 
-/***/ 2463:
+/***/ 9001:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
+var Node = __nccwpck_require__(240);
 
 /**
  * Recursively convert any node or its contents to native JavaScript
@@ -10401,15 +10401,15 @@ exports.toJS = toJS;
 
 /***/ }),
 
-/***/ 9027:
+/***/ 7465:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var resolveBlockScalar = __nccwpck_require__(9485);
-var resolveFlowScalar = __nccwpck_require__(7578);
-var errors = __nccwpck_require__(4236);
-var stringifyString = __nccwpck_require__(6226);
+var resolveBlockScalar = __nccwpck_require__(5504);
+var resolveFlowScalar = __nccwpck_require__(5164);
+var errors = __nccwpck_require__(2983);
+var stringifyString = __nccwpck_require__(5917);
 
 function resolveAsScalar(token, strict = true, onError) {
     if (token) {
@@ -10626,7 +10626,7 @@ exports.setScalarValue = setScalarValue;
 
 /***/ }),
 
-/***/ 6307:
+/***/ 3960:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -10696,7 +10696,7 @@ exports.stringify = stringify;
 
 /***/ }),
 
-/***/ 8497:
+/***/ 7223:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -10802,14 +10802,14 @@ exports.visit = visit;
 
 /***/ }),
 
-/***/ 9169:
+/***/ 1670:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var cstScalar = __nccwpck_require__(9027);
-var cstStringify = __nccwpck_require__(6307);
-var cstVisit = __nccwpck_require__(8497);
+var cstScalar = __nccwpck_require__(7465);
+var cstStringify = __nccwpck_require__(3960);
+var cstVisit = __nccwpck_require__(7223);
 
 /** The byte order mark */
 const BOM = '\u{FEFF}';
@@ -10921,12 +10921,12 @@ exports.tokenType = tokenType;
 
 /***/ }),
 
-/***/ 5976:
+/***/ 8791:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var cst = __nccwpck_require__(9169);
+var cst = __nccwpck_require__(1670);
 
 /*
 START -> stream
@@ -11631,7 +11631,7 @@ exports.Lexer = Lexer;
 
 /***/ }),
 
-/***/ 1929:
+/***/ 7978:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -11679,13 +11679,13 @@ exports.LineCounter = LineCounter;
 
 /***/ }),
 
-/***/ 3328:
+/***/ 272:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var cst = __nccwpck_require__(9169);
-var lexer = __nccwpck_require__(5976);
+var cst = __nccwpck_require__(1670);
+var lexer = __nccwpck_require__(8791);
 
 function includesToken(list, type) {
     for (let i = 0; i < list.length; ++i)
@@ -12640,17 +12640,17 @@ exports.Parser = Parser;
 
 /***/ }),
 
-/***/ 8649:
+/***/ 1461:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var composer = __nccwpck_require__(9493);
-var Document = __nccwpck_require__(42);
-var errors = __nccwpck_require__(4236);
-var log = __nccwpck_require__(6909);
-var lineCounter = __nccwpck_require__(1929);
-var parser = __nccwpck_require__(3328);
+var composer = __nccwpck_require__(6426);
+var Document = __nccwpck_require__(9954);
+var errors = __nccwpck_require__(2983);
+var log = __nccwpck_require__(1829);
+var lineCounter = __nccwpck_require__(7978);
+var parser = __nccwpck_require__(272);
 
 function parseOptions(options) {
     const prettyErrors = options.prettyErrors !== false;
@@ -12751,16 +12751,16 @@ exports.stringify = stringify;
 
 /***/ }),
 
-/***/ 6831:
+/***/ 8726:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var map = __nccwpck_require__(83);
-var seq = __nccwpck_require__(1693);
-var string = __nccwpck_require__(2201);
-var tags = __nccwpck_require__(4138);
+var Node = __nccwpck_require__(240);
+var map = __nccwpck_require__(8407);
+var seq = __nccwpck_require__(1442);
+var string = __nccwpck_require__(1550);
+var tags = __nccwpck_require__(536);
 
 const sortMapEntriesByKey = (a, b) => a.key < b.key ? -1 : a.key > b.key ? 1 : 0;
 class Schema {
@@ -12798,14 +12798,14 @@ exports.Schema = Schema;
 
 /***/ }),
 
-/***/ 83:
+/***/ 8407:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var YAMLMap = __nccwpck_require__(6011);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var YAMLMap = __nccwpck_require__(163);
 
 function createMap(schema, obj, ctx) {
     const { keepUndefined, replacer } = ctx;
@@ -12849,12 +12849,12 @@ exports.map = map;
 
 /***/ }),
 
-/***/ 6703:
+/***/ 284:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
+var Scalar = __nccwpck_require__(5461);
 
 const nullTag = {
     identify: value => value == null,
@@ -12873,14 +12873,14 @@ exports.nullTag = nullTag;
 
 /***/ }),
 
-/***/ 1693:
+/***/ 1442:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var createNode = __nccwpck_require__(9652);
-var Node = __nccwpck_require__(1399);
-var YAMLSeq = __nccwpck_require__(5161);
+var createNode = __nccwpck_require__(6822);
+var Node = __nccwpck_require__(240);
+var YAMLSeq = __nccwpck_require__(7225);
 
 function createSeq(schema, obj, ctx) {
     const { replacer } = ctx;
@@ -12915,12 +12915,12 @@ exports.seq = seq;
 
 /***/ }),
 
-/***/ 2201:
+/***/ 1550:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var stringifyString = __nccwpck_require__(6226);
+var stringifyString = __nccwpck_require__(5917);
 
 const string = {
     identify: value => typeof value === 'string',
@@ -12938,12 +12938,12 @@ exports.string = string;
 
 /***/ }),
 
-/***/ 2045:
+/***/ 8608:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
+var Scalar = __nccwpck_require__(5461);
 
 const boolTag = {
     identify: value => typeof value === 'boolean',
@@ -12966,13 +12966,13 @@ exports.boolTag = boolTag;
 
 /***/ }),
 
-/***/ 6810:
+/***/ 6066:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
-var stringifyNumber = __nccwpck_require__(4174);
+var Scalar = __nccwpck_require__(5461);
+var stringifyNumber = __nccwpck_require__(6275);
 
 const floatNaN = {
     identify: value => typeof value === 'number',
@@ -13020,12 +13020,12 @@ exports.floatNaN = floatNaN;
 
 /***/ }),
 
-/***/ 3019:
+/***/ 4067:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var stringifyNumber = __nccwpck_require__(4174);
+var stringifyNumber = __nccwpck_require__(6275);
 
 const intIdentify = (value) => typeof value === 'bigint' || Number.isInteger(value);
 const intResolve = (str, offset, radix, { intAsBigInt }) => (intAsBigInt ? BigInt(str) : parseInt(str.substring(offset), radix));
@@ -13069,18 +13069,18 @@ exports.intOct = intOct;
 
 /***/ }),
 
-/***/ 27:
+/***/ 7849:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var map = __nccwpck_require__(83);
-var _null = __nccwpck_require__(6703);
-var seq = __nccwpck_require__(1693);
-var string = __nccwpck_require__(2201);
-var bool = __nccwpck_require__(2045);
-var float = __nccwpck_require__(6810);
-var int = __nccwpck_require__(3019);
+var map = __nccwpck_require__(8407);
+var _null = __nccwpck_require__(284);
+var seq = __nccwpck_require__(1442);
+var string = __nccwpck_require__(1550);
+var bool = __nccwpck_require__(8608);
+var float = __nccwpck_require__(6066);
+var int = __nccwpck_require__(4067);
 
 const schema = [
     map.map,
@@ -13101,14 +13101,14 @@ exports.schema = schema;
 
 /***/ }),
 
-/***/ 4545:
+/***/ 5879:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
-var map = __nccwpck_require__(83);
-var seq = __nccwpck_require__(1693);
+var Scalar = __nccwpck_require__(5461);
+var map = __nccwpck_require__(8407);
+var seq = __nccwpck_require__(1442);
 
 function intIdentify(value) {
     return typeof value === 'bigint' || Number.isInteger(value);
@@ -13172,26 +13172,26 @@ exports.schema = schema;
 
 /***/ }),
 
-/***/ 4138:
+/***/ 536:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var map = __nccwpck_require__(83);
-var _null = __nccwpck_require__(6703);
-var seq = __nccwpck_require__(1693);
-var string = __nccwpck_require__(2201);
-var bool = __nccwpck_require__(2045);
-var float = __nccwpck_require__(6810);
-var int = __nccwpck_require__(3019);
-var schema = __nccwpck_require__(27);
-var schema$1 = __nccwpck_require__(4545);
-var binary = __nccwpck_require__(5724);
-var omap = __nccwpck_require__(8974);
-var pairs = __nccwpck_require__(9841);
-var schema$2 = __nccwpck_require__(5389);
-var set = __nccwpck_require__(7847);
-var timestamp = __nccwpck_require__(1156);
+var map = __nccwpck_require__(8407);
+var _null = __nccwpck_require__(284);
+var seq = __nccwpck_require__(1442);
+var string = __nccwpck_require__(1550);
+var bool = __nccwpck_require__(8608);
+var float = __nccwpck_require__(6066);
+var int = __nccwpck_require__(4067);
+var schema = __nccwpck_require__(7849);
+var schema$1 = __nccwpck_require__(5879);
+var binary = __nccwpck_require__(7442);
+var omap = __nccwpck_require__(6428);
+var pairs = __nccwpck_require__(3440);
+var schema$2 = __nccwpck_require__(9856);
+var set = __nccwpck_require__(5360);
+var timestamp = __nccwpck_require__(615);
 
 const schemas = new Map([
     ['core', schema.schema],
@@ -13265,13 +13265,13 @@ exports.getTags = getTags;
 
 /***/ }),
 
-/***/ 5724:
+/***/ 7442:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
-var stringifyString = __nccwpck_require__(6226);
+var Scalar = __nccwpck_require__(5461);
+var stringifyString = __nccwpck_require__(5917);
 
 const binary = {
     identify: value => value instanceof Uint8Array,
@@ -13340,12 +13340,12 @@ exports.binary = binary;
 
 /***/ }),
 
-/***/ 2631:
+/***/ 585:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
+var Scalar = __nccwpck_require__(5461);
 
 function boolStringify({ value, source }, ctx) {
     const boolObj = value ? trueTag : falseTag;
@@ -13376,13 +13376,13 @@ exports.trueTag = trueTag;
 
 /***/ }),
 
-/***/ 8035:
+/***/ 1844:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
-var stringifyNumber = __nccwpck_require__(4174);
+var Scalar = __nccwpck_require__(5461);
+var stringifyNumber = __nccwpck_require__(6275);
 
 const floatNaN = {
     identify: value => typeof value === 'number',
@@ -13433,12 +13433,12 @@ exports.floatNaN = floatNaN;
 
 /***/ }),
 
-/***/ 9503:
+/***/ 3087:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var stringifyNumber = __nccwpck_require__(4174);
+var stringifyNumber = __nccwpck_require__(6275);
 
 const intIdentify = (value) => typeof value === 'bigint' || Number.isInteger(value);
 function intResolve(str, offset, radix, { intAsBigInt }) {
@@ -13516,16 +13516,16 @@ exports.intOct = intOct;
 
 /***/ }),
 
-/***/ 8974:
+/***/ 6428:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var YAMLSeq = __nccwpck_require__(5161);
-var toJS = __nccwpck_require__(2463);
-var Node = __nccwpck_require__(1399);
-var YAMLMap = __nccwpck_require__(6011);
-var pairs = __nccwpck_require__(9841);
+var YAMLSeq = __nccwpck_require__(7225);
+var toJS = __nccwpck_require__(9001);
+var Node = __nccwpck_require__(240);
+var YAMLMap = __nccwpck_require__(163);
+var pairs = __nccwpck_require__(3440);
 
 class YAMLOMap extends YAMLSeq.YAMLSeq {
     constructor() {
@@ -13599,15 +13599,15 @@ exports.omap = omap;
 
 /***/ }),
 
-/***/ 9841:
+/***/ 3440:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var Scalar = __nccwpck_require__(9338);
-var YAMLSeq = __nccwpck_require__(5161);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var Scalar = __nccwpck_require__(5461);
+var YAMLSeq = __nccwpck_require__(7225);
 
 function resolvePairs(seq, onError) {
     if (Node.isSeq(seq)) {
@@ -13687,23 +13687,23 @@ exports.resolvePairs = resolvePairs;
 
 /***/ }),
 
-/***/ 5389:
+/***/ 9856:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var map = __nccwpck_require__(83);
-var _null = __nccwpck_require__(6703);
-var seq = __nccwpck_require__(1693);
-var string = __nccwpck_require__(2201);
-var binary = __nccwpck_require__(5724);
-var bool = __nccwpck_require__(2631);
-var float = __nccwpck_require__(8035);
-var int = __nccwpck_require__(9503);
-var omap = __nccwpck_require__(8974);
-var pairs = __nccwpck_require__(9841);
-var set = __nccwpck_require__(7847);
-var timestamp = __nccwpck_require__(1156);
+var map = __nccwpck_require__(8407);
+var _null = __nccwpck_require__(284);
+var seq = __nccwpck_require__(1442);
+var string = __nccwpck_require__(1550);
+var binary = __nccwpck_require__(7442);
+var bool = __nccwpck_require__(585);
+var float = __nccwpck_require__(1844);
+var int = __nccwpck_require__(3087);
+var omap = __nccwpck_require__(6428);
+var pairs = __nccwpck_require__(3440);
+var set = __nccwpck_require__(5360);
+var timestamp = __nccwpck_require__(615);
 
 const schema = [
     map.map,
@@ -13733,14 +13733,14 @@ exports.schema = schema;
 
 /***/ }),
 
-/***/ 7847:
+/***/ 5360:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Pair = __nccwpck_require__(246);
-var YAMLMap = __nccwpck_require__(6011);
+var Node = __nccwpck_require__(240);
+var Pair = __nccwpck_require__(9200);
+var YAMLMap = __nccwpck_require__(163);
 
 class YAMLSet extends YAMLMap.YAMLMap {
     constructor(schema) {
@@ -13835,12 +13835,12 @@ exports.set = set;
 
 /***/ }),
 
-/***/ 1156:
+/***/ 615:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var stringifyNumber = __nccwpck_require__(4174);
+var stringifyNumber = __nccwpck_require__(6275);
 
 /** Internal types handle bigint as number, because TS can't figure it out. */
 function parseSexagesimal(str, asBigInt) {
@@ -13947,7 +13947,7 @@ exports.timestamp = timestamp;
 
 /***/ }),
 
-/***/ 2889:
+/***/ 1040:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -14094,15 +14094,15 @@ exports.foldFlowLines = foldFlowLines;
 
 /***/ }),
 
-/***/ 8409:
+/***/ 1631:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var anchors = __nccwpck_require__(8459);
-var Node = __nccwpck_require__(1399);
-var stringifyComment = __nccwpck_require__(5182);
-var stringifyString = __nccwpck_require__(6226);
+var anchors = __nccwpck_require__(7626);
+var Node = __nccwpck_require__(240);
+var stringifyComment = __nccwpck_require__(3502);
+var stringifyString = __nccwpck_require__(5917);
 
 function createStringifyContext(doc, options) {
     const opt = Object.assign({
@@ -14114,6 +14114,7 @@ function createStringifyContext(doc, options) {
         doubleQuotedAsJSON: false,
         doubleQuotedMinMultiLineLength: 40,
         falseStr: 'false',
+        flowCollectionPadding: true,
         indentSeq: true,
         lineWidth: 80,
         minContentWidth: 20,
@@ -14137,6 +14138,7 @@ function createStringifyContext(doc, options) {
     return {
         anchors: new Set(),
         doc,
+        flowCollectionPadding: opt.flowCollectionPadding ? ' ' : '',
         indent: '',
         indentStep: typeof opt.indent === 'number' ? ' '.repeat(opt.indent) : '  ',
         inFlow,
@@ -14226,15 +14228,15 @@ exports.stringify = stringify;
 
 /***/ }),
 
-/***/ 2466:
+/***/ 8949:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Collection = __nccwpck_require__(3466);
-var Node = __nccwpck_require__(1399);
-var stringify = __nccwpck_require__(8409);
-var stringifyComment = __nccwpck_require__(5182);
+var Collection = __nccwpck_require__(6848);
+var Node = __nccwpck_require__(240);
+var stringify = __nccwpck_require__(1631);
+var stringifyComment = __nccwpck_require__(3502);
 
 function stringifyCollection(collection, ctx, options) {
     const flow = ctx.inFlow ?? collection.flow;
@@ -14293,7 +14295,7 @@ function stringifyBlockCollection({ comment, items }, ctx, { blockItemPrefix, fl
     return str;
 }
 function stringifyFlowCollection({ comment, items }, ctx, { flowChars, itemIndent, onComment }) {
-    const { indent, indentStep, options: { commentString } } = ctx;
+    const { indent, indentStep, flowCollectionPadding: fcPadding, options: { commentString } } = ctx;
     itemIndent += indentStep;
     const itemCtx = Object.assign({}, ctx, {
         indent: itemIndent,
@@ -14362,7 +14364,7 @@ function stringifyFlowCollection({ comment, items }, ctx, { flowChars, itemInden
             str += `\n${indent}${end}`;
         }
         else {
-            str = `${start} ${lines.join(' ')} ${end}`;
+            str = `${start}${fcPadding}${lines.join(' ')}${fcPadding}${end}`;
         }
     }
     if (comment) {
@@ -14386,7 +14388,7 @@ exports.stringifyCollection = stringifyCollection;
 
 /***/ }),
 
-/***/ 5182:
+/***/ 3502:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -14417,14 +14419,14 @@ exports.stringifyComment = stringifyComment;
 
 /***/ }),
 
-/***/ 5225:
+/***/ 8279:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var stringify = __nccwpck_require__(8409);
-var stringifyComment = __nccwpck_require__(5182);
+var Node = __nccwpck_require__(240);
+var stringify = __nccwpck_require__(1631);
+var stringifyComment = __nccwpck_require__(3502);
 
 function stringifyDocument(doc, options) {
     const lines = [];
@@ -14511,7 +14513,7 @@ exports.stringifyDocument = stringifyDocument;
 
 /***/ }),
 
-/***/ 4174:
+/***/ 6275:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -14544,15 +14546,15 @@ exports.stringifyNumber = stringifyNumber;
 
 /***/ }),
 
-/***/ 4875:
+/***/ 4775:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
-var Scalar = __nccwpck_require__(9338);
-var stringify = __nccwpck_require__(8409);
-var stringifyComment = __nccwpck_require__(5182);
+var Node = __nccwpck_require__(240);
+var Scalar = __nccwpck_require__(5461);
+var stringify = __nccwpck_require__(1631);
+var stringifyComment = __nccwpck_require__(3502);
 
 function stringifyPair({ key, value }, ctx, onComment, onChompKeep) {
     const { allNullValues, doc, indent, indentStep, options: { commentString, indentSeq, simpleKeys } } = ctx;
@@ -14614,19 +14616,18 @@ function stringifyPair({ key, value }, ctx, onComment, onChompKeep) {
         if (keyComment)
             str += stringifyComment.lineComment(str, ctx.indent, commentString(keyComment));
     }
-    let vcb = '';
-    let valueComment = null;
+    let vsb, vcb, valueComment;
     if (Node.isNode(value)) {
-        if (value.spaceBefore)
-            vcb = '\n';
-        if (value.commentBefore) {
-            const cs = commentString(value.commentBefore);
-            vcb += `\n${stringifyComment.indentComment(cs, ctx.indent)}`;
-        }
+        vsb = !!value.spaceBefore;
+        vcb = value.commentBefore;
         valueComment = value.comment;
     }
-    else if (value && typeof value === 'object') {
-        value = doc.createNode(value);
+    else {
+        vsb = false;
+        vcb = null;
+        valueComment = null;
+        if (value && typeof value === 'object')
+            value = doc.createNode(value);
     }
     ctx.implicitKey = false;
     if (!explicitKey && !keyComment && Node.isScalar(value))
@@ -14641,24 +14642,50 @@ function stringifyPair({ key, value }, ctx, onComment, onChompKeep) {
         !value.tag &&
         !value.anchor) {
         // If indentSeq === false, consider '- ' as part of indentation where possible
-        ctx.indent = ctx.indent.substr(2);
+        ctx.indent = ctx.indent.substring(2);
     }
     let valueCommentDone = false;
     const valueStr = stringify.stringify(value, ctx, () => (valueCommentDone = true), () => (chompKeep = true));
     let ws = ' ';
-    if (vcb || keyComment) {
-        if (valueStr === '' && !ctx.inFlow)
-            ws = vcb === '\n' ? '\n\n' : vcb;
-        else
-            ws = `${vcb}\n${ctx.indent}`;
+    if (keyComment || vsb || vcb) {
+        ws = vsb ? '\n' : '';
+        if (vcb) {
+            const cs = commentString(vcb);
+            ws += `\n${stringifyComment.indentComment(cs, ctx.indent)}`;
+        }
+        if (valueStr === '' && !ctx.inFlow) {
+            if (ws === '\n')
+                ws = '\n\n';
+        }
+        else {
+            ws += `\n${ctx.indent}`;
+        }
     }
     else if (!explicitKey && Node.isCollection(value)) {
-        const flow = valueStr[0] === '[' || valueStr[0] === '{';
-        if (!flow || valueStr.includes('\n'))
-            ws = `\n${ctx.indent}`;
+        const vs0 = valueStr[0];
+        const nl0 = valueStr.indexOf('\n');
+        const hasNewline = nl0 !== -1;
+        const flow = ctx.inFlow ?? value.flow ?? value.items.length === 0;
+        if (hasNewline || !flow) {
+            let hasPropsLine = false;
+            if (hasNewline && (vs0 === '&' || vs0 === '!')) {
+                let sp0 = valueStr.indexOf(' ');
+                if (vs0 === '&' &&
+                    sp0 !== -1 &&
+                    sp0 < nl0 &&
+                    valueStr[sp0 + 1] === '!') {
+                    sp0 = valueStr.indexOf(' ', sp0 + 1);
+                }
+                if (sp0 === -1 || nl0 < sp0)
+                    hasPropsLine = true;
+            }
+            if (!hasPropsLine)
+                ws = `\n${ctx.indent}`;
+        }
     }
-    else if (valueStr === '' || valueStr[0] === '\n')
+    else if (valueStr === '' || valueStr[0] === '\n') {
         ws = '';
+    }
     str += ws + valueStr;
     if (ctx.inFlow) {
         if (valueCommentDone && onComment)
@@ -14678,13 +14705,13 @@ exports.stringifyPair = stringifyPair;
 
 /***/ }),
 
-/***/ 6226:
+/***/ 5917:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Scalar = __nccwpck_require__(9338);
-var foldFlowLines = __nccwpck_require__(2889);
+var Scalar = __nccwpck_require__(5461);
+var foldFlowLines = __nccwpck_require__(1040);
 
 const getFoldOptions = (ctx) => ({
     indentAtStart: ctx.indentAtStart,
@@ -14915,7 +14942,7 @@ function blockString({ comment, type, value }, ctx, onComment, onChompKeep) {
 }
 function plainString(item, ctx, onComment, onChompKeep) {
     const { type, value } = item;
-    const { actualString, implicitKey, indent, inFlow } = ctx;
+    const { actualString, implicitKey, indent, indentStep, inFlow } = ctx;
     if ((implicitKey && /[\n[\]{},]/.test(value)) ||
         (inFlow && /[[\]{},]/.test(value))) {
         return quotedString(value, ctx);
@@ -14939,9 +14966,14 @@ function plainString(item, ctx, onComment, onChompKeep) {
         // Where allowed & type not set explicitly, prefer block style for multiline strings
         return blockString(item, ctx, onComment, onChompKeep);
     }
-    if (indent === '' && containsDocumentMarker(value)) {
-        ctx.forceBlockIndent = true;
-        return blockString(item, ctx, onComment, onChompKeep);
+    if (containsDocumentMarker(value)) {
+        if (indent === '') {
+            ctx.forceBlockIndent = true;
+            return blockString(item, ctx, onComment, onChompKeep);
+        }
+        else if (implicitKey && indent === indentStep) {
+            return quotedString(value, ctx);
+        }
     }
     const str = value.replace(/\n+/g, `$&\n${indent}`);
     // Verify that output will be parsed as a string, as e.g. plain numbers and
@@ -15001,12 +15033,12 @@ exports.stringifyString = stringifyString;
 
 /***/ }),
 
-/***/ 6796:
+/***/ 8159:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 
 
-var Node = __nccwpck_require__(1399);
+var Node = __nccwpck_require__(240);
 
 const BREAK = Symbol('break visit');
 const SKIP = Symbol('skip children');
@@ -15244,7 +15276,7 @@ exports.visitAsync = visitAsync;
 
 /***/ }),
 
-/***/ 8572:
+/***/ 4348:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /* c8 ignore start */
@@ -15268,7 +15300,7 @@ if (!globalThis.ReadableStream) {
     }
   } catch (error) {
     // fallback to polyfill implementation
-    Object.assign(globalThis, __nccwpck_require__(1452))
+    Object.assign(globalThis, __nccwpck_require__(6484))
   }
 }
 
@@ -15302,157 +15334,83 @@ try {
 
 /***/ }),
 
-/***/ 1673:
+/***/ 5137:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
 // EXPORTS
 __nccwpck_require__.d(__webpack_exports__, {
-  "pM": () => (/* reexport */ is_json),
-  "HD": () => (/* reexport */ is_string),
-  "rE": () => (/* reexport */ is_stringify_json)
+  "eP": () => (/* reexport */ json),
+  "Pf": () => (/* reexport */ string),
+  "yA": () => (/* reexport */ stringify_json)
 });
 
-// UNUSED EXPORTS: areEqual, default, isArr, isArray, isBigInt, isBigInteger, isDict, isDictionary, isFn, isFunction, isGenerator, isJSONStr, isJSONStringified, isJSONStringify, isList, isMap, isNum, isNumber, isObj, isObjPlain, isObject, isObjectPlain, isPlainObj, isPlainObject, isRegEx, isRegExp, isRegularExpression, isSet, isStr, isStrJSON, isStringifiedJSON, typeOf
+// UNUSED EXPORTS: ArrayItemFilter, BigIntItemFilter, BigIntegerItemFilter, FunctionItemFilter, GeneratorItemFilter, JSONStringifiedItemFilter, JSONStringifyItemFilter, MapItemFilter, NumberItemFilter, ObjectItemFilter, ObjectPlainItemFilter, PlainObjectItemFilter, RegExItemFilter, RegExpItemFilter, RegularExpressionItemFilter, SetItemFilter, StringifiedJSONItemFilter, areEqual, default, isArray, isBigInt, isBigInteger, isFunction, isGenerator, isJSON, isJSONStringified, isJSONStringify, isMap, isNumber, isObject, isObjectPlain, isPlainObject, isRegEx, isRegExp, isRegularExpression, isSet, isString, isStringifiedJSON, isStringifyJSON, typeOf
 
 ;// CONCATENATED MODULE: external "node:assert"
 const external_node_assert_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:assert");
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-object.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/object-meta.js
 /**
- * @function isObject
- * @alias isObj
- * @description Determine item is type of object or not.
- * @param {any} item Item that need to determine.
- * @returns {boolean} Determine result.
+ * @access private
+ * @class ObjectMeta
  */
-function isObject(item) {
-	return (typeof item === "object" && !Array.isArray(item) && item !== null && !(item instanceof RegExp));
-}
-/* harmony default export */ const is_object = (isObject);
-
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/internal/is-plain-object.mjs
-
-/**
- * @private
- * @function $isPlainObject
- * @param {any} item
- * @param {object} [param1={}]
- * @param {boolean} [param1.configurableEntries]
- * @param {boolean} [param1.enumerableEntries]
- * @param {boolean} [param1.getterEntries]
- * @param {number} [param1.maximumEntries=Infinity]
- * @param {number} [param1.minimumEntries=0]
- * @param {boolean} [param1.setterEntries]
- * @param {boolean} [param1.symbolKeys]
- * @param {boolean} [param1.writableEntries]
- * @returns {boolean}
- */
-function $isPlainObject(item, {
-	configurableEntries,
-	enumerableEntries,
-	getterEntries,
-	maximumEntries = Infinity,
-	minimumEntries = 0,
-	setterEntries,
-	symbolKeys,
-	writableEntries
-} = {}) {
-	if (
-		!is_object(item) ||
-		!(item instanceof Object) ||
-		item.constructor.name !== "Object" ||
-		Object.prototype.toString.call(item) !== "[object Object]"
-	) {
-		return false;
-	}
-	let itemPrototype = Object.getPrototypeOf(item);
-	if (itemPrototype !== null && itemPrototype !== Object.prototype) {
-		return false;
-	}
-	let itemShadow = item;
-	while (Object.getPrototypeOf(itemShadow) !== null) {
-		itemShadow = Object.getPrototypeOf(itemShadow);
-	}
-	if (itemPrototype !== itemShadow) {
-		return false;
-	}
-	let itemSymbolKeysLength = Object.getOwnPropertySymbols(item).length;
-	if (
-		(symbolKeys === false && itemSymbolKeysLength > 0) ||
-		(symbolKeys === true && itemSymbolKeysLength === 0)
-	) {
-		return false;
-	}
-	let itemDescriptors = Object.getOwnPropertyDescriptors(item);
-	let itemConfigurableEntriesLength = 0;
-	let itemEnumerableEntriesLength = 0;
-	let itemGetterEntriesLength = 0;
-	let itemNonAccessorEntriesLength = 0;
-	let itemNonConfigurableEntriesLength = 0;
-	let itemNonEnumerableEntriesLength = 0;
-	let itemNonWritableEntriesLength = 0;
-	let itemSetterEntriesLength = 0;
-	let itemWritableEntriesLength = 0;
-	for (let itemPropertyKey in itemDescriptors) {
-		if (Object.prototype.hasOwnProperty.call(itemDescriptors, itemPropertyKey)) {
-			let itemPropertyDescriptor = itemDescriptors[itemPropertyKey];
-			if (itemPropertyDescriptor.configurable) {
-				itemConfigurableEntriesLength += 1;
-			} else {
-				itemNonConfigurableEntriesLength += 1;
-			}
-			if (itemPropertyDescriptor.enumerable) {
-				itemEnumerableEntriesLength += 1;
-			} else {
-				itemNonEnumerableEntriesLength += 1;
-			}
-			if (typeof itemPropertyDescriptor.get !== "undefined") {
-				itemGetterEntriesLength += 1;
-			} else if (typeof itemPropertyDescriptor.set !== "undefined") {
-				itemSetterEntriesLength += 1;
-			} else {
-				itemNonAccessorEntriesLength += 1;
-			}
-			if (itemPropertyDescriptor.writable) {
-				itemWritableEntriesLength += 1;
-			} else {
-				itemNonWritableEntriesLength += 1;
+class ObjectMeta {
+	/**
+	 * @constructor
+	 * @param {object} item
+	 */
+	constructor(item) {
+		this.prototypes = Object.getPrototypeOf(item);
+		this.symbolKeys = Object.getOwnPropertySymbols(item);
+		this.descriptors = Object.getOwnPropertyDescriptors(item);
+		this.configurableEntries = [];
+		this.enumerableEntries = [];
+		this.getterEntries = [];
+		this.nonAccessorEntries = [];
+		this.nonConfigurableEntries = [];
+		this.nonEnumerableEntries = [];
+		this.nonWritableEntries = [];
+		this.setterEntries = [];
+		this.writableEntries = [];
+		for (let descriptor in this.descriptors) {
+			if (Object.prototype.hasOwnProperty.call(this.descriptors, descriptor)) {
+				let descriptorProperties = this.descriptors[descriptor];
+				if (descriptorProperties.configurable) {
+					this.configurableEntries.push(descriptor);
+				} else {
+					this.nonConfigurableEntries.push(descriptor);
+				}
+				if (descriptorProperties.enumerable) {
+					this.enumerableEntries.push(descriptor);
+				} else {
+					this.nonEnumerableEntries.push(descriptor);
+				}
+				if (typeof descriptorProperties.get !== "undefined") {
+					this.getterEntries.push(descriptor);
+				}
+				if (typeof descriptorProperties.set !== "undefined") {
+					this.setterEntries.push(descriptor);
+				}
+				if (typeof descriptorProperties.get === "undefined" && typeof descriptorProperties.set === "undefined") {
+					this.nonAccessorEntries.push(descriptor);
+				}
+				if (descriptorProperties.writable) {
+					this.writableEntries.push(descriptor);
+				} else {
+					this.nonWritableEntries.push(descriptor);
+				}
 			}
 		}
 	}
-	if (
-		Object.entries(item).length !== itemEnumerableEntriesLength ||
-		itemConfigurableEntriesLength + itemNonConfigurableEntriesLength !== itemEnumerableEntriesLength + itemNonEnumerableEntriesLength ||
-		itemEnumerableEntriesLength + itemNonEnumerableEntriesLength !== itemGetterEntriesLength + itemNonAccessorEntriesLength + itemSetterEntriesLength ||
-		itemGetterEntriesLength + itemNonAccessorEntriesLength + itemSetterEntriesLength !== itemNonWritableEntriesLength + itemWritableEntriesLength ||
-		itemConfigurableEntriesLength + itemNonConfigurableEntriesLength !== itemNonWritableEntriesLength + itemWritableEntriesLength ||
-		maximumEntries < itemGetterEntriesLength + itemNonAccessorEntriesLength + itemSetterEntriesLength + itemSymbolKeysLength ||
-		itemGetterEntriesLength + itemNonAccessorEntriesLength + itemSetterEntriesLength + itemSymbolKeysLength < minimumEntries ||
-		(configurableEntries === false && itemConfigurableEntriesLength > 0) ||
-		(configurableEntries === true && itemNonConfigurableEntriesLength > 0) ||
-		(enumerableEntries === false && itemEnumerableEntriesLength > 0) ||
-		(enumerableEntries === true && itemNonEnumerableEntriesLength > 0) ||
-		(getterEntries === false && itemGetterEntriesLength > 0) ||
-		(setterEntries === false && itemSetterEntriesLength > 0) ||
-		((
-			getterEntries === true ||
-			setterEntries === true
-		) && itemNonAccessorEntriesLength > 0) ||
-		(writableEntries === false && itemWritableEntriesLength > 0) ||
-		(writableEntries === true && itemNonWritableEntriesLength > 0)
-	) {
-		return false;
-	}
-	return true;
 }
-/* harmony default export */ const is_plain_object = ($isPlainObject);
+/* harmony default export */ const object_meta = (ObjectMeta);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/type-of.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/type-of.js
 /**
  * @function typeOf
  * @description Determine item type of the unevaluated operand.
- * @param {any} item Item that need to determine.
- * @returns {"array"|"bigint"|"boolean"|"function"|"nan"|"null"|"number"|"object"|"regexp"|"string"|"symbol"|"undefined"} Determine result.
+ * @param {unknown} item Item that need to determine.
+ * @returns {"array" | "bigint" | "boolean" | "function" | "nan" | "null" | "number" | "object" | "regexp" | "string" | "symbol" | "undefined"} Determine result.
  */
 function typeOf(item) {
 	let itemOriginalType = typeof item;
@@ -15475,188 +15433,114 @@ function typeOf(item) {
 }
 /* harmony default export */ const type_of = (typeOf);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/are-equal.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/are-equal.js
 
 
 
 /**
- * @private
- * @function $compareObjectProperties
- * @param {object} item1
- * @param {object} item2
+ * @access private
+ * @function areEqualObjectMeta
+ * @param {object} item1 Item 1.
+ * @param {object} item2 Item 2.
  * @returns {boolean}
  */
-function $compareObjectProperties(item1, item2) {
-	if (!$areEqual(Object.getPrototypeOf(item1), Object.getPrototypeOf(item2))) {
+function areEqualObjectMeta(item1, item2) {
+	let item1ObjectMeta = new object_meta(item1);
+	let item2ObjectMeta = new object_meta(item2);
+	if (!areEqualInternal(item1ObjectMeta.prototypes, item2ObjectMeta.prototypes)) {
 		return false;
 	}
-	let item1SymbolKeys = Object.getOwnPropertySymbols(item1);
-	let item2SymbolKeys = Object.getOwnPropertySymbols(item2);
-	if (item1SymbolKeys.length !== item2SymbolKeys.length) {
+	if (item1ObjectMeta.symbolKeys.length !== item2ObjectMeta.symbolKeys.length) {
 		return false;
 	}
-	for (let item1SymbolKey of item1SymbolKeys) {
+	for (let item1SymbolKey of item1ObjectMeta.symbolKeys) {
 		if (
-			!item2SymbolKeys.includes(item1SymbolKey) ||
-			!$areEqual(item1[item1SymbolKey], item2[item1SymbolKey])
+			!item2ObjectMeta.symbolKeys.includes(item1SymbolKey) ||
+			!areEqualInternal(item1[item1SymbolKey], item2[item1SymbolKey])
 		) {
 			return false;
 		}
 	}
-	let item1Descriptors = Object.getOwnPropertyDescriptors(item1);
-	let item2Descriptors = Object.getOwnPropertyDescriptors(item2);
-	if (Object.entries(item1Descriptors).length !== Object.entries(item2Descriptors).length) {
+	if (Object.entries(item1ObjectMeta.descriptors).length !== Object.entries(item2ObjectMeta.descriptors).length) {
 		return false;
 	}
-	let item1ConfigurableEntries = [];
-	let item1EnumerableEntries = [];
-	let item1GetterEntries = [];
-	let item1NonAccessorEntries = [];
-	let item1NonConfigurableEntries = [];
-	let item1NonEnumerableEntries = [];
-	let item1NonWritableEntries = [];
-	let item1SetterEntries = [];
-	let item1WritableEntries = [];
-	let item2ConfigurableEntries = [];
-	let item2EnumerableEntries = [];
-	let item2GetterEntries = [];
-	let item2NonAccessorEntries = [];
-	let item2NonConfigurableEntries = [];
-	let item2NonEnumerableEntries = [];
-	let item2NonWritableEntries = [];
-	let item2SetterEntries = [];
-	let item2WritableEntries = [];
-	for (let item1Property in item1Descriptors) {
-		if (Object.prototype.hasOwnProperty.call(item1Descriptors, item1Property)) {
-			let item1PropertyDescriptor = item1Descriptors[item1Property];
-			if (item1PropertyDescriptor.configurable) {
-				item1ConfigurableEntries.push(item1Property);
-			} else {
-				item1NonConfigurableEntries.push(item1Property);
-			}
-			if (item1PropertyDescriptor.enumerable) {
-				item1EnumerableEntries.push(item1Property);
-			} else {
-				item1NonEnumerableEntries.push(item1Property);
-			}
-			if (typeof item1PropertyDescriptor.get !== "undefined") {
-				item1GetterEntries.push(item1Property);
-			} else if (typeof item1PropertyDescriptor.set !== "undefined") {
-				item1SetterEntries.push(item1Property);
-			} else {
-				item1NonAccessorEntries.push(item1Property);
-			}
-			if (item1PropertyDescriptor.writable) {
-				item1WritableEntries.push(item1Property);
-			} else {
-				item1NonWritableEntries.push(item1Property);
-			}
-		}
-	}
-	for (let item2Property in item2Descriptors) {
-		if (Object.prototype.hasOwnProperty.call(item2Descriptors, item2Property)) {
-			let item2PropertyDescriptor = item2Descriptors[item2Property];
-			if (item2PropertyDescriptor.configurable) {
-				item2ConfigurableEntries.push(item2Property);
-			} else {
-				item2NonConfigurableEntries.push(item2Property);
-			}
-			if (item2PropertyDescriptor.enumerable) {
-				item2EnumerableEntries.push(item2Property);
-			} else {
-				item2NonEnumerableEntries.push(item2Property);
-			}
-			if (typeof item2PropertyDescriptor.get !== "undefined") {
-				item2GetterEntries.push(item2Property);
-			} else if (typeof item2PropertyDescriptor.set !== "undefined") {
-				item2SetterEntries.push(item2Property);
-			} else {
-				item2NonAccessorEntries.push(item2Property);
-			}
-			if (item2PropertyDescriptor.writable) {
-				item2WritableEntries.push(item2Property);
-			} else {
-				item2NonWritableEntries.push(item2Property);
-			}
-		}
-	}
 	if (
-		item1ConfigurableEntries.length !== item2ConfigurableEntries.length ||
-		item1EnumerableEntries.length !== item2EnumerableEntries.length ||
-		item1GetterEntries.length !== item2GetterEntries.length ||
-		item1NonAccessorEntries.length !== item2NonAccessorEntries.length ||
-		item1NonConfigurableEntries.length !== item2NonConfigurableEntries.length ||
-		item1NonEnumerableEntries.length !== item2NonEnumerableEntries.length ||
-		item1NonWritableEntries.length !== item2NonWritableEntries.length ||
-		item1SetterEntries.length !== item2SetterEntries.length ||
-		item1WritableEntries.length !== item2WritableEntries.length
+		item1ObjectMeta.configurableEntries.length !== item2ObjectMeta.configurableEntries.length ||
+		item1ObjectMeta.enumerableEntries.length !== item2ObjectMeta.enumerableEntries.length ||
+		item1ObjectMeta.getterEntries.length !== item2ObjectMeta.getterEntries.length ||
+		item1ObjectMeta.nonAccessorEntries.length !== item2ObjectMeta.nonAccessorEntries.length ||
+		item1ObjectMeta.nonConfigurableEntries.length !== item2ObjectMeta.nonConfigurableEntries.length ||
+		item1ObjectMeta.nonEnumerableEntries.length !== item2ObjectMeta.nonEnumerableEntries.length ||
+		item1ObjectMeta.nonWritableEntries.length !== item2ObjectMeta.nonWritableEntries.length ||
+		item1ObjectMeta.setterEntries.length !== item2ObjectMeta.setterEntries.length ||
+		item1ObjectMeta.writableEntries.length !== item2ObjectMeta.writableEntries.length
 	) {
 		return false;
 	}
-	for (let item1ConfigurableEntry of item1ConfigurableEntries) {
-		if (!item2ConfigurableEntries.includes(item1ConfigurableEntry)) {
+	for (let item1ConfigurableEntry of item1ObjectMeta.configurableEntries) {
+		if (!item2ObjectMeta.configurableEntries.includes(item1ConfigurableEntry)) {
 			return false;
 		}
 	}
-	for (let item1EnumerableEntry of item1EnumerableEntries) {
-		if (!item2EnumerableEntries.includes(item1EnumerableEntry)) {
+	for (let item1EnumerableEntry of item1ObjectMeta.enumerableEntries) {
+		if (!item2ObjectMeta.enumerableEntries.includes(item1EnumerableEntry)) {
 			return false;
 		}
 	}
-	for (let item1GetterEntry of item1GetterEntries) {
+	for (let item1GetterEntry of item1ObjectMeta.getterEntries) {
 		if (
-			!item2GetterEntries.includes(item1GetterEntry) ||
-			!$areEqual(item1[item1GetterEntry], item2[item1GetterEntry])
+			!item2ObjectMeta.getterEntries.includes(item1GetterEntry) ||
+			!areEqualInternal(item1[item1GetterEntry], item2[item1GetterEntry])
 		) {
 			return false;
 		}
 	}
-	for (let item1NonAccessorEntry of item1NonAccessorEntries) {
+	for (let item1NonAccessorEntry of item1ObjectMeta.nonAccessorEntries) {
 		if (
-			!item2NonAccessorEntries.includes(item1NonAccessorEntry) ||
-			!$areEqual(item1[item1NonAccessorEntry], item2[item1NonAccessorEntry])
+			!item2ObjectMeta.nonAccessorEntries.includes(item1NonAccessorEntry) ||
+			!areEqualInternal(item1[item1NonAccessorEntry], item2[item1NonAccessorEntry])
 		) {
 			return false;
 		}
 	}
-	for (let item1NonConfigurableEntry of item1NonConfigurableEntries) {
-		if (!item2NonConfigurableEntries.includes(item1NonConfigurableEntry)) {
+	for (let item1NonConfigurableEntry of item1ObjectMeta.nonConfigurableEntries) {
+		if (!item2ObjectMeta.nonConfigurableEntries.includes(item1NonConfigurableEntry)) {
 			return false;
 		}
 	}
-	for (let item1NonEnumerableEntry of item1NonEnumerableEntries) {
-		if (!item2NonEnumerableEntries.includes(item1NonEnumerableEntry)) {
+	for (let item1NonEnumerableEntry of item1ObjectMeta.nonEnumerableEntries) {
+		if (!item2ObjectMeta.nonEnumerableEntries.includes(item1NonEnumerableEntry)) {
 			return false;
 		}
 	}
-	for (let item1NonWritableEntry of item1NonWritableEntries) {
-		if (!item2NonWritableEntries.includes(item1NonWritableEntry)) {
+	for (let item1NonWritableEntry of item1ObjectMeta.nonWritableEntries) {
+		if (!item2ObjectMeta.nonWritableEntries.includes(item1NonWritableEntry)) {
 			return false;
 		}
 	}
-	for (let item1SetterEntry of item1SetterEntries) {
+	for (let item1SetterEntry of item1ObjectMeta.setterEntries) {
 		if (
-			!item2SetterEntries.includes(item1SetterEntry) ||
-			!$areEqual(item1[item1SetterEntry], item2[item1SetterEntry])
+			!item2ObjectMeta.setterEntries.includes(item1SetterEntry) ||
+			!areEqualInternal(item1[item1SetterEntry], item2[item1SetterEntry])
 		) {
 			return false;
 		}
 	}
-	for (let item1WritableEntry of item1WritableEntries) {
-		if (!item2WritableEntries.includes(item1WritableEntry)) {
+	for (let item1WritableEntry of item1ObjectMeta.writableEntries) {
+		if (!item2ObjectMeta.writableEntries.includes(item1WritableEntry)) {
 			return false;
 		}
 	}
 	return true;
 }
 /**
- * @private
- * @function $areEqual
- * @param {any} item1
- * @param {any} item2
+ * @access private
+ * @function areEqualInternal
+ * @param {unknown} item1 Item 1.
+ * @param {unknown} item2 Item 2.
  * @returns {boolean}
  */
-function $areEqual(item1, item2) {
+function areEqualInternal(item1, item2) {
 	if (item1 === item2) {
 		return true;
 	}
@@ -15675,28 +15559,21 @@ function $areEqual(item1, item2) {
 	) {
 		return false;
 	}
-	if (item1TypeOf === "array") {
-		if (Object.entries(item1).length !== Object.entries(item2).length) {
-			return false;
-		}
-		return $compareObjectProperties(item1, item2);
-	}
-	if (item1TypeOf === "object" && item1 instanceof Map && item2 instanceof Map) {
+	if (item1 instanceof Map && item2 instanceof Map) {
 		if (item1.size !== item2.size) {
 			return false;
 		}
-		let item1Entries = item1.entries();
-		if ($areEqual(Array.from(item1Entries), Array.from(item2.entries()))) {
+		if (areEqualInternal(Array.from(item1.entries()), Array.from(item2.entries()))) {
 			return true;
 		}
 		let item2Keys = Array.from(item2.keys());
 		let item2Values = Array.from(item2.values());
-		for (let [item1Key, item1Value] of item1Entries) {
+		for (let [item1Key, item1Value] of item1.entries()) {
 			let matchItem2KeysIndexes = [];
 			item2Keys.forEach((item2Key, item2KeysIndex) => {
 				if (
 					(type_of(item1Key) === "nan" && type_of(item2Key) === "nan") ||
-					$areEqual(item1Key, item2Key)
+					areEqualInternal(item1Key, item2Key)
 				) {
 					matchItem2KeysIndexes.push(item2KeysIndex);
 				}
@@ -15704,11 +15581,11 @@ function $areEqual(item1, item2) {
 			if (matchItem2KeysIndexes.length === 0) {
 				return false;
 			}
-			if (!matchItem2KeysIndexes.some((matchItem2KeysIndex) => {
+			if (matchItem2KeysIndexes.some((matchItem2KeysIndex) => {
 				let matchItem2Value = item2Values[matchItem2KeysIndex];
-				return (
+				return !(
 					(type_of(item1Value) === "nan" && type_of(matchItem2Value) === "nan") ||
-					$areEqual(item1Value, matchItem2Value)
+					areEqualInternal(item1Value, matchItem2Value)
 				);
 			})) {
 				return false;
@@ -15716,30 +15593,22 @@ function $areEqual(item1, item2) {
 		}
 		return true;
 	}
-	if (item1TypeOf === "regexp") {
-		if (
-			item1.flags !== item2.flags ||
-			item1.source !== item2.source
-		) {
-			return false;
-		}
-		return true;
+	if (item1 instanceof RegExp && item2 instanceof RegExp) {
+		return (item1.flags === item2.flags && item1.source === item2.source);
 	}
-	if (item1TypeOf === "object" && item1 instanceof Set && item2 instanceof Set) {
+	if (item1 instanceof Set && item2 instanceof Set) {
 		if (item1.size !== item2.size) {
 			return false;
 		}
-		let item1Values = item1.values();
-		let item2Values = item2.values();
-		if ($areEqual(Array.from(item1Values), Array.from(item2Values))) {
+		if (areEqualInternal(Array.from(item1.values()), Array.from(item2.values()))) {
 			return true;
 		}
-		for (let item1Value of item1Values) {
+		for (let item1Value of item1.values()) {
 			let matchItem2Values = [];
-			for (let item2Value of item2Values) {
+			for (let item2Value of item2.values()) {
 				if (
 					(type_of(item1Value) === "nan" && type_of(item2Value) === "nan") ||
-					$areEqual(item1Value, item2Value)
+					areEqualInternal(item1Value, item2Value)
 				) {
 					matchItem2Values.push(item2Value);
 				}
@@ -15750,11 +15619,11 @@ function $areEqual(item1, item2) {
 		}
 		return true;
 	}
-	if (is_plain_object(item1) && is_plain_object(item2)) {
-		if (Object.entries(item1).length !== Object.entries(item2).length) {
-			return false;
-		}
-		return $compareObjectProperties(item1, item2);
+	if (
+		(item1TypeOf === "array" && item2TypeOf === "array") ||
+		(item1TypeOf === "object" && item2TypeOf === "object")
+	) {
+		return ((Object.entries(item1).length === Object.entries(item2).length) ? areEqualObjectMeta(item1, item2) : false);
 	}
 	try {
 		(0,external_node_assert_namespaceObject.notDeepStrictEqual)(item1, item2);
@@ -15766,19 +15635,19 @@ function $areEqual(item1, item2) {
 /**
  * @function areEqual
  * @description Determine items are equal or not.
- * @param {...any} items Items that need to determine.
+ * @param {...unknown} items Items that need to determine.
  * @returns {boolean} Determine result.
  */
 function areEqual(...items) {
 	switch (items.length) {
 		case 0:
-			throw new ReferenceError(`Argument \`items\` is not defined!`);
+			throw new ReferenceError(`Argument \`items\` is not defined.`);
 		case 1:
 		case 2:
-			return $areEqual(...items);
+			return areEqualInternal(...items);
 		default:
 			for (let index = 0; index < items.length - 1; index++) {
-				if (!$areEqual(items[index], items[index + 1])) {
+				if (!areEqualInternal(items[index], items[index + 1])) {
 					return false;
 				}
 			}
@@ -15787,18 +15656,300 @@ function areEqual(...items) {
 }
 /* harmony default export */ const are_equal = (areEqual);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/internal/is-prime-number.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/check-item.js
 /**
- * @private
+ * @access private
+ * @function checkNumber
+ * @param {unknown} item
+ * @returns {boolean}
+ */
+function checkNumber(item) {
+	return (typeof item === "number" && !Number.isNaN(item));
+}
+/**
+ * @access private
+ * @function checkNumberWithMaximum
+ * @param {unknown} item
+ * @param {number} maximum
+ * @returns {boolean}
+ */
+function checkNumberWithMaximum(item, maximum) {
+	return (checkNumber(item) && item <= maximum);
+}
+/**
+ * @access private
+ * @function checkNumberIPS
+ * @param {unknown} item
+ * @returns {boolean}
+ */
+function checkNumberIPS(item) {
+	return (checkNumber(item) && Number.isSafeInteger(item) && item >= 0);
+}
+/**
+ * @access private
+ * @function checkNumberIPSWithMaximum
+ * @param {unknown} item
+ * @param {number} maximum
+ * @returns {boolean}
+ */
+function checkNumberIPSWithMaximum(item, maximum) {
+	return (checkNumberIPS(item) && item <= maximum);
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+undefinish@1.0.18/node_modules/@hugoalh/undefinish/lib/main.mjs
+/**
+ * @function undefinish
+ * @description Undefinish coalescing.
+ * @param {...unknown} inputs
+ * @returns {unknown}
+ */
+function undefinish(...inputs) {
+	for (let input of inputs) {
+		if (typeof input !== "undefined") {
+			return input;
+		}
+	}
+	return undefined;
+}
+/* harmony default export */ const main = (undefinish);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/array.js
+
+
+/**
+ * @class ArrayItemFilter
+ * @description Determine item with the filter of type of array.
+ */
+class ArrayItemFilter {
+	#maximumLength;
+	#minimumLength;
+	#strict;
+	#unique;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of array to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty array.
+	 * @param {number} [param0.maximumLength=Infinity] Maximum length of the array.
+	 * @param {number} [param0.minimumLength=1] Minimum length of the array.
+	 * @param {boolean} [param0.strict=false] Whether to determine no custom defined properties in the array.
+	 * @param {boolean} [param0.unique=false] Whether to determine all of the elements in the array are unique.
+	 */
+	constructor({
+		allowEmpty = false,
+		maximumLength,
+		minimumLength,
+		strict = false,
+		unique = false,
+		...aliases
+	} = {}) {
+		if (typeof allowEmpty !== "boolean") {
+			throw new TypeError(`Argument \`allowEmpty\` must be type of boolean.`);
+		}
+		maximumLength = main(maximumLength, aliases.maxLength, aliases.maximumElements, aliases.maxElements, Infinity);
+		if (maximumLength !== Infinity && !checkNumberIPS(maximumLength)) {
+			throw new TypeError(`Argument \`maximumLength\` must be \`Infinity\` or type of number (integer, positive, and safe).`);
+		}
+		minimumLength = main(minimumLength, aliases.minLength, aliases.minimumElements, aliases.minElements, 1);
+		if (!checkNumberIPSWithMaximum(minimumLength, maximumLength)) {
+			throw new TypeError(`Argument \`minimumLength\` must be type of number (integer, positive, and safe) and <= ${maximumLength}.`);
+		}
+		if (typeof strict !== "boolean") {
+			throw new TypeError(`Argument \`strict\` must be type of boolean.`);
+		}
+		if (typeof unique !== "boolean") {
+			throw new TypeError(`Argument \`unique\` must be type of boolean.`);
+		}
+		this.#maximumLength = maximumLength;
+		this.#minimumLength = allowEmpty ? 0 : minimumLength;
+		this.#strict = strict;
+		this.#unique = unique;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of array.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			!Array.isArray(item) ||
+			!(item instanceof Array) ||
+			item.constructor.name !== "Array" ||
+			Object.prototype.toString.call(item) !== "[object Array]"
+		) {
+			return false;
+		}
+		if (this.#strict) {
+			let itemPrototype = Object.getPrototypeOf(item);
+			if (
+				(itemPrototype !== null && itemPrototype !== Array.prototype) ||
+				Object.getOwnPropertySymbols(item).length > 0
+			) {
+				return false;
+			}
+			let itemDescriptors = Object.getOwnPropertyDescriptors(item);
+			for (let itemPropertyKey in itemDescriptors) {
+				if (Object.prototype.hasOwnProperty.call(itemDescriptors, itemPropertyKey)) {
+					if (itemPropertyKey.search(/^(?:0|[1-9]\d*)$/u) === 0 && Number(itemPropertyKey) < 4294967296) {
+						let itemPropertyDescriptor = itemDescriptors[itemPropertyKey];
+						if (
+							!itemPropertyDescriptor.configurable ||
+							!itemPropertyDescriptor.enumerable ||
+							typeof itemPropertyDescriptor.get !== "undefined" ||
+							typeof itemPropertyDescriptor.set !== "undefined" ||
+							!itemPropertyDescriptor.writable
+						) {
+							return false;
+						}
+					} else if (itemPropertyKey === "length") {
+						let itemPropertyDescriptor = itemDescriptors[itemPropertyKey];
+						if (
+							itemPropertyDescriptor.configurable ||
+							itemPropertyDescriptor.enumerable ||
+							typeof itemPropertyDescriptor.get !== "undefined" ||
+							typeof itemPropertyDescriptor.set !== "undefined" ||
+							!itemPropertyDescriptor.writable
+						) {
+							return false;
+						}
+					} else {
+						return false;
+					}
+				}
+			}
+		}
+		if (
+			Object.entries(item).length !== item.length ||
+			this.#maximumLength < item.length ||
+			item.length < this.#minimumLength ||
+			(this.#unique && new Set(item).size !== item.length)
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const array = (ArrayItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/integer-types-range.js
+const grid8 = 2n ** 8n;
+const grid16 = 2n ** 16n;
+const grid32 = 2n ** 32n;
+const grid64 = 2n ** 64n;
+/**
+ * @access private
+ * @function integerTypesRangeInt
+ * @param {bigint} grid Grid.
+ * @returns {[bigint, bigint]}
+ */
+function integerTypesRangeInt(grid) {
+	let gridHalf = grid / 2n;
+	return [-gridHalf, gridHalf - 1n];
+}
+/**
+ * @access private
+ * @function integerTypesRangeUInt
+ * @param {bigint} grid Grid.
+ * @returns {[bigint, bigint]}
+ */
+function integerTypesRangeUInt(grid) {
+	return [0n, grid - 1n];
+}
+/**
+ * @typedef {boolean} AsNumber Whether to return result as type of number.
+ */
+/**
+ * @access private
+ * @function integerTypesRangeOutput
+ * @template {AsNumber} T
+ * @param {[bigint, bigint]} output Output.
+ * @param {T} [asNumber=false] Whether to return result as type of number.
+ * @returns {T extends true ? [number, number] : [bigint, bigint]}
+ */
+function integerTypesRangeOutput(output, asNumber = false) {
+	if (asNumber) {
+		return output.map((value) => {
+			return Number(value);
+		});
+	}
+	return output;
+}
+/**
+ * @access private
+ * @function integerTypesRange
+ * @param {string} name Name of the integer type.
+ * @param {AsNumber} [asNumber=false] Whether to return result as type of number.
+ * @returns {ReturnType<typeof integerTypesRangeOutput>}
+ */
+function integerTypesRange(name, asNumber = false) {
+	switch (name) {
+		case "char":
+		case "Char":
+		case "int8":
+		case "Int8":
+			return integerTypesRangeOutput(integerTypesRangeInt(grid8), asNumber);
+		case "int16":
+		case "Int16":
+		case "short":
+		case "Short":
+			return integerTypesRangeOutput(integerTypesRangeInt(grid16), asNumber);
+		case "int32":
+		case "Int32":
+		case "rune":
+		case "Rune":
+			return integerTypesRangeOutput(integerTypesRangeInt(grid32), asNumber);
+		case "int64":
+		case "Int64":
+		case "long":
+		case "Long":
+			return integerTypesRangeOutput(integerTypesRangeInt(grid64), asNumber);
+		case "byte":
+		case "Byte":
+		case "uchar":
+		case "Uchar":
+		case "UChar":
+		case "uint8":
+		case "Uint8":
+		case "UInt8":
+			return integerTypesRangeOutput(integerTypesRangeUInt(grid8), asNumber);
+		case "uint16":
+		case "Uint16":
+		case "UInt16":
+		case "ushort":
+		case "Ushort":
+		case "UShort":
+			return integerTypesRangeOutput(integerTypesRangeUInt(grid16), asNumber);
+		case "uint32":
+		case "Uint32":
+		case "UInt32":
+			return integerTypesRangeOutput(integerTypesRangeUInt(grid32), asNumber);
+		case "uint64":
+		case "Uint64":
+		case "UInt64":
+		case "ulong":
+		case "Ulong":
+		case "ULong":
+			return integerTypesRangeOutput(integerTypesRangeUInt(grid64), asNumber);
+		default:
+			throw new RangeError(`\`${name}\` is not a valid interger type.`);
+	}
+}
+/* harmony default export */ const integer_types_range = (integerTypesRange);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/is-prime-number.js
+/**
+ * @access private
  * @function bigIntegerSquareRoot
- * @param {bigint} item
+ * @param {bigint} n
  * @returns {bigint}
  * @note From https://stackoverflow.com/a/53684036.
  */
- function bigIntegerSquareRoot(item) {
+function bigIntegerSquareRoot(n) {
 	let x0 = 1n;
 	while (true) {
-		let x1 = (item / x0 + x0) >> 1n;
+		let x1 = (n / x0 + x0) >> 1n;
 		if (
 			x0 === x1 ||
 			x0 === x1 - 1n
@@ -15809,9 +15960,9 @@ function areEqual(...items) {
 	}
 }
 /**
- * @private
+ * @access private
  * @function isPrimeNumber
- * @param {bigint|number} item
+ * @param {bigint | number} item
  * @returns {boolean}
  */
 function isPrimeNumber(item) {
@@ -15842,436 +15993,355 @@ function isPrimeNumber(item) {
 }
 /* harmony default export */ const is_prime_number = (isPrimeNumber);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/internal/is-number.mjs
-
-/**
- * @private
- * @function $isNumber
- * @param {any} item
- * @param {object} [param1={}]
- * @param {boolean} [param1.even]
- * @param {boolean} [param1.exclusiveMaximum=false]
- * @param {boolean} [param1.exclusiveMinimum=false]
- * @param {boolean} [param1.finite]
- * @param {boolean} [param1.float]
- * @param {boolean} [param1.infinite]
- * @param {boolean} [param1.integer]
- * @param {number} [param1.maximum=Infinity]
- * @param {number} [param1.minimum=-Infinity]
- * @param {boolean} [param1.negative]
- * @param {boolean} [param1.odd]
- * @param {boolean} [param1.positive]
- * @param {boolean} [param1.prime]
- * @param {boolean} [param1.safe]
- * @param {boolean} [param1.unsafe]
- * @returns {boolean}
- */
-function $isNumber(item, {
-	even,
-	exclusiveMaximum = false,
-	exclusiveMinimum = false,
-	finite,
-	float,
-	infinite,
-	integer,
-	maximum = Infinity,
-	minimum = -Infinity,
-	negative,
-	odd,
-	positive,
-	prime,
-	safe,
-	unsafe
-} = {}) {
-	let itemIsFinite = Number.isFinite(item);
-	let itemIsInteger = Number.isInteger(item);
-	let itemIsSafeInteger = Number.isSafeInteger(item);
-	if (
-		typeof item !== "number" ||
-		Number.isNaN(item) ||
-		(even === false && itemIsSafeInteger && item % 2 === 0) ||
-		(even === true && (
-			!itemIsSafeInteger ||
-			item % 2 !== 0
-		)) ||
-		(exclusiveMaximum && maximum <= item) ||
-		(!exclusiveMaximum && maximum < item) ||
-		(exclusiveMinimum && item <= minimum) ||
-		(!exclusiveMinimum && item < minimum) ||
-		((
-			finite === true ||
-			infinite === false
-		) && !itemIsFinite) ||
-		((
-			infinite === true ||
-			finite === false
-		) && itemIsFinite) ||
-		((
-			float === true ||
-			integer === false
-		) && itemIsInteger) ||
-		((
-			integer === true ||
-			float === false
-		) && !itemIsInteger) ||
-		((
-			negative === true ||
-			positive === false
-		) && item >= 0) ||
-		((
-			positive === true ||
-			negative === false
-		) && item < 0) ||
-		(odd === false && itemIsSafeInteger && item % 2 !== 0) ||
-		(odd === true && (
-			!itemIsSafeInteger ||
-			item % 2 === 0
-		)) ||
-		(prime === false && itemIsSafeInteger && is_prime_number(item)) ||
-		(prime === true && (
-			!itemIsSafeInteger ||
-			!is_prime_number(item)
-		)) ||
-		((
-			safe === true ||
-			unsafe === false
-		) && (
-			item < Number.MIN_SAFE_INTEGER ||
-			item > Number.MAX_SAFE_INTEGER
-		)) ||
-		((
-			unsafe === true ||
-			safe === false
-		) && item >= Number.MIN_SAFE_INTEGER && item <= Number.MAX_SAFE_INTEGER)
-	) {
-		return false;
-	}
-	return true;
-}
-/* harmony default export */ const is_number = ($isNumber);
-
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/undefinish/lib/main.mjs
-/**
- * @function undefinish
- * @description Undefinish coalescing.
- * @param {...unknown} inputs
- * @returns {unknown}
- */
-function undefinish(...inputs) {
-	for (let input of inputs) {
-		if (typeof input !== "undefined") {
-			return input;
-		}
-	}
-	return undefined;
-}
-/* harmony default export */ const main = (undefinish);
-
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-array.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/big-integer.js
 
 
-/**
- * @function isArray
- * @alias isArr
- * @alias isList
- * @description Determine item is type of array or not.
- * @param {any} item Item that need to determine.
- * @param {object} [param1={}] Options.
- * @param {boolean} [param1.empty] An empty array.
- * @param {number} [param1.maximumLength=Infinity] Maximum length of the array.
- * @param {number} [param1.minimumLength=0] Minimum length of the array.
- * @param {boolean} [param1.strict=false] Ensure no custom defined properties in the array.
- * @param {boolean} [param1.unique=false] Elements must be unique in the array.
- * @returns {boolean} Determine result.
- */
-function isArray(item, {
-	empty,
-	maximumLength,
-	minimumLength,
-	strict,
-	unique = false,
-	...aliases
-} = {}) {
-	if (typeof empty !== "boolean" && typeof empty !== "undefined") {
-		throw new TypeError(`Argument \`empty\` must be type of boolean or undefined!`);
-	}
-	maximumLength = main(maximumLength, aliases.maxLength, aliases.maximumElements, aliases.maxElements, Infinity);
-	if (maximumLength !== Infinity && !is_number(maximumLength, {
-		integer: true,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`maximumLength\` must be \`Infinity\` or type of number (integer, positive, and safe)!`);
-	}
-	minimumLength = main(minimumLength, aliases.minLength, aliases.minimumElements, aliases.minElements, 0);
-	if (!is_number(minimumLength, {
-		integer: true,
-		maximum: maximumLength,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimumLength\` must be type of number (integer, positive, and safe) and <= ${maximumLength}!`);
-	}
-	strict = main(strict, aliases.super, false);
-	if (typeof strict !== "boolean") {
-		throw new TypeError(`Argument \`strict\` must be type of boolean!`);
-	}
-	if (typeof unique !== "boolean") {
-		throw new TypeError(`Argument \`unique\` must be type of boolean!`);
-	}
-	if (empty === false) {
-		maximumLength = Infinity;
-		minimumLength = 1;
-	} else if (empty === true) {
-		maximumLength = 0;
-		minimumLength = 0;
-	}
-	if (
-		!Array.isArray(item) ||
-		!(item instanceof Array) ||
-		item.constructor.name !== "Array" ||
-		Object.prototype.toString.call(item) !== "[object Array]"
-	) {
-		return false;
-	}
-	if (Object.entries(item).length !== item.length) {
-		return false;
-	}
-	if (strict) {
-		let itemPrototype = Object.getPrototypeOf(item);
-		if (itemPrototype !== null && itemPrototype !== Array.prototype) {
-			return false;
-		}
-		if (Object.getOwnPropertySymbols(item).length > 0) {
-			return false;
-		}
-		let itemDescriptors = Object.getOwnPropertyDescriptors(item);
-		for (let itemPropertyKey in itemDescriptors) {
-			if (Object.prototype.hasOwnProperty.call(itemDescriptors, itemPropertyKey)) {
-				if (itemPropertyKey.search(/^(?:0|[1-9]\d*)$/gu) === 0 && Number(itemPropertyKey) < 4294967296) {
-					let itemPropertyDescriptor = itemDescriptors[itemPropertyKey];
-					if (
-						!itemPropertyDescriptor.configurable ||
-						!itemPropertyDescriptor.enumerable ||
-						typeof itemPropertyDescriptor.get !== "undefined" ||
-						typeof itemPropertyDescriptor.set !== "undefined" ||
-						!itemPropertyDescriptor.writable
-					) {
-						return false;
-					}
-				} else if (itemPropertyKey === "length") {
-					let itemPropertyDescriptor = itemDescriptors[itemPropertyKey];
-					if (
-						itemPropertyDescriptor.configurable ||
-						itemPropertyDescriptor.enumerable ||
-						typeof itemPropertyDescriptor.get !== "undefined" ||
-						typeof itemPropertyDescriptor.set !== "undefined" ||
-						!itemPropertyDescriptor.writable
-					) {
-						return false;
-					}
-				} else {
-					return false;
-				}
-			}
-		}
-	}
-	if (
-		maximumLength < item.length ||
-		item.length < minimumLength ||
-		(unique && Array.from(new Set(item).values()).length < item.length)
-	) {
-		return false;
-	}
-	return true;
-}
-/* harmony default export */ const is_array = (isArray);
-
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/internal/is-big-integer.mjs
 
 const maximumSafeInteger = BigInt(Number.MAX_SAFE_INTEGER);
 const minimumSafeInteger = BigInt(Number.MIN_SAFE_INTEGER);
 /**
- * @function $isBigInteger
- * @param {any} item
- * @param {object} [param1={}]
- * @param {boolean} [param1.even]
- * @param {boolean} [param1.exclusiveMaximum=false]
- * @param {boolean} [param1.exclusiveMinimum=false]
- * @param {bigint} [param1.maximum=Infinity]
- * @param {bigint} [param1.minimum=-Infinity]
- * @param {boolean} [param1.negative]
- * @param {boolean} [param1.odd]
- * @param {boolean} [param1.positive]
- * @param {boolean} [param1.prime]
- * @param {boolean} [param1.safe]
- * @param {boolean} [param1.unsafe]
- * @returns {boolean}
+ * @class BigIntegerItemFilter
+ * @alias BigIntItemFilter
+ * @description Determine item with the filter of type of big integer.
  */
-function $isBigInteger(item, {
-	even,
-	exclusiveMaximum = false,
-	exclusiveMinimum = false,
-	maximum = Infinity,
-	minimum = -Infinity,
-	negative,
-	odd,
-	positive,
-	prime,
-	safe,
-	unsafe
+class BigIntegerItemFilter {
+	#even;
+	#exclusiveMaximum;
+	#exclusiveMinimum;
+	#maximum;
+	#minimum;
+	#negative;
+	#odd;
+	#positive;
+	#prime;
+	#safe;
+	#unsafe;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of big integer to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.even] Whether an even big integer.
+	 * @param {boolean} [param0.exclusiveMaximum=false] Whether to exclusive maximum of the big integer.
+	 * @param {boolean} [param0.exclusiveMinimum=false] Whether to exclusive minimum of the big integer.
+	 * @param {bigint} [param0.maximum=Infinity] Maximum of the big integer.
+	 * @param {bigint} [param0.minimum=-Infinity] Minimum of the big integer.
+	 * @param {boolean} [param0.negative] Whether a negative big integer.
+	 * @param {boolean} [param0.odd] Whether an odd big integer.
+	 * @param {boolean} [param0.positive] Whether a positive big integer.
+	 * @param {boolean} [param0.prime] Whether a prime big integer.
+	 * @param {boolean} [param0.safe] Whether an IEEE-754 big integer.
+	 * @param {string} [param0.type] Type of the big integer.
+	 * @param {boolean} [param0.unsafe] Whether not an IEEE-754 big integer.
+	 */
+	constructor({
+		even,
+		exclusiveMaximum,
+		exclusiveMinimum,
+		maximum,
+		minimum,
+		negative,
+		odd,
+		positive,
+		prime,
+		safe,
+		type,
+		unsafe,
+		...aliases
+	} = {}) {
+		if (typeof even !== "boolean" && typeof even !== "undefined") {
+			throw new TypeError(`Argument \`even\` must be type of boolean or undefined.`);
+		}
+		exclusiveMaximum = main(exclusiveMaximum, aliases.exclusiveMax, false);
+		if (typeof exclusiveMaximum !== "boolean") {
+			throw new TypeError(`Argument \`exclusiveMaximum\` must be type of boolean.`);
+		}
+		exclusiveMinimum = main(exclusiveMinimum, aliases.exclusiveMin, false);
+		if (typeof exclusiveMinimum !== "boolean") {
+			throw new TypeError(`Argument \`exclusiveMinimum\` must be type of boolean.`);
+		}
+		maximum = main(maximum, aliases.max, Infinity);
+		if (maximum !== Infinity && typeof maximum !== "bigint") {
+			throw new TypeError(`Argument \`maximum\` must be \`Infinity\` or type of big integer.`);
+		}
+		minimum = main(minimum, aliases.min, -Infinity);
+		if (minimum !== -Infinity && !(typeof minimum === "bigint" && minimum <= maximum)) {
+			throw new TypeError(`Argument \`minimum\` must be \`-Infinity\`, or type of big integer and <= ${maximum}.`);
+		}
+		negative = main(negative, aliases.ngt, aliases.nega);
+		if (typeof negative !== "boolean" && typeof negative !== "undefined") {
+			throw new TypeError(`Argument \`negative\` must be type of boolean or undefined.`);
+		}
+		if (typeof odd !== "boolean" && typeof odd !== "undefined") {
+			throw new TypeError(`Argument \`odd\` must be type of boolean or undefined.`);
+		}
+		positive = main(positive, aliases.pst, aliases.posi);
+		if (typeof positive !== "boolean" && typeof positive !== "undefined") {
+			throw new TypeError(`Argument \`positive\` must be type of boolean or undefined.`);
+		}
+		if (typeof prime !== "boolean" && typeof prime !== "undefined") {
+			throw new TypeError(`Argument \`prime\` must be type of boolean or undefined.`);
+		}
+		if (typeof safe !== "boolean" && typeof safe !== "undefined") {
+			throw new TypeError(`Argument \`safe\` must be type of boolean or undefined.`);
+		}
+		if (typeof unsafe !== "boolean" && typeof unsafe !== "undefined") {
+			throw new TypeError(`Argument \`unsafe\` must be type of boolean or undefined.`);
+		}
+		if (typeof type === "string") {
+			this.#exclusiveMaximum = false;
+			this.#exclusiveMinimum = false;
+			[this.#minimum, this.#maximum] = integer_types_range(type);
+		} else if (typeof type === "undefined") {
+			this.#exclusiveMaximum = exclusiveMaximum;
+			this.#exclusiveMinimum = exclusiveMinimum;
+			this.#maximum = maximum;
+			this.#minimum = minimum;
+		} else {
+			throw new TypeError(`Argument \`type\` must be type of string or undefined.`);
+		}
+		this.#even = even;
+		this.#negative = negative;
+		this.#odd = odd;
+		this.#positive = positive;
+		this.#prime = prime;
+		this.#safe = safe;
+		this.#unsafe = unsafe;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of big integer.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			typeof item !== "bigint" ||
+			(this.#even === false && item % 2n === 0n) ||
+			(this.#even === true && item % 2n !== 0n) ||
+			(this.#exclusiveMaximum && this.#maximum <= item) ||
+			(!this.#exclusiveMaximum && this.#maximum < item) ||
+			(this.#exclusiveMinimum && item <= this.#minimum) ||
+			(!this.#exclusiveMinimum && item < this.#minimum) ||
+			((
+				this.#negative === true ||
+				this.#positive === false
+			) && item >= 0n) ||
+			((
+				this.#positive === true ||
+				this.#negative === false
+			) && item < 0n) ||
+			(this.#odd === false && item % 2n !== 0n) ||
+			(this.#odd === true && item % 2n === 0n) ||
+			(this.#prime === false && is_prime_number(item)) ||
+			(this.#prime === true && !is_prime_number(item)) ||
+			(
+				(
+					this.#safe === true ||
+					this.#unsafe === false
+				) && (
+					maximumSafeInteger < item ||
+					item < minimumSafeInteger
+				)
+			) ||
+			((
+				this.#unsafe === true ||
+				this.#safe === false
+			) && minimumSafeInteger <= item && item <= maximumSafeInteger)
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const big_integer = (BigIntegerItemFilter);
+
+// EXTERNAL MODULE: external "node:util"
+var external_node_util_ = __nccwpck_require__(7261);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/function.js
+
+
+/**
+ * @class FunctionItemFilter
+ * @description Determine item with the filter of type of function.
+ */
+class FunctionItemFilter {
+	#asynchronous;
+	#constructorNameRegExp;
+	#generator;
+	#objectStringRegExp;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of function to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.asynchronous] Whether an asynchronous function.
+	 * @param {boolean} [param0.generator] Whether a generator function.
+	 * @returns {boolean} Determine result.
+	 */
+	constructor({
+		asynchronous,
+		generator,
+		...aliases
+	} = {}) {
+		asynchronous = main(asynchronous, aliases.async);
+		if (typeof asynchronous !== "boolean" && typeof asynchronous !== "undefined") {
+			throw new TypeError(`Argument \`asynchronous\` must be type of boolean or undefined.`);
+		}
+		if (typeof generator !== "boolean" && typeof generator !== "undefined") {
+			throw new TypeError(`Argument \`generator\` must be type of boolean or undefined.`);
+		}
+		let constructorNameRegExpPattern = `${(asynchronous === false) ? "" : "(?:Async)"}${(typeof asynchronous === "undefined") ? "?" : ""}${(generator === false) ? "" : "(?:Generator)"}${(typeof generator === "undefined") ? "?" : ""}Function`;
+		this.#asynchronous = asynchronous;
+		this.#constructorNameRegExp = new RegExp(`^${constructorNameRegExpPattern}$`, "u");
+		this.#generator = generator;
+		this.#objectStringRegExp = new RegExp(`^\\[object ${constructorNameRegExpPattern}\\]$`, "u");
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of function.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			typeof item !== "function" ||
+			(this.#asynchronous === false && external_node_util_.types.isAsyncFunction(item)) ||
+			(this.#asynchronous === true && !external_node_util_.types.isAsyncFunction(item)) ||
+			(this.#generator === false && external_node_util_.types.isGeneratorFunction(item)) ||
+			(this.#generator === true && !external_node_util_.types.isGeneratorFunction(item)) ||
+			item.constructor.name.search(this.#constructorNameRegExp) !== 0 ||
+			Object.prototype.toString.call(item).search(this.#objectStringRegExp) !== 0
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const item_filter_function = (FunctionItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/object.js
+/**
+ * @class ObjectItemFilter
+ * @description Determine item with the filter of type of object.
+ */
+class ObjectItemFilter {
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of object to determine item.
+	 */
+	constructor() { }// Use to add description during create instance.
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of object.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		return (typeof item === "object" && !Array.isArray(item) && item !== null && !(item instanceof RegExp));
+	}
+}
+/* harmony default export */ const object = (ObjectItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/generator.js
+
+
+
+/**
+ * @class GeneratorItemFilter
+ * @description Determine item with the filter of type of generator.
+ */
+class GeneratorItemFilter {
+	#objectStringRegExp;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of generator to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.asynchronous] Whether an asynchronous generator.
+	 */
+	constructor({
+		asynchronous,
+		...aliases
+	} = {}) {
+		asynchronous = main(asynchronous, aliases.async);
+		if (typeof asynchronous !== "boolean" && typeof asynchronous !== "undefined") {
+			throw new TypeError(`Argument \`asynchronous\` must be type of boolean or undefined.`);
+		}
+		this.#objectStringRegExp = new RegExp(`^\\[object ${(asynchronous === false) ? "" : "(?:Async)"}${(typeof asynchronous === "undefined") ? "?" : ""}Generator\\]$`, "u");
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of generator.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			!(new object().test(item)) ||
+			!external_node_util_.types.isGeneratorObject(item) ||
+			Object.prototype.toString.call(item).search(this.#objectStringRegExp) !== 0 ||
+			typeof item.next !== "function" ||
+			typeof item.return !== "function" ||
+			typeof item.throw !== "function"
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const generator = (GeneratorItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/array.js
+
+/**
+ * @function isArray
+ * @description Determine item with the filter of type of array.
+ * @param {unknown} item Item that need to determine.
+ * @param {object} [param1={}] Options.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty array.
+ * @param {number} [param1.maximumLength=Infinity] Maximum length of the array.
+ * @param {number} [param1.minimumLength=1] Minimum length of the array.
+ * @param {boolean} [param1.strict=false] Whether to determine no custom defined properties in the array.
+ * @param {boolean} [param1.unique=false] Whether to determine all of the elements in the array are unique.
+ * @returns {boolean} Determine result.
+ */
+function isArray(item, {
+	allowEmpty = false,
+	maximumLength,
+	minimumLength,
+	strict = false,
+	unique = false,
+	...aliases
 } = {}) {
-	if (
-		typeof item !== "bigint" ||
-		(even === false && item % 2n === 0n) ||
-		(even === true && item % 2n !== 0n) ||
-		(exclusiveMaximum && maximum <= item) ||
-		(!exclusiveMaximum && maximum < item) ||
-		(exclusiveMinimum && item <= minimum) ||
-		(!exclusiveMinimum && item < minimum) ||
-		((
-			negative === true ||
-			positive === false
-		) && item >= 0n) ||
-		((
-			positive === true ||
-			negative === false
-		) && item < 0n) ||
-		(odd === false && item % 2n !== 0n) ||
-		(odd === true && item % 2n === 0n) ||
-		(prime === false && is_prime_number(item)) ||
-		(prime === true && !is_prime_number(item)) ||
-		((
-			safe === true ||
-			unsafe === false
-		) && (
-			maximumSafeInteger < item ||
-			item < minimumSafeInteger
-		)) ||
-		((
-			unsafe === true ||
-			safe === false
-		) && minimumSafeInteger <= item && item <= maximumSafeInteger)
-	) {
-		return false;
-	}
-	return true;
+	return new array({
+		allowEmpty,
+		maximumLength,
+		minimumLength,
+		strict,
+		unique,
+		...aliases
+	}).test(item);
 }
-/* harmony default export */ const is_big_integer = ($isBigInteger);
+/* harmony default export */ const is_array = (isArray);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/internal/integer-types.mjs
-const int8Maximum = 127n;
-const int8Minimum = -128n;
-const int16Maximum = 32767n;
-const int16Minimum = -32768n;
-const int32Maximum = 2147483647n;
-const int32Minimum = -2147483648n;
-const int64Maximum = 9223372036854775807n;
-const int64Minimum = -9223372036854775808n;
-const uint8Maximum = 255n;
-const uint16Maximum = 65535n;
-const uint32Maximum = 4294967295n;
-const uint64Maximum = 18446744073709551615n;
-const uintMinimum = 0n;
-/**
- * @private
- * @function integerTypesOutputConvert
- * @param {[bigint,bigint]} output
- * @param {boolean} [asNumber=false]
- * @returns {[bigint,bigint]|[number,number]}
- */
-function integerTypesOutputConvert(output, asNumber = false) {
-	if (asNumber) {
-		return output.map((value) => {
-			return Number(value);
-		});
-	}
-	return output;
-}
-/**
- * @private
- * @function integerTypes
- * @param {string} name
- * @param {boolean} [asNumber=false]
- * @returns {[bigint,bigint]|[number,number]}
- */
-function integerTypes(name, asNumber = false) {
-	switch (name) {
-		case "char":
-		case "Char":
-		case "int8":
-		case "Int8":
-			return integerTypesOutputConvert([int8Minimum, int8Maximum], asNumber);
-		case "int16":
-		case "Int16":
-		case "short":
-		case "Short":
-			return integerTypesOutputConvert([int16Minimum, int16Maximum], asNumber);
-		case "int32":
-		case "Int32":
-		case "rune":
-		case "Rune":
-			return integerTypesOutputConvert([int32Minimum, int32Maximum], asNumber);
-		case "int64":
-		case "Int64":
-		case "long":
-		case "Long":
-			return integerTypesOutputConvert([int64Minimum, int64Maximum], asNumber);
-		case "byte":
-		case "Byte":
-		case "uchar":
-		case "Uchar":
-		case "UChar":
-		case "uint8":
-		case "Uint8":
-		case "UInt8":
-			return integerTypesOutputConvert([uintMinimum, uint8Maximum], asNumber);
-		case "uint16":
-		case "Uint16":
-		case "UInt16":
-		case "ushort":
-		case "Ushort":
-		case "UShort":
-			return integerTypesOutputConvert([uintMinimum, uint16Maximum], asNumber);
-		case "uint32":
-		case "Uint32":
-		case "UInt32":
-			return integerTypesOutputConvert([uintMinimum, uint32Maximum], asNumber);
-		case "uint64":
-		case "Uint64":
-		case "UInt64":
-		case "ulong":
-		case "Ulong":
-		case "ULong":
-			return integerTypesOutputConvert([uintMinimum, uint64Maximum], asNumber);
-		default:
-			throw new Error(`\`${name}\` is not a valid interger type!`);
-	}
-}
-/* harmony default export */ const integer_types = (integerTypes);
-
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-big-integer.mjs
-
-
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/big-integer.js
 
 /**
  * @function isBigInteger
  * @alias isBigInt
- * @description Determine item is type of big integer or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of big integer.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.even] An even big integer.
- * @param {boolean} [param1.exclusiveMaximum=false] Exclusive maximum of the big integer.
- * @param {boolean} [param1.exclusiveMinimum=false] Exclusive minimum of the big integer.
+ * @param {boolean} [param1.even] Whether an even big integer.
+ * @param {boolean} [param1.exclusiveMaximum=false] Whether to exclusive maximum of the big integer.
+ * @param {boolean} [param1.exclusiveMinimum=false] Whether to exclusive minimum of the big integer.
  * @param {bigint} [param1.maximum=Infinity] Maximum of the big integer.
  * @param {bigint} [param1.minimum=-Infinity] Minimum of the big integer.
- * @param {boolean} [param1.negative] A negative big integer.
- * @param {boolean} [param1.odd] An odd big integer.
- * @param {boolean} [param1.positive] A positive big integer.
- * @param {boolean} [param1.prime] A prime big integer.
- * @param {boolean} [param1.safe] An IEEE-754 big integer.
+ * @param {boolean} [param1.negative] Whether a negative big integer.
+ * @param {boolean} [param1.odd] Whether an odd big integer.
+ * @param {boolean} [param1.positive] Whether a positive big integer.
+ * @param {boolean} [param1.prime] Whether a prime big integer.
+ * @param {boolean} [param1.safe] Whether an IEEE-754 big integer.
  * @param {string} [param1.type] Type of the big integer.
- * @param {boolean} [param1.unsafe] Not an IEEE-754 big integer.
+ * @param {boolean} [param1.unsafe] Whether not an IEEE-754 big integer.
  * @returns {boolean} Determine result.
  */
 function isBigInteger(item, {
@@ -16289,53 +16359,7 @@ function isBigInteger(item, {
 	unsafe,
 	...aliases
 } = {}) {
-	if (typeof even !== "boolean" && typeof even !== "undefined") {
-		throw new TypeError(`Argument \`even\` must be type of boolean or undefined!`);
-	}
-	exclusiveMaximum = main(exclusiveMaximum, aliases.exclusiveMax, false);
-	if (typeof exclusiveMaximum !== "boolean") {
-		throw new TypeError(`Argument \`exclusiveMaximum\` must be type of boolean!`);
-	}
-	exclusiveMinimum = main(exclusiveMinimum, aliases.exclusiveMin, false);
-	if (typeof exclusiveMinimum !== "boolean") {
-		throw new TypeError(`Argument \`exclusiveMinimum\` must be type of boolean!`);
-	}
-	maximum = main(maximum, aliases.max, Infinity);
-	if (maximum !== Infinity && typeof maximum !== "bigint") {
-		throw new TypeError(`Argument \`maximum\` must be \`Infinity\` or type of big integer!`);
-	}
-	minimum = main(minimum, aliases.min, -Infinity);
-	if (minimum !== -Infinity && isBigInteger(minimum, { maximum })) {
-		throw new TypeError(`Argument \`minimum\` must be \`-Infinity\`, or type of big integer and <= ${maximum}!`);
-	}
-	negative = main(negative, aliases.ngt, aliases.nega);
-	if (typeof negative !== "boolean" && typeof negative !== "undefined") {
-		throw new TypeError(`Argument \`negative\` must be type of boolean or undefined!`);
-	}
-	if (typeof odd !== "boolean" && typeof odd !== "undefined") {
-		throw new TypeError(`Argument \`odd\` must be type of boolean or undefined!`);
-	}
-	positive = main(positive, aliases.pst, aliases.posi);
-	if (typeof positive !== "boolean" && typeof positive !== "undefined") {
-		throw new TypeError(`Argument \`positive\` must be type of boolean or undefined!`);
-	}
-	if (typeof prime !== "boolean" && typeof prime !== "undefined") {
-		throw new TypeError(`Argument \`prime\` must be type of boolean or undefined!`);
-	}
-	if (typeof safe !== "boolean" && typeof safe !== "undefined") {
-		throw new TypeError(`Argument \`safe\` must be type of boolean or undefined!`);
-	}
-	if (typeof unsafe !== "boolean" && typeof unsafe !== "undefined") {
-		throw new TypeError(`Argument \`unsafe\` must be type of boolean or undefined!`);
-	}
-	if (typeof type === "string") {
-		[minimum, maximum] = integer_types(type);
-		exclusiveMaximum = false;
-		exclusiveMinimum = false;
-	} else if (typeof type !== "undefined") {
-		throw new TypeError(`Argument \`type\` must be type of string or undefined!`);
-	}
-	return is_big_integer(item, {
+	return new big_integer({
 		even,
 		exclusiveMaximum,
 		exclusiveMinimum,
@@ -16346,24 +16370,22 @@ function isBigInteger(item, {
 		positive,
 		prime,
 		safe,
-		unsafe
-	});
+		type,
+		unsafe,
+		...aliases
+	}).test(item);
 }
-/* harmony default export */ const lib_is_big_integer = (isBigInteger);
+/* harmony default export */ const is_big_integer = (isBigInteger);
 
-// EXTERNAL MODULE: external "node:util"
-var external_node_util_ = __nccwpck_require__(7261);
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-function.mjs
-
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/function.js
 
 /**
  * @function isFunction
- * @alias isFn
- * @description Determine item is type of function or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of function.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.asynchronous] An asynchronous function.
- * @param {boolean} [param1.generator] A generator function.
+ * @param {boolean} [param1.asynchronous] Whether an asynchronous function.
+ * @param {boolean} [param1.generator] Whether a generator function.
  * @returns {boolean} Determine result.
  */
 function isFunction(item, {
@@ -16371,113 +16393,240 @@ function isFunction(item, {
 	generator,
 	...aliases
 } = {}) {
-	asynchronous = main(asynchronous, aliases.async);
-	if (typeof asynchronous !== "boolean" && typeof asynchronous !== "undefined") {
-		throw new TypeError(`Argument \`asynchronous\` must be type of boolean or undefined!`);
-	}
-	if (typeof generator !== "boolean" && typeof generator !== "undefined") {
-		throw new TypeError(`Argument \`generator\` must be type of boolean or undefined!`);
-	}
-	let reConstructorName = `${(asynchronous === false) ? "" : "(?:Async)"}${(typeof asynchronous === "undefined") ? "?" : ""}${(generator === false) ? "" : "(?:Generator)"}${(typeof generator === "undefined") ? "?" : ""}Function`;
-	if (
-		typeof item !== "function" ||
-		(asynchronous === false && external_node_util_.types.isAsyncFunction(item)) ||
-		(asynchronous === true && !external_node_util_.types.isAsyncFunction(item)) ||
-		(generator === false && external_node_util_.types.isGeneratorFunction(item)) ||
-		(generator === true && !external_node_util_.types.isGeneratorFunction(item)) ||
-		item.constructor.name.search(new RegExp(`^${reConstructorName}$`, "gu")) !== 0 ||
-		Object.prototype.toString.call(item).search(new RegExp(`^\\[object ${reConstructorName}\\]$`, "gu")) !== 0
-	) {
-		return false;
-	}
-	return true;
+	return new item_filter_function({
+		asynchronous,
+		generator,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_function = (isFunction);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-generator.mjs
-
-
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/generator.js
 
 /**
  * @function isGenerator
- * @description Determine item is type of generator or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of generator.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.asynchronous] An asynchronous generator.
+ * @param {boolean} [param1.asynchronous] Whether an asynchronous generator.
  * @returns {boolean} Determine result.
  */
 function isGenerator(item, {
 	asynchronous,
 	...aliases
 } = {}) {
-	asynchronous = main(asynchronous, aliases.async);
-	if (typeof asynchronous !== "boolean" && typeof asynchronous !== "undefined") {
-		throw new TypeError(`Argument \`asynchronous\` must be type of boolean or undefined!`);
-	}
-	if (
-		!is_object(item) ||
-		!external_node_util_.types.isGeneratorObject(item) ||
-		Object.prototype.toString.call(item).search(new RegExp(`^\\[object ${(asynchronous === false) ? "" : "(?:Async)"}${(typeof asynchronous === "undefined") ? "?" : ""}Generator\\]$`, "gu")) !== 0 ||
-		typeof item.next !== "function" ||
-		typeof item.return !== "function" ||
-		typeof item.throw !== "function"
-	) {
-		return false;
-	}
-	return true;
+	return new generator({
+		asynchronous,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_generator = (isGenerator);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-json.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/plain-object.js
 
 
 
 
 /**
- * @private
- * @function $isValidJSONValue
- * @param {any} item
- * @param {object} [param1={}]
- * @param {RegExp} [param1.keysPattern]
- * @returns {boolean}
+ * @class PlainObjectItemFilter
+ * @alias ObjectPlainItemFilter
+ * @description Determine item with the filter of type of plain object.
  */
-function $isValidJSONValue(item, { keysPattern } = {}) {
-	if (
-		typeof item === "boolean" ||
-		$isJSON(item, { keysPattern }) ||
-		item === null ||
-		is_number(item) ||
-		typeof item === "string"
-	) {
+class PlainObjectItemFilter {
+	#configurableEntries;
+	#enumerableEntries;
+	#getterEntries;
+	#maximumEntries;
+	#minimumEntries;
+	#setterEntries;
+	#symbolKeys;
+	#writableEntries;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of plain object to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty plain object.
+	 * @param {boolean} [param0.configurableEntries] Whether contain configurable entries in the plain object.
+	 * @param {boolean} [param0.enumerableEntries] Whether contain enumerable entries in the plain object.
+	 * @param {boolean} [param0.getterEntries] Whether contain getter entries in the plain object.
+	 * @param {number} [param0.maximumEntries=Infinity] Maximum entries of the plain object.
+	 * @param {number} [param0.minimumEntries=1] Minimum entries of the plain object.
+	 * @param {boolean} [param0.setterEntries] Whether contain setter entries in the plain object.
+	 * @param {boolean} [param0.strict=false] Whether to determine no custom defined properties (i.e.: getters, setters, non-configurable, non-enumerable, and non-writable) in the plain object, and no symbols in the plain object keys.
+	 * @param {boolean} [param0.symbolKeys] Whether contain symbols in the plain object keys.
+	 * @param {boolean} [param0.writableEntries] Whether contain writable entries in the plain object.
+	 */
+	constructor({
+		allowEmpty = false,
+		configurableEntries,
+		enumerableEntries,
+		getterEntries,
+		maximumEntries,
+		minimumEntries,
+		setterEntries,
+		strict = false,
+		symbolKeys,
+		writableEntries,
+		...aliases
+	} = {}) {
+		if (typeof allowEmpty !== "boolean") {
+			throw new TypeError(`Argument \`allowEmpty\` must be type of boolean.`);
+		}
+		if (typeof configurableEntries !== "boolean" && typeof configurableEntries !== "undefined") {
+			throw new TypeError(`Argument \`configurableEntries\` must be type of boolean or undefined.`);
+		}
+		if (typeof enumerableEntries !== "boolean" && typeof enumerableEntries !== "undefined") {
+			throw new TypeError(`Argument \`elementsEnumerable\` must be type of boolean or undefined.`);
+		}
+		if (typeof getterEntries !== "boolean" && typeof getterEntries !== "undefined") {
+			throw new TypeError(`Argument \`getterEntries\` must be type of boolean or undefined.`);
+		}
+		maximumEntries = main(maximumEntries, aliases.maxEntries, Infinity);
+		if (maximumEntries !== Infinity && !checkNumberIPS(maximumEntries)) {
+			throw new TypeError(`Argument \`maximumEntries\` must be \`Infinity\` or type of number (integer, positive, and safe).`);
+		}
+		minimumEntries = main(minimumEntries, aliases.minEntries, 1);
+		if (!checkNumberIPSWithMaximum(minimumEntries, maximumEntries)) {
+			throw new TypeError(`Argument \`minimumEntries\` must be type of number (integer, positive, and safe) and <= ${maximumEntries}.`);
+		}
+		if (typeof setterEntries !== "boolean" && typeof setterEntries !== "undefined") {
+			throw new TypeError(`Argument \`setterEntries\` must be type of boolean or undefined.`);
+		}
+		if (typeof strict !== "boolean") {
+			throw new TypeError(`Argument \`strict\` must be type of boolean.`);
+		}
+		if (typeof symbolKeys !== "boolean" && typeof symbolKeys !== "undefined") {
+			throw new TypeError(`Argument \`keysSymbols\` must be type of boolean or undefined.`);
+		}
+		if (typeof writableEntries !== "boolean" && typeof writableEntries !== "undefined") {
+			throw new TypeError(`Argument \`elementsWritable\` must be type of boolean or undefined.`);
+		}
+		this.#maximumEntries = maximumEntries;
+		this.#minimumEntries = allowEmpty ? 0 : minimumEntries;
+		if (strict) {
+			this.#configurableEntries = true;
+			this.#enumerableEntries = true;
+			this.#getterEntries = false;
+			this.#setterEntries = false;
+			this.#symbolKeys = false;
+			this.#writableEntries = true;
+		} else {
+			this.#configurableEntries = configurableEntries;
+			this.#enumerableEntries = enumerableEntries;
+			this.#getterEntries = getterEntries;
+			this.#setterEntries = setterEntries;
+			this.#symbolKeys = symbolKeys;
+			this.#writableEntries = writableEntries;
+		}
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of plain object.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			!(new object().test(item)) ||
+			!(item instanceof Object) ||
+			item.constructor.name !== "Object" ||
+			Object.prototype.toString.call(item) !== "[object Object]"
+		) {
+			return false;
+		}
+		let itemObjectMeta = new object_meta(item);
+		if (itemObjectMeta.prototypes !== null && itemObjectMeta.prototypes !== Object.prototype) {
+			return false;
+		}
+		let itemShadow = item;
+		while (Object.getPrototypeOf(itemShadow) !== null) {
+			itemShadow = Object.getPrototypeOf(itemShadow);
+		}
+		if (itemObjectMeta.prototypes !== itemShadow) {
+			return false;
+		}
+		if (
+			(this.#symbolKeys === false && itemObjectMeta.symbolKeys.length > 0) ||
+			(this.#symbolKeys === true && itemObjectMeta.symbolKeys.length === 0)
+		) {
+			return false;
+		}
+		if (
+			Object.entries(item).length !== itemObjectMeta.enumerableEntries.length ||
+			itemObjectMeta.configurableEntries.length + itemObjectMeta.nonConfigurableEntries.length !== itemObjectMeta.enumerableEntries.length + itemObjectMeta.nonEnumerableEntries.length ||
+			itemObjectMeta.enumerableEntries.length + itemObjectMeta.nonEnumerableEntries.length !== itemObjectMeta.getterEntries.length + itemObjectMeta.nonAccessorEntries.length + itemObjectMeta.setterEntries.length ||
+			itemObjectMeta.getterEntries.length + itemObjectMeta.nonAccessorEntries.length + itemObjectMeta.setterEntries.length !== itemObjectMeta.nonWritableEntries.length + itemObjectMeta.writableEntries.length ||
+			itemObjectMeta.configurableEntries.length + itemObjectMeta.nonConfigurableEntries.length !== itemObjectMeta.nonWritableEntries.length + itemObjectMeta.writableEntries.length ||
+			this.#maximumEntries < itemObjectMeta.getterEntries.length + itemObjectMeta.nonAccessorEntries.length + itemObjectMeta.setterEntries.length + itemObjectMeta.symbolKeys.length ||
+			itemObjectMeta.getterEntries.length + itemObjectMeta.nonAccessorEntries.length + itemObjectMeta.setterEntries.length + itemObjectMeta.symbolKeys.length < this.#minimumEntries ||
+			(this.#configurableEntries === false && itemObjectMeta.configurableEntries.length > 0) ||
+			(this.#configurableEntries === true && itemObjectMeta.nonConfigurableEntries.length > 0) ||
+			(this.#enumerableEntries === false && itemObjectMeta.enumerableEntries.length > 0) ||
+			(this.#enumerableEntries === true && itemObjectMeta.nonEnumerableEntries.length > 0) ||
+			(this.#getterEntries === false && itemObjectMeta.getterEntries.length > 0) ||
+			(this.#setterEntries === false && itemObjectMeta.setterEntries.length > 0) ||
+			((
+				this.#getterEntries === true ||
+				this.#setterEntries === true
+			) && itemObjectMeta.nonAccessorEntries.length > 0) ||
+			(this.#writableEntries === false && itemObjectMeta.writableEntries.length > 0) ||
+			(this.#writableEntries === true && itemObjectMeta.nonWritableEntries.length > 0)
+		) {
+			return false;
+		}
 		return true;
 	}
-	return false;
 }
+/* harmony default export */ const plain_object = (PlainObjectItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/json.js
+
+
+
+
+const jsonArrayFilter = new array({ strict: true });
+const jsonObjectFilter = new plain_object({
+	configurableEntries: true,
+	enumerableEntries: true,
+	getterEntries: false,
+	setterEntries: false,
+	symbolKeys: false,
+	writableEntries: true
+});
+const jsonLegalKeysPatternRegExp = /^[$_a-z][$\d_a-z]*$/u;
 /**
- * @private
- * @function $isJSON
- * @param {any} item
- * @param {object} [param1={}]
- * @param {RegExp} [param1.keysPattern]
+ * @access private
+ * @function isJSONValue
+ * @param {unknown} item Item that need to determine.
+ * @param {RegExp} [keysPattern] Whether a pattern matchable JSON keys.
  * @returns {boolean}
  */
-function $isJSON(item, { keysPattern } = {}) {
-	if (is_array(item, { strict: true })) {
+function isJSONValue(item, keysPattern) {
+	return (
+		typeof item === "boolean" ||
+		isJSONInternal(item, keysPattern) ||
+		item === null ||
+		checkNumber(item) ||
+		typeof item === "string"
+	);
+}
+/**
+ * @access private
+ * @function isJSONInternal
+ * @param {unknown} item Item that need to determine.
+ * @param {RegExp} [keysPattern] Whether a pattern matchable JSON keys.
+ * @returns {boolean}
+ */
+function isJSONInternal(item, keysPattern) {
+	if (jsonArrayFilter.test(item)) {
 		for (let itemElement of item) {
-			if (!$isValidJSONValue(itemElement, { keysPattern })) {
+			if (!isJSONValue(itemElement, keysPattern)) {
 				return false;
 			}
 		}
 		return true;
 	}
-	if (is_plain_object(item, {
-		configurableEntries: true,
-		enumerableEntries: true,
-		getterEntries: false,
-		setterEntries: false,
-		symbolKeys: false,
-		writableEntries: true
-	})) {
+	if (jsonObjectFilter.test(item)) {
 		try {
 			JSON.stringify(item);
 		} catch {
@@ -16486,7 +16635,7 @@ function $isJSON(item, { keysPattern } = {}) {
 		for (let itemKey of Object.keys(item)) {
 			if (
 				(keysPattern instanceof RegExp && itemKey.search(keysPattern) === -1) ||
-				!$isValidJSONValue(item[itemKey], keysPattern)
+				!isJSONValue(item[itemKey], keysPattern)
 			) {
 				return false;
 			}
@@ -16496,22 +16645,108 @@ function $isJSON(item, { keysPattern } = {}) {
 	return false;
 }
 /**
+ * @class JSONItemFilter
+ * @description Determine item with the filter of type of JSON.
+ */
+class JSONItemFilter {
+	#arrayRoot;
+	#keysPattern;
+	#maximumEntries;
+	#minimumEntries;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of JSON to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty JSON.
+	 * @param {boolean} [param0.arrayRoot] Whether type of array as the root of the JSON.
+	 * @param {RegExp} [param0.keysPattern] Whether a pattern matchable JSON keys.
+	 * @param {number} [param0.maximumEntries=Infinity] Maximum entries of the JSON.
+	 * @param {number} [param0.minimumEntries=1] Minimum entries of the JSON.
+	 * @param {boolean} [param0.strict=false] Whether to determine type of array not as the root of the JSON, and no illegal namespace characters in the JSON keys.
+	 * @param {boolean} [param0.strictKeys=false] Whether to determine no illegal namespace characters in the JSON keys.
+	 */
+	constructor({
+		allowEmpty = false,
+		arrayRoot,
+		keysPattern,
+		maximumEntries,
+		minimumEntries,
+		strict = false,
+		strictKeys = false,
+		...aliases
+	} = {}) {
+		if (typeof allowEmpty !== "boolean") {
+			throw new TypeError(`Argument \`empty\` must be type of boolean.`);
+		}
+		if (typeof arrayRoot !== "boolean" && typeof arrayRoot !== "undefined") {
+			throw new TypeError(`Argument \`arrayRoot\` must be type of boolean or undefined.`);
+		}
+		if (!(keysPattern instanceof RegExp) && typeof keysPattern !== "undefined") {
+			throw new TypeError(`Argument \`keysPattern\` must be type of regular expression or undefined.`);
+		}
+		maximumEntries = main(maximumEntries, aliases.maxEntries, Infinity);
+		if (maximumEntries !== Infinity && !checkNumberIPS(maximumEntries)) {
+			throw new TypeError(`Argument \`maximumEntries\` must be \`Infinity\` or type of number (integer, positive, and safe).`);
+		}
+		minimumEntries = main(minimumEntries, aliases.minEntries, 1);
+		if (!checkNumberIPSWithMaximum(minimumEntries, maximumEntries)) {
+			throw new TypeError(`Argument \`minimumEntries\` must be type of number (integer, positive, and safe) and <= ${maximumEntries}.`);
+		}
+		if (typeof strict !== "boolean") {
+			throw new TypeError(`Argument \`strict\` must be type of boolean.`);
+		}
+		if (typeof strictKeys !== "boolean") {
+			throw new TypeError(`Argument \`strictKeys\` must be type of boolean.`);
+		}
+		this.#arrayRoot = strict ? false : arrayRoot;
+		this.#keysPattern = (
+			strict ||
+			strictKeys
+		) ? jsonLegalKeysPatternRegExp : keysPattern;
+		this.#maximumEntries = maximumEntries;
+		this.#minimumEntries = allowEmpty ? 0 : minimumEntries;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of JSON.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		let itemEntriesLength = Object.entries(item).length;
+		if (
+			!isJSONInternal(item, this.#keysPattern) ||
+			(this.#arrayRoot === false && Array.isArray(item)) ||
+			(this.#arrayRoot === true && !Array.isArray(item)) ||
+			this.#maximumEntries < itemEntriesLength ||
+			itemEntriesLength < this.#minimumEntries
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const json = (JSONItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/json.js
+
+/**
  * @function isJSON
- * @description Determine item is type of JSON or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of JSON.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.arrayRoot] Type of array as the root of the JSON.
- * @param {boolean} [param1.empty] An empty JSON.
- * @param {RegExp} [param1.keysPattern] Ensure pattern in the JSON keys.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty JSON.
+ * @param {boolean} [param1.arrayRoot] Whether type of array as the root of the JSON.
+ * @param {RegExp} [param1.keysPattern] Whether a pattern matchable JSON keys.
  * @param {number} [param1.maximumEntries=Infinity] Maximum entries of the JSON.
- * @param {number} [param1.minimumEntries=0] Minimum entries of the JSON.
- * @param {boolean} [param1.strict=false] Ensure type of array is not as the root of the JSON, and no illegal namespace characters in the JSON keys.
- * @param {boolean} [param1.strictKeys=false] Ensure no illegal namespace characters in the JSON keys.
+ * @param {number} [param1.minimumEntries=1] Minimum entries of the JSON.
+ * @param {boolean} [param1.strict=false] Whether to determine type of array not as the root of the JSON, and no illegal namespace characters in the JSON keys.
+ * @param {boolean} [param1.strictKeys=false] Whether to determine no illegal namespace characters in the JSON keys.
  * @returns {boolean} Determine result.
  */
 function isJSON(item, {
+	allowEmpty = false,
 	arrayRoot,
-	empty,
 	keysPattern,
 	maximumEntries,
 	minimumEntries,
@@ -16519,150 +16754,347 @@ function isJSON(item, {
 	strictKeys = false,
 	...aliases
 } = {}) {
-	if (typeof arrayRoot !== "boolean" && typeof arrayRoot !== "undefined") {
-		throw new TypeError(`Argument \`arrayRoot\` must be type of boolean or undefined!`);
-	}
-	if (typeof empty !== "boolean" && typeof empty !== "undefined") {
-		throw new TypeError(`Argument \`empty\` must be type of boolean or undefined!`);
-	}
-	if (!(keysPattern instanceof RegExp) && typeof keysPattern !== "undefined") {
-		throw new TypeError(`Argument \`keysPattern\` must be type of regular expression or undefined!`);
-	}
-	maximumEntries = main(maximumEntries, aliases.maxEntries, Infinity);
-	if (maximumEntries !== Infinity && !is_number(maximumEntries, {
-		integer: true,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`maximumEntries\` must be \`Infinity\` or type of number (integer, positive, and safe)!`);
-	}
-	minimumEntries = main(minimumEntries, aliases.minEntries, 0);
-	if (!is_number(minimumEntries, {
-		integer: true,
-		maximum: maximumEntries,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimumEntries\` must be type of number (integer, positive, and safe) and <= ${maximumEntries}!`);
-	}
-	if (typeof strict !== "boolean") {
-		throw new TypeError(`Argument \`strict\` must be type of boolean!`);
-	}
-	if (typeof strictKeys !== "boolean") {
-		throw new TypeError(`Argument \`strictKeys\` must be type of boolean!`);
-	}
-	if (empty === false) {
-		maximumEntries = Infinity;
-		minimumEntries = 1;
-	} else if (empty === true) {
-		maximumEntries = 0;
-		minimumEntries = 0;
-	}
-	if (strict) {
-		arrayRoot = false;
-		strictKeys = true;
-	}
-	if (strictKeys) {
-		keysPattern = /^[$_a-z][$\d_a-z]*$/giu;
-	}
-	let itemEntriesLength = Object.entries(item).length;
-	let itemIsArray = Array.isArray(item);
-	if (
-		!$isJSON(item, { keysPattern }) ||
-		(arrayRoot === false && itemIsArray) ||
-		(arrayRoot === true && !itemIsArray) ||
-		maximumEntries < itemEntriesLength ||
-		itemEntriesLength < minimumEntries
-	) {
-		return false;
-	}
-	return true;
+	return new json({
+		allowEmpty,
+		arrayRoot,
+		keysPattern,
+		maximumEntries,
+		minimumEntries,
+		strict,
+		strictKeys,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_json = (isJSON);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-map.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/map.js
 
 
 /**
+ * @class MapItemFilter
+ * @description Determine item with the filter of type of map.
+ */
+class MapItemFilter {
+	#maximumSize;
+	#minimumSize;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of map to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty map.
+	 * @param {number} [param0.maximumSize=Infinity] Maximum size of the map.
+	 * @param {number} [param0.minimumSize=1] Minimum size of the map.
+	 */
+	constructor({
+		allowEmpty = false,
+		maximumSize,
+		minimumSize,
+		...aliases
+	} = {}) {
+		if (typeof allowEmpty !== "boolean") {
+			throw new TypeError(`Argument \`allowEmpty\` must be type of boolean.`);
+		}
+		maximumSize = main(maximumSize, aliases.maxSize, Infinity);
+		if (maximumSize !== Infinity && !checkNumberIPS(maximumSize)) {
+			throw new TypeError(`Argument \`maximumSize\` must be \`Infinity\` or type of number (integer, positive, and safe).`);
+		}
+		minimumSize = main(minimumSize, aliases.minSize, 1);
+		if (!checkNumberIPSWithMaximum(minimumSize, maximumSize)) {
+			throw new TypeError(`Argument \`minimumSize\` must be type of number (integer, positive, and safe) and <= ${maximumSize}.`);
+		}
+		this.#maximumSize = maximumSize;
+		this.#minimumSize = allowEmpty ? 0 : minimumSize;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of map.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			!(item instanceof Map) ||
+			this.#maximumSize < item.size ||
+			item.size < this.#minimumSize
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const map = (MapItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/map.js
+
+/**
  * @function isMap
- * @description Determine item is type of map or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of map.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.empty] An empty map.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty map.
  * @param {number} [param1.maximumSize=Infinity] Maximum size of the map.
- * @param {number} [param1.minimumSize=0] Minimum size of the map.
+ * @param {number} [param1.minimumSize=1] Minimum size of the map.
  * @returns {boolean} Determine result.
  */
 function isMap(item, {
-	empty,
+	allowEmpty = false,
 	maximumSize,
 	minimumSize,
 	...aliases
 } = {}) {
-	if (typeof empty !== "boolean" && typeof empty !== "undefined") {
-		throw new TypeError(`Argument \`empty\` must be type of boolean or undefined!`);
-	}
-	maximumSize = main(maximumSize, aliases.maxSize, aliases.maximumEntries, aliases.maxEntries, Infinity);
-	if (maximumSize !== Infinity && !is_number(maximumSize, {
-		integer: true,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`maximumSize\` must be \`Infinity\` or type of number (integer, positive, and safe)!`);
-	}
-	minimumSize = main(minimumSize, aliases.minSize, aliases.minimumEntries, aliases.minEntries, 0);
-	if (!is_number(minimumSize, {
-		integer: true,
-		maximum: maximumSize,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimumSize\` must be type of number (integer, positive, and safe) and <= ${maximumSize}!`);
-	}
-	if (empty === false) {
-		maximumSize = Infinity;
-		minimumSize = 1;
-	} else if (empty === true) {
-		maximumSize = 0;
-		minimumSize = 0;
-	}
-	if (
-		!(item instanceof Map) ||
-		maximumSize < item.size ||
-		item.size < minimumSize
-	) {
-		return false;
-	}
-	return true;
+	return new map({
+		allowEmpty,
+		maximumSize,
+		minimumSize,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_map = (isMap);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-number.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/number.js
+
 
 
 
 /**
+ * @class NumberItemFilter
+ * @description Determine item with the filter of type of number.
+ */
+class NumberItemFilter {
+	#even;
+	#exclusiveMaximum;
+	#exclusiveMinimum;
+	#finite;
+	#float;
+	#infinite;
+	#integer;
+	#maximum;
+	#minimum;
+	#negative;
+	#odd;
+	#positive;
+	#prime;
+	#safe;
+	#unsafe;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of number to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.even] Whether an even number.
+	 * @param {boolean} [param0.exclusiveMaximum=false] Whether to exclusive maximum of the number.
+	 * @param {boolean} [param0.exclusiveMinimum=false] Whether to exclusive minimum of the number.
+	 * @param {boolean} [param0.finite] Whether a finite number.
+	 * @param {boolean} [param0.float] Whether a float number.
+	 * @param {boolean} [param0.infinite] Whether an infinite number.
+	 * @param {boolean} [param0.integer] Whether an integer number.
+	 * @param {number} [param0.maximum=Infinity] Maximum of the number.
+	 * @param {number} [param0.minimum=-Infinity] Minimum of the number.
+	 * @param {boolean} [param0.negative] Whether a negative number.
+	 * @param {boolean} [param0.odd] Whether an odd number.
+	 * @param {boolean} [param0.positive] Whether a positive number.
+	 * @param {boolean} [param0.prime] Whether a prime number.
+	 * @param {boolean} [param0.safe] Whether an IEEE-754 number.
+	 * @param {string} [param0.type] Type of the integer.
+	 * @param {boolean} [param0.unsafe] Whether not an IEEE-754 number.
+	 */
+	constructor({
+		even,
+		exclusiveMaximum,
+		exclusiveMinimum,
+		finite,
+		float,
+		infinite,
+		integer,
+		maximum,
+		minimum,
+		negative,
+		odd,
+		positive,
+		prime,
+		safe,
+		type,
+		unsafe,
+		...aliases
+	} = {}) {
+		if (typeof even !== "boolean" && typeof even !== "undefined") {
+			throw new TypeError(`Argument \`even\` must be type of boolean or undefined.`);
+		}
+		exclusiveMaximum = main(exclusiveMaximum, aliases.exclusiveMax, false);
+		if (typeof exclusiveMaximum !== "boolean") {
+			throw new TypeError(`Argument \`exclusiveMaximum\` must be type of boolean.`);
+		}
+		exclusiveMinimum = main(exclusiveMinimum, aliases.exclusiveMin, false);
+		if (typeof exclusiveMinimum !== "boolean") {
+			throw new TypeError(`Argument \`exclusiveMinimum\` must be type of boolean.`);
+		}
+		if (typeof finite !== "boolean" && typeof finite !== "undefined") {
+			throw new TypeError(`Argument \`finite\` must be type of boolean or undefined.`);
+		}
+		float = main(float, aliases.flt);
+		if (typeof float !== "boolean" && typeof float !== "undefined") {
+			throw new TypeError(`Argument \`float\` must be type of boolean or undefined.`);
+		}
+		if (typeof infinite !== "boolean" && typeof infinite !== "undefined") {
+			throw new TypeError(`Argument \`infinite\` must be type of boolean or undefined.`);
+		}
+		integer = main(integer, aliases.int);
+		if (typeof integer !== "boolean" && typeof integer !== "undefined") {
+			throw new TypeError(`Argument \`integer\` must be type of boolean or undefined.`);
+		}
+		maximum = main(maximum, aliases.max, Infinity);
+		if (maximum !== Infinity && !checkNumber(maximum)) {
+			throw new TypeError(`Argument \`maximum\` must be \`Infinity\` or type of number.`);
+		}
+		minimum = main(minimum, aliases.min, -Infinity);
+		if (minimum !== -Infinity && !checkNumberWithMaximum(minimum, maximum)) {
+			throw new TypeError(`Argument \`minimum\` must be \`-Infinity\`, or type of number and <= ${maximum}.`);
+		}
+		negative = main(negative, aliases.ngt, aliases.nega);
+		if (typeof negative !== "boolean" && typeof negative !== "undefined") {
+			throw new TypeError(`Argument \`negative\` must be type of boolean or undefined.`);
+		}
+		if (typeof odd !== "boolean" && typeof odd !== "undefined") {
+			throw new TypeError(`Argument \`odd\` must be type of boolean or undefined.`);
+		}
+		positive = main(positive, aliases.pst, aliases.posi);
+		if (typeof positive !== "boolean" && typeof positive !== "undefined") {
+			throw new TypeError(`Argument \`positive\` must be type of boolean or undefined.`);
+		}
+		if (typeof prime !== "boolean" && typeof prime !== "undefined") {
+			throw new TypeError(`Argument \`prime\` must be type of boolean or undefined.`);
+		}
+		if (typeof safe !== "boolean" && typeof safe !== "undefined") {
+			throw new TypeError(`Argument \`safe\` must be type of boolean or undefined.`);
+		}
+		if (typeof unsafe !== "boolean" && typeof unsafe !== "undefined") {
+			throw new TypeError(`Argument \`unsafe\` must be type of boolean or undefined.`);
+		}
+		if (typeof type === "string") {
+			this.#exclusiveMaximum = false;
+			this.#exclusiveMinimum = false;
+			this.#float = undefined;
+			this.#integer = true;
+			[this.#minimum, this.#maximum] = integer_types_range(type, true);
+		} else if (typeof type === "undefined") {
+			this.#exclusiveMaximum = exclusiveMaximum;
+			this.#exclusiveMinimum = exclusiveMinimum;
+			this.#float = float;
+			this.#integer = integer;
+			this.#maximum = maximum;
+			this.#minimum = minimum;
+		} else {
+			throw new TypeError(`Argument \`type\` must be type of string or undefined.`);
+		}
+		this.#even = even;
+		this.#finite = finite;
+		this.#infinite = infinite;
+		this.#negative = negative;
+		this.#odd = odd;
+		this.#positive = positive;
+		this.#prime = prime;
+		this.#safe = safe;
+		this.#unsafe = unsafe;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of number.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		let itemIsFinite = Number.isFinite(item);
+		let itemIsInteger = Number.isInteger(item);
+		let itemIsSafeInteger = Number.isSafeInteger(item);
+		if (
+			typeof item !== "number" ||
+			Number.isNaN(item) ||
+			(this.#even === false && itemIsSafeInteger && item % 2 === 0) ||
+			(this.#even === true && (
+				!itemIsSafeInteger ||
+				item % 2 !== 0
+			)) ||
+			(this.#exclusiveMaximum && this.#maximum <= item) ||
+			(!this.#exclusiveMaximum && this.#maximum < item) ||
+			(this.#exclusiveMinimum && item <= this.#minimum) ||
+			(!this.#exclusiveMinimum && item < this.#minimum) ||
+			((
+				this.#finite === true ||
+				this.#infinite === false
+			) && !itemIsFinite) ||
+			((
+				this.#infinite === true ||
+				this.#finite === false
+			) && itemIsFinite) ||
+			((
+				this.#float === true ||
+				this.#integer === false
+			) && itemIsInteger) ||
+			((
+				this.#integer === true ||
+				this.#float === false
+			) && !itemIsInteger) ||
+			((
+				this.#negative === true ||
+				this.#positive === false
+			) && item >= 0) ||
+			((
+				this.#positive === true ||
+				this.#negative === false
+			) && item < 0) ||
+			(this.#odd === false && itemIsSafeInteger && item % 2 !== 0) ||
+			(this.#odd === true && (
+				!itemIsSafeInteger ||
+				item % 2 === 0
+			)) ||
+			(this.#prime === false && itemIsSafeInteger && is_prime_number(item)) ||
+			(this.#prime === true && (
+				!itemIsSafeInteger ||
+				!is_prime_number(item)
+			)) ||
+			(
+				(
+					this.#safe === true ||
+					this.#unsafe === false
+				) && (
+					item < Number.MIN_SAFE_INTEGER ||
+					item > Number.MAX_SAFE_INTEGER
+				)
+			) ||
+			((
+				this.#unsafe === true ||
+				this.#safe === false
+			) && item >= Number.MIN_SAFE_INTEGER && item <= Number.MAX_SAFE_INTEGER)
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const number = (NumberItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/number.js
+
+/**
  * @function isNumber
- * @alias isNum
- * @description Determine item is type of number or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of number.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.even] An even number.
- * @param {boolean} [param1.exclusiveMaximum=false] Exclusive maximum of the number.
- * @param {boolean} [param1.exclusiveMinimum=false] Exclusive minimum of the number.
- * @param {boolean} [param1.finite] A finite number.
- * @param {boolean} [param1.float] A float number.
- * @param {boolean} [param1.infinite] An infinite number.
- * @param {boolean} [param1.integer] An integer number.
+ * @param {boolean} [param1.even] Whether an even number.
+ * @param {boolean} [param1.exclusiveMaximum=false] Whether to exclusive maximum of the number.
+ * @param {boolean} [param1.exclusiveMinimum=false] Whether to exclusive minimum of the number.
+ * @param {boolean} [param1.finite] Whether a finite number.
+ * @param {boolean} [param1.float] Whether a float number.
+ * @param {boolean} [param1.infinite] Whether an infinite number.
+ * @param {boolean} [param1.integer] Whether an integer number.
  * @param {number} [param1.maximum=Infinity] Maximum of the number.
  * @param {number} [param1.minimum=-Infinity] Minimum of the number.
- * @param {boolean} [param1.negative] A negative number.
- * @param {boolean} [param1.odd] An odd number.
- * @param {boolean} [param1.positive] A positive number.
- * @param {boolean} [param1.prime] A prime number.
- * @param {boolean} [param1.safe] An IEEE-754 number.
- * @param {string} [param1.type] Type of the big integer.
- * @param {boolean} [param1.unsafe] Not an IEEE-754 number.
+ * @param {boolean} [param1.negative] Whether a negative number.
+ * @param {boolean} [param1.odd] Whether an odd number.
+ * @param {boolean} [param1.positive] Whether a positive number.
+ * @param {boolean} [param1.prime] Whether a prime number.
+ * @param {boolean} [param1.safe] Whether an IEEE-754 number.
+ * @param {string} [param1.type] Type of the integer.
+ * @param {boolean} [param1.unsafe] Whether not an IEEE-754 number.
  * @returns {boolean} Determine result.
  */
 function isNumber(item, {
@@ -16684,72 +17116,7 @@ function isNumber(item, {
 	unsafe,
 	...aliases
 } = {}) {
-	if (typeof even !== "boolean" && typeof even !== "undefined") {
-		throw new TypeError(`Argument \`even\` must be type of boolean or undefined!`);
-	}
-	exclusiveMaximum = main(exclusiveMaximum, aliases.exclusiveMax, false);
-	if (typeof exclusiveMaximum !== "boolean") {
-		throw new TypeError(`Argument \`exclusiveMaximum\` must be type of boolean!`);
-	}
-	exclusiveMinimum = main(exclusiveMinimum, aliases.exclusiveMin, false);
-	if (typeof exclusiveMinimum !== "boolean") {
-		throw new TypeError(`Argument \`exclusiveMinimum\` must be type of boolean!`);
-	}
-	if (typeof finite !== "boolean" && typeof finite !== "undefined") {
-		throw new TypeError(`Argument \`finite\` must be type of boolean or undefined!`);
-	}
-	float = main(float, aliases.flt);
-	if (typeof float !== "boolean" && typeof float !== "undefined") {
-		throw new TypeError(`Argument \`float\` must be type of boolean or undefined!`);
-	}
-	if (typeof infinite !== "boolean" && typeof infinite !== "undefined") {
-		throw new TypeError(`Argument \`infinite\` must be type of boolean or undefined!`);
-	}
-	integer = main(integer, aliases.int);
-	if (typeof integer !== "boolean" && typeof integer !== "undefined") {
-		throw new TypeError(`Argument \`integer\` must be type of boolean or undefined!`);
-	}
-	maximum = main(maximum, aliases.max, Infinity);
-	if (maximum !== Infinity && !isNumber(maximum, { safe: true })) {
-		throw new TypeError(`Argument \`maximum\` must be \`Infinity\` or type of number (safe)!`);
-	}
-	minimum = main(minimum, aliases.min, -Infinity);
-	if (minimum !== -Infinity && !isNumber(minimum, {
-		maximum,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimum\` must be \`-Infinity\`, or type of number (safe) and <= ${maximum}!`);
-	}
-	negative = main(negative, aliases.ngt, aliases.nega);
-	if (typeof negative !== "boolean" && typeof negative !== "undefined") {
-		throw new TypeError(`Argument \`negative\` must be type of boolean or undefined!`);
-	}
-	if (typeof odd !== "boolean" && typeof odd !== "undefined") {
-		throw new TypeError(`Argument \`odd\` must be type of boolean or undefined!`);
-	}
-	positive = main(positive, aliases.pst, aliases.posi);
-	if (typeof positive !== "boolean" && typeof positive !== "undefined") {
-		throw new TypeError(`Argument \`positive\` must be type of boolean or undefined!`);
-	}
-	if (typeof prime !== "boolean" && typeof prime !== "undefined") {
-		throw new TypeError(`Argument \`prime\` must be type of boolean or undefined!`);
-	}
-	if (typeof safe !== "boolean" && typeof safe !== "undefined") {
-		throw new TypeError(`Argument \`safe\` must be type of boolean or undefined!`);
-	}
-	if (typeof unsafe !== "boolean" && typeof unsafe !== "undefined") {
-		throw new TypeError(`Argument \`unsafe\` must be type of boolean or undefined!`);
-	}
-	if (typeof type === "string") {
-		[minimum, maximum] = integer_types(type, true);
-		exclusiveMaximum = false;
-		exclusiveMinimum = false;
-		float = undefined;
-		integer = true;
-	} else if (typeof type !== "undefined") {
-		throw new TypeError(`Argument \`type\` must be type of string or undefined!`);
-	}
-	return is_number(item, {
+	return new number({
 		even,
 		exclusiveMaximum,
 		exclusiveMinimum,
@@ -16764,136 +17131,195 @@ function isNumber(item, {
 		positive,
 		prime,
 		safe,
-		unsafe
-	});
+		type,
+		unsafe,
+		...aliases
+	}).test(item);
 }
-/* harmony default export */ const lib_is_number = (isNumber);
+/* harmony default export */ const is_number = (isNumber);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-plain-object.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/object.js
 
+/**
+ * @function isObject
+ * @description Determine item with the filter of type of object.
+ * @param {unknown} item Item that need to determine.
+ * @returns {boolean} Determine result.
+ */
+function isObject(item) {
+	return new object().test(item);
+}
+/* harmony default export */ const is_object = (isObject);
 
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/plain-object.js
 
 /**
  * @function isPlainObject
- * @alias isDict
- * @alias isDictionary
  * @alias isObjectPlain
- * @alias isObjPlain
- * @alias isPlainObj
- * @description Determine item is type of plain object or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of plain object.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.configurableEntries] Configurable entries in the plain object.
- * @param {boolean} [param1.empty] An empty plain object.
- * @param {boolean} [param1.enumerableEntries] Enumerable entries in the plain object.
- * @param {boolean} [param1.getterEntries] Getter entries in the plain object.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty plain object.
+ * @param {boolean} [param1.configurableEntries] Whether contain configurable entries in the plain object.
+ * @param {boolean} [param1.enumerableEntries] Whether contain enumerable entries in the plain object.
+ * @param {boolean} [param1.getterEntries] Whether contain getter entries in the plain object.
  * @param {number} [param1.maximumEntries=Infinity] Maximum entries of the plain object.
- * @param {number} [param1.minimumEntries=0] Minimum entries of the plain object.
- * @param {boolean} [param1.setterEntries] Setter entries in the plain object.
- * @param {boolean} [param1.strict=false] Ensure no custom defined properties (i.e.: getters, setters, non-configurable, non-enumerable, and non-writable) in the plain object, and no symbols in the plain object keys.
- * @param {boolean} [param1.symbolKeys] Symbols in the plain object keys.
- * @param {boolean} [param1.writableEntries] Writable entries in the plain object.
+ * @param {number} [param1.minimumEntries=1] Minimum entries of the plain object.
+ * @param {boolean} [param1.setterEntries] Whether contain setter entries in the plain object.
+ * @param {boolean} [param1.strict=false] Whether to determine no custom defined properties (i.e.: getters, setters, non-configurable, non-enumerable, and non-writable) in the plain object, and no symbols in the plain object keys.
+ * @param {boolean} [param1.symbolKeys] Whether contain symbols in the plain object keys.
+ * @param {boolean} [param1.writableEntries] Whether contain writable entries in the plain object.
  * @returns {boolean} Determine result.
  */
 function isPlainObject(item, {
+	allowEmpty = false,
 	configurableEntries,
-	empty,
 	enumerableEntries,
 	getterEntries,
 	maximumEntries,
 	minimumEntries,
 	setterEntries,
-	strict,
+	strict = false,
 	symbolKeys,
 	writableEntries,
 	...aliases
 } = {}) {
-	if (typeof getterEntries !== "boolean" && typeof getterEntries !== "undefined") {
-		throw new TypeError(`Argument \`getterEntries\` must be type of boolean or undefined!`);
-	}
-	if (typeof setterEntries !== "boolean" && typeof setterEntries !== "undefined") {
-		throw new TypeError(`Argument \`setterEntries\` must be type of boolean or undefined!`);
-	}
-	if (typeof configurableEntries !== "boolean" && typeof configurableEntries !== "undefined") {
-		throw new TypeError(`Argument \`configurableEntries\` must be type of boolean or undefined!`);
-	}
-	if (typeof enumerableEntries !== "boolean" && typeof enumerableEntries !== "undefined") {
-		throw new TypeError(`Argument \`elementsEnumerable\` must be type of boolean or undefined!`);
-	}
-	if (typeof writableEntries !== "boolean" && typeof writableEntries !== "undefined") {
-		throw new TypeError(`Argument \`elementsWritable\` must be type of boolean or undefined!`);
-	}
-	if (typeof empty !== "boolean" && typeof empty !== "undefined") {
-		throw new TypeError(`Argument \`empty\` must be type of boolean or undefined!`);
-	}
-	if (typeof symbolKeys !== "boolean" && typeof symbolKeys !== "undefined") {
-		throw new TypeError(`Argument \`keysSymbols\` must be type of boolean or undefined!`);
-	}
-	maximumEntries = main(maximumEntries, aliases.maxEntries, Infinity);
-	if (maximumEntries !== Infinity && !is_number(maximumEntries, {
-		integer: true,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`maximumEntries\` must be \`Infinity\` or type of number (integer, positive, and safe)!`);
-	}
-	minimumEntries = main(minimumEntries, aliases.minEntries, 0);
-	if (!is_number(minimumEntries, {
-		integer: true,
-		maximum: maximumEntries,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimumEntries\` must be type of number (integer, positive, and safe) and <= ${maximumEntries}!`);
-	}
-	strict = main(strict, aliases.super, false);
-	if (typeof strict !== "boolean") {
-		throw new TypeError(`Argument \`strict\` must be type of boolean!`);
-	}
-	if (empty === false) {
-		maximumEntries = Infinity;
-		minimumEntries = 1;
-	} else if (empty === true) {
-		maximumEntries = 0;
-		minimumEntries = 0;
-	}
-	if (strict) {
-		configurableEntries = true;
-		enumerableEntries = true;
-		getterEntries = false;
-		setterEntries = false;
-		symbolKeys = false;
-		writableEntries = true;
-	}
-	return is_plain_object(item, {
+	return new plain_object({
+		allowEmpty,
 		configurableEntries,
 		enumerableEntries,
 		getterEntries,
 		maximumEntries,
 		minimumEntries,
 		setterEntries,
+		strict,
 		symbolKeys,
-		writableEntries
-	});
+		writableEntries,
+		...aliases
+	}).test(item);
 }
-/* harmony default export */ const lib_is_plain_object = (isPlainObject);
+/* harmony default export */ const is_plain_object = (isPlainObject);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-regular-expression.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/regular-expression.js
+
+/**
+ * @class RegularExpressionItemFilter
+ * @alias RegExItemFilter
+ * @alias RegExpItemFilter
+ * @description Determine item with the filter of type of regular expression.
+ */
+class RegularExpressionItemFilter {
+	#caseInsensitive;
+	#dotAll;
+	#exactly;
+	#global;
+	#multipleLine;
+	#sticky;
+	#unicode;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of regular expression to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.caseInsensitive] Whether a case insensitive regular expression.
+	 * @param {boolean} [param0.dotAll] Whether a dot-all regular expression.
+	 * @param {boolean} [param0.exactly] Whether an exactly regular expression.
+	 * @param {boolean} [param0.global] Whether a global regular expression.
+	 * @param {boolean} [param0.multipleLine] Whether a multiple line regular expression.
+	 * @param {boolean} [param0.sticky] Whether a sticky regular expression.
+	 * @param {boolean} [param0.unicode] Whether an unicode regular expression.
+	 */
+	constructor({
+		caseInsensitive,
+		dotAll,
+		exactly,
+		global,
+		multipleLine,
+		sticky,
+		unicode,
+		...aliases
+	} = {}) {
+		caseInsensitive = main(caseInsensitive, aliases.ignoreCase);
+		if (typeof caseInsensitive !== "boolean" && typeof caseInsensitive !== "undefined") {
+			throw new TypeError(`Argument \`caseInsensitive\` must be type of boolean or undefined.`);
+		}
+		if (typeof dotAll !== "boolean" && typeof dotAll !== "undefined") {
+			throw new TypeError(`Argument \`dotAll\` must be type of boolean or undefined.`);
+		}
+		exactly = main(exactly, aliases.exact);
+		if (typeof exactly !== "boolean" && typeof exactly !== "undefined") {
+			throw new TypeError(`Argument \`exactly\` must be type of boolean or undefined.`);
+		}
+		if (typeof global !== "boolean" && typeof global !== "undefined") {
+			throw new TypeError(`Argument \`global\` must be type of boolean or undefined.`);
+		}
+		multipleLine = main(multipleLine, aliases.multiLine, aliases.multiline);
+		if (typeof multipleLine !== "boolean" && typeof multipleLine !== "undefined") {
+			throw new TypeError(`Argument \`multipleLine\` must be type of boolean or undefined.`);
+		}
+		if (typeof sticky !== "boolean" && typeof sticky !== "undefined") {
+			throw new TypeError(`Argument \`sticky\` must be type of boolean or undefined.`);
+		}
+		if (typeof unicode !== "boolean" && typeof unicode !== "undefined") {
+			throw new TypeError(`Argument \`unicode\` must be type of boolean or undefined.`);
+		}
+		this.#caseInsensitive = caseInsensitive;
+		this.#dotAll = dotAll;
+		this.#exactly = exactly;
+		this.#global = global;
+		this.#multipleLine = multipleLine;
+		this.#sticky = sticky;
+		this.#unicode = unicode;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of regular expression.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			!(item instanceof RegExp) ||
+			(this.#caseInsensitive === false && item.ignoreCase) ||
+			(this.#caseInsensitive === true && !item.ignoreCase) ||
+			(this.#dotAll === false && item.dotAll) ||
+			(this.#dotAll === true && !item.dotAll) ||
+			(this.#exactly === false && item.source.startsWith("^") && item.source.endsWith("$")) ||
+			(this.#exactly === true && (
+				!item.source.startsWith("^") ||
+				!item.source.endsWith("$")
+			)) ||
+			(this.#global === false && item.global) ||
+			(this.#global === true && !item.global) ||
+			(this.#multipleLine === false && item.multiline) ||
+			(this.#multipleLine === true && !item.multiline) ||
+			(this.#sticky === false && item.sticky) ||
+			(this.#sticky === true && !item.sticky) ||
+			(this.#unicode === false && item.unicode) ||
+			(this.#unicode === true && !item.unicode)
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const regular_expression = (RegularExpressionItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/regular-expression.js
 
 /**
  * @function isRegularExpression
  * @alias isRegEx
  * @alias isRegExp
- * @description Determine item is type of regular expression or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of regular expression.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.caseInsensitive] A case insensitive regular expression.
- * @param {boolean} [param1.dotAll] A dot-all regular expression.
- * @param {boolean} [param1.exactly] An exactly regular expression.
- * @param {boolean} [param1.global] A global regular expression.
- * @param {boolean} [param1.multipleLine] A multiple line regular expression.
- * @param {boolean} [param1.sticky] A sticky regular expression.
- * @param {boolean} [param1.unicode] An unicode regular expression.
+ * @param {boolean} [param1.caseInsensitive] Whether a case insensitive regular expression.
+ * @param {boolean} [param1.dotAll] Whether a dot-all regular expression.
+ * @param {boolean} [param1.exactly] Whether an exactly regular expression.
+ * @param {boolean} [param1.global] Whether a global regular expression.
+ * @param {boolean} [param1.multipleLine] Whether a multiple line regular expression.
+ * @param {boolean} [param1.sticky] Whether a sticky regular expression.
+ * @param {boolean} [param1.unicode] Whether an unicode regular expression.
  * @returns {boolean} Determine result.
  */
 function isRegularExpression(item, {
@@ -16906,137 +17332,264 @@ function isRegularExpression(item, {
 	unicode,
 	...aliases
 } = {}) {
-	caseInsensitive = main(caseInsensitive, aliases.ignoreCase);
-	if (typeof caseInsensitive !== "boolean" && typeof caseInsensitive !== "undefined") {
-		throw new TypeError(`Argument \`caseInsensitive\` must be type of boolean or undefined!`);
-	}
-	if (typeof dotAll !== "boolean" && typeof dotAll !== "undefined") {
-		throw new TypeError(`Argument \`dotAll\` must be type of boolean or undefined!`);
-	}
-	exactly = main(exactly, aliases.exact);
-	if (typeof exactly !== "boolean" && typeof exactly !== "undefined") {
-		throw new TypeError(`Argument \`exactly\` must be type of boolean or undefined!`);
-	}
-	if (typeof global !== "boolean" && typeof global !== "undefined") {
-		throw new TypeError(`Argument \`global\` must be type of boolean or undefined!`);
-	}
-	multipleLine = main(multipleLine, aliases.multiLine, aliases.multiline);
-	if (typeof multipleLine !== "boolean" && typeof multipleLine !== "undefined") {
-		throw new TypeError(`Argument \`multipleLine\` must be type of boolean or undefined!`);
-	}
-	if (typeof sticky !== "boolean" && typeof sticky !== "undefined") {
-		throw new TypeError(`Argument \`sticky\` must be type of boolean or undefined!`);
-	}
-	if (typeof unicode !== "boolean" && typeof unicode !== "undefined") {
-		throw new TypeError(`Argument \`unicode\` must be type of boolean or undefined!`);
-	}
-	if (
-		!(item instanceof RegExp) ||
-		(caseInsensitive === false && item.ignoreCase) ||
-		(caseInsensitive === true && !item.ignoreCase) ||
-		(dotAll === false && item.dotAll) ||
-		(dotAll === true && !item.dotAll) ||
-		(exactly === false && item.source.startsWith("^") && item.source.endsWith("$")) ||
-		(exactly === true && (
-			!item.source.startsWith("^") ||
-			!item.source.endsWith("$")
-		)) ||
-		(global === false && item.global) ||
-		(global === true && !item.global) ||
-		(multipleLine === false && item.multiline) ||
-		(multipleLine === true && !item.multiline) ||
-		(sticky === false && item.sticky) ||
-		(sticky === true && !item.sticky) ||
-		(unicode === false && item.unicode) ||
-		(unicode === true && !item.unicode)
-	) {
-		return false;
-	}
-	return true;
+	return new regular_expression({
+		caseInsensitive,
+		dotAll,
+		exactly,
+		global,
+		multipleLine,
+		sticky,
+		unicode,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_regular_expression = (isRegularExpression);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-set.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/set.js
 
 
 /**
+ * @class SetItemFilter
+ * @description Determine item with the filter of type of set.
+ */
+class SetItemFilter {
+	#maximumSize;
+	#minimumSize;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of set to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty set.
+	 * @param {number} [param0.maximumSize=Infinity] Maximum size of the set.
+	 * @param {number} [param0.minimumSize=1] Minimum size of the set.
+	 */
+	constructor({
+		allowEmpty = false,
+		maximumSize,
+		minimumSize,
+		...aliases
+	} = {}) {
+		if (typeof allowEmpty !== "boolean") {
+			throw new TypeError(`Argument \`empty\` must be type of boolean.`);
+		}
+		maximumSize = main(maximumSize, aliases.maxSize, Infinity);
+		if (maximumSize !== Infinity && !checkNumberIPS(maximumSize)) {
+			throw new TypeError(`Argument \`maximumSize\` must be \`Infinity\` or type of number (integer, positive, and safe).`);
+		}
+		minimumSize = main(minimumSize, aliases.minSize, 1);
+		if (!checkNumberIPSWithMaximum(minimumSize, maximumSize)) {
+			throw new TypeError(`Argument \`minimumSize\` must be type of number (integer, positive, and safe) and <= ${maximumSize}.`);
+		}
+		this.#maximumSize = maximumSize;
+		this.#minimumSize = allowEmpty ? 0 : minimumSize;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of set.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (
+			!(item instanceof Set) ||
+			this.#maximumSize < item.size ||
+			item.size < this.#minimumSize
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const set = (SetItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/set.js
+
+/**
  * @function isSet
- * @description Determine item is type of set or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of set.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.empty] An empty set.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty set.
  * @param {number} [param1.maximumSize=Infinity] Maximum size of the set.
- * @param {number} [param1.minimumSize=0] Minimum size of the set.
+ * @param {number} [param1.minimumSize=1] Minimum size of the set.
  * @returns {boolean} Determine result.
  */
 function isSet(item, {
-	empty,
+	allowEmpty = false,
 	maximumSize,
 	minimumSize,
 	...aliases
 } = {}) {
-	if (typeof empty !== "boolean" && typeof empty !== "undefined") {
-		throw new TypeError(`Argument \`empty\` must be type of boolean or undefined!`);
-	}
-	maximumSize = main(maximumSize, aliases.maxSize, Infinity);
-	if (maximumSize !== Infinity && !is_number(maximumSize, {
-		integer: true,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`maximumSize\` must be \`Infinity\` or type of number (integer, positive, and safe)!`);
-	}
-	minimumSize = main(minimumSize, aliases.minSize, 0);
-	if (!is_number(minimumSize, {
-		integer: true,
-		maximum: maximumSize,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimumSize\` must be type of number (integer, positive, and safe) and <= ${maximumSize}!`);
-	}
-	if (empty === false) {
-		maximumSize = Infinity;
-		minimumSize = 1;
-	} else if (empty === true) {
-		maximumSize = 0;
-		minimumSize = 0;
-	}
-	if (
-		!(item instanceof Set) ||
-		maximumSize < item.size ||
-		item.size < minimumSize
-	) {
-		return false;
-	}
-	return true;
+	return new set({
+		allowEmpty,
+		maximumSize,
+		minimumSize,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_set = (isSet);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-string.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/string.js
 
+
+const newLineRegExp = /[\n\r]/gu;
+/**
+ * @class StringItemFilter
+ * @description Determine item with the filter of type of string.
+ */
+class StringItemFilter {
+	#ascii;
+	#lowerCase;
+	#maximumLength;
+	#minimumLength;
+	#multipleLine;
+	#pattern;
+	#preTrim;
+	#singleLine;
+	#upperCase;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of string to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty string.
+	 * @param {boolean} [param0.ascii] Whether an ASCII string.
+	 * @param {boolean} [param0.lowerCase] Whether a lower case string.
+	 * @param {number} [param0.maximumLength=Infinity] Maximum length of the string.
+	 * @param {number} [param0.minimumLength=1] Minimum length of the string.
+	 * @param {boolean} [param0.multipleLine] Whether a multiple lines string.
+	 * @param {RegExp} [param0.pattern] Whether a pattern matchable string.
+	 * @param {boolean} [param0.preTrim=false] Whether to trim the string internally before determine.
+	 * @param {boolean} [param0.singleLine] Whether a single line string.
+	 * @param {boolean} [param0.upperCase] Whether an upper case string.
+	 */
+	constructor({
+		allowEmpty = false,
+		ascii,
+		lowerCase,
+		maximumLength,
+		minimumLength,
+		multipleLine,
+		pattern,
+		preTrim = false,
+		singleLine,
+		upperCase,
+		...aliases
+	} = {}) {
+		if (typeof allowEmpty !== "boolean" && typeof allowEmpty !== "undefined") {
+			throw new TypeError(`Argument \`empty\` must be type of boolean or undefined.`);
+		}
+		if (typeof ascii !== "boolean" && typeof ascii !== "undefined") {
+			throw new TypeError(`Argument \`ascii\` must be type of boolean or undefined.`);
+		}
+		if (typeof lowerCase !== "boolean" && typeof lowerCase !== "undefined") {
+			throw new TypeError(`Argument \`lowerCase\` must be type of boolean or undefined.`);
+		}
+		maximumLength = main(maximumLength, aliases.maxLength, aliases.maximumCharacters, aliases.maxCharacters, Infinity);
+		if (maximumLength !== Infinity && !checkNumberIPS(maximumLength)) {
+			throw new TypeError(`Argument \`maximumLength\` must be \`Infinity\` or type of number (integer, positive, and safe).`);
+		}
+		minimumLength = main(minimumLength, aliases.minLength, aliases.minimumCharacters, aliases.minCharacters, 1);
+		if (!checkNumberIPSWithMaximum(minimumLength, maximumLength)) {
+			throw new TypeError(`Argument \`minimumLength\` must be type of number (integer, positive, and safe) and <= ${maximumLength}.`);
+		}
+		multipleLine = main(multipleLine, aliases.multipleLines, aliases.multiLine, aliases.multiLines, aliases.multiline, aliases.multilines);
+		if (typeof multipleLine !== "boolean" && typeof multipleLine !== "undefined") {
+			throw new TypeError(`Argument \`multipleLine\` must be type of boolean or undefined.`);
+		}
+		if (!(pattern instanceof RegExp) && typeof pattern !== "undefined") {
+			throw new TypeError(`Argument \`pattern\` must be type of regular expression or undefined.`);
+		}
+		if (typeof preTrim !== "boolean") {
+			throw new TypeError(`Argument \`preTrim\` must be type of boolean.`);
+		}
+		if (typeof singleLine !== "boolean" && typeof singleLine !== "undefined") {
+			throw new TypeError(`Argument \`singleLine\` must be type of boolean or undefined.`);
+		}
+		if (typeof upperCase !== "boolean" && typeof upperCase !== "undefined") {
+			throw new TypeError(`Argument \`upperCase\` must be type of boolean or undefined.`);
+		}
+		this.#ascii = ascii;
+		this.#lowerCase = lowerCase;
+		this.#maximumLength = maximumLength;
+		this.#minimumLength = allowEmpty ? 0 : minimumLength;
+		this.#multipleLine = multipleLine;
+		this.#pattern = pattern;
+		this.#preTrim = preTrim;
+		this.#singleLine = singleLine;
+		this.#upperCase = upperCase;
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of string.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (typeof item !== "string") {
+			return false;
+		}
+		let itemRaw = this.#preTrim ? item.trim() : item;
+		if (typeof this.#ascii === "boolean") {
+			for (let character of itemRaw) {
+				let charCode = character.charCodeAt(0);
+				if (
+					(this.#ascii === false && charCode < 128) ||
+					(this.#ascii === true && charCode > 127)
+				) {
+					return false;
+				}
+			}
+		}
+		if (
+			this.#maximumLength < itemRaw.length ||
+			itemRaw.length < this.#minimumLength ||
+			(this.#pattern instanceof RegExp && itemRaw.search(this.#pattern) === -1) ||
+			((
+				this.#lowerCase === true ||
+				this.#upperCase === false
+			) && itemRaw !== itemRaw.toLowerCase()) ||
+			((
+				this.#upperCase === true ||
+				this.#lowerCase === false
+			) && itemRaw !== itemRaw.toUpperCase()) ||
+			((
+				this.#multipleLine === true ||
+				this.#singleLine === false
+			) && itemRaw.search(newLineRegExp) === -1) ||
+			((
+				this.#singleLine === true ||
+				this.#multipleLine === false
+			) && itemRaw.search(newLineRegExp) !== -1)
+		) {
+			return false;
+		}
+		return true;
+	}
+}
+/* harmony default export */ const string = (StringItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/string.js
 
 /**
  * @function isString
- * @alias isStr
- * @description Determine item is type of string or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of string.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.ascii=false] Allow only ASCII characters in the string.
- * @param {boolean} [param1.empty] An empty string.
- * @param {boolean} [param1.lowerCase] A lower case string.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty string.
+ * @param {boolean} [param1.ascii] Whether an ASCII string.
+ * @param {boolean} [param1.lowerCase] Whether a lower case string.
  * @param {number} [param1.maximumLength=Infinity] Maximum length of the string.
- * @param {number} [param1.minimumLength=0] Minimum length of the string.
- * @param {boolean} [param1.multipleLine] A multiple line string.
- * @param {RegExp} [param1.pattern] Pattern.
- * @param {boolean} [param1.preTrim=false] Trim string before determine.
- * @param {boolean} [param1.singleLine] A single line string.
- * @param {boolean} [param1.upperCase] An upper case string.
+ * @param {number} [param1.minimumLength=1] Minimum length of the string.
+ * @param {boolean} [param1.multipleLine] Whether a multiple lines string.
+ * @param {RegExp} [param1.pattern] Whether a pattern matchable string.
+ * @param {boolean} [param1.preTrim=false] Whether to trim the string internally before determine.
+ * @param {boolean} [param1.singleLine] Whether a single line string.
+ * @param {boolean} [param1.upperCase] Whether an upper case string.
  * @returns {boolean} Determine result.
  */
 function isString(item, {
-	ascii = false,
-	empty,
+	allowEmpty = false,
+	ascii,
 	lowerCase,
 	maximumLength,
 	minimumLength,
@@ -17047,117 +17600,109 @@ function isString(item, {
 	upperCase,
 	...aliases
 } = {}) {
-	if (typeof ascii !== "boolean") {
-		throw new TypeError(`Argument \`ascii\` must be type of boolean!`);
-	}
-	if (typeof empty !== "boolean" && typeof empty !== "undefined") {
-		throw new TypeError(`Argument \`empty\` must be type of boolean or undefined!`);
-	}
-	if (typeof lowerCase !== "boolean" && typeof lowerCase !== "undefined") {
-		throw new TypeError(`Argument \`lowerCase\` must be type of boolean or undefined!`);
-	}
-	maximumLength = main(maximumLength, aliases.maxLength, aliases.maximumCharacters, aliases.maxCharacters, Infinity);
-	if (maximumLength !== Infinity && !is_number(maximumLength, {
-		integer: true,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`maximumLength\` must be \`Infinity\` or type of number (integer, positive, and safe)!`);
-	}
-	minimumLength = main(minimumLength, aliases.minLength, aliases.minimumCharacters, aliases.minCharacters, 0);
-	if (!is_number(minimumLength, {
-		integer: true,
-		maximum: maximumLength,
-		positive: true,
-		safe: true
-	})) {
-		throw new TypeError(`Argument \`minimumLength\` must be type of number (integer, positive, and safe) and <= ${maximumLength}!`);
-	}
-	multipleLine = main(multipleLine, aliases.multiLine, aliases.multiline);
-	if (typeof multipleLine !== "boolean" && typeof multipleLine !== "undefined") {
-		throw new TypeError(`Argument \`multipleLine\` must be type of boolean or undefined!`);
-	}
-	if (!(pattern instanceof RegExp) && typeof pattern !== "undefined") {
-		throw new TypeError(`Argument \`pattern\` must be type of regular expression or undefined!`);
-	}
-	if (typeof preTrim !== "boolean") {
-		throw new TypeError(`Argument \`preTrim\` must be type of boolean!`);
-	}
-	if (typeof singleLine !== "boolean" && typeof singleLine !== "undefined") {
-		throw new TypeError(`Argument \`singleLine\` must be type of boolean or undefined!`);
-	}
-	if (typeof upperCase !== "boolean" && typeof upperCase !== "undefined") {
-		throw new TypeError(`Argument \`upperCase\` must be type of boolean or undefined!`);
-	}
-	if (empty === false) {
-		maximumLength = Infinity;
-		minimumLength = 1;
-	} else if (empty === true) {
-		maximumLength = 0;
-		minimumLength = 0;
-	}
-	if (typeof item !== "string") {
-		return false;
-	}
-	let itemRaw = preTrim ? item.trim() : item;
-	if (ascii) {
-		for (let character of itemRaw) {
-			if (character.charCodeAt(0) > 127) {
-				return false;
-			}
-		}
-	}
-	if (
-		maximumLength < itemRaw.length ||
-		itemRaw.length < minimumLength ||
-		(pattern instanceof RegExp && itemRaw.search(pattern) === -1) ||
-		((
-			lowerCase === true ||
-			upperCase === false
-		) && itemRaw !== itemRaw.toLowerCase()) ||
-		((
-			upperCase === true ||
-			lowerCase === false
-		) && itemRaw !== itemRaw.toUpperCase()) ||
-		((
-			multipleLine === true ||
-			singleLine === false
-		) && itemRaw.search(/[\n\r]/gu) === -1) ||
-		((
-			singleLine === true ||
-			multipleLine === false
-		) && itemRaw.search(/[\n\r]/gu) !== -1)
-	) {
-		return false;
-	}
-	return true;
+	return new string({
+		allowEmpty,
+		ascii,
+		lowerCase,
+		maximumLength,
+		minimumLength,
+		multipleLine,
+		pattern,
+		preTrim,
+		singleLine,
+		upperCase,
+		...aliases
+	}).test(item);
 }
 /* harmony default export */ const is_string = (isString);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/is-stringify-json.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/stringify-json.js
+
+/**
+ * @class StringifyJSONItemFilter
+ * @alias JSONStringifiedItemFilter
+ * @alias JSONStringifyItemFilter
+ * @alias StringifiedJSONItemFilter
+ * @description Determine item with the filter of type of stringify JSON.
+ */
+class StringifyJSONItemFilter {
+	#jsonItemFilterWrapper;
+	/**
+	 * @constructor
+	 * @description Initialize the filter of type of stringify JSON to determine item.
+	 * @param {object} [param0={}] Options.
+	 * @param {boolean} [param0.allowEmpty=false] Whether to allow an empty stringify JSON.
+	 * @param {boolean} [param0.arrayRoot] Whether type of array as the root of the stringify JSON.
+	 * @param {RegExp} [param0.keysPattern] Whether a pattern matchable stringify JSON keys.
+	 * @param {number} [param0.maximumEntries=Infinity] Maximum entries of the stringify JSON.
+	 * @param {number} [param0.minimumEntries=1] Minimum entries of the stringify JSON.
+	 * @param {boolean} [param0.strict=false] Whether to determine type of array not as the root of the stringify JSON, and no illegal namespace characters in the stringify JSON keys.
+	 * @param {boolean} [param0.strictKeys=false] Whether to determine no illegal namespace characters in the stringify JSON keys.
+	 */
+	constructor({
+		allowEmpty = false,
+		arrayRoot,
+		keysPattern,
+		maximumEntries,
+		minimumEntries,
+		strict = false,
+		strictKeys = false,
+		...aliases
+	} = {}) {
+		this.#jsonItemFilterWrapper = new json({
+			allowEmpty,
+			arrayRoot,
+			keysPattern,
+			maximumEntries,
+			minimumEntries,
+			strict,
+			strictKeys,
+			...aliases
+		});
+	}
+	/**
+	 * @method test
+	 * @description Determine item with the configured filter of type of stringify JSON.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	test(item) {
+		if (typeof item !== "string") {
+			return false;
+		}
+		let itemParse;
+		try {
+			itemParse = JSON.parse(item);
+		} catch {
+			return false;
+		}
+		return this.#jsonItemFilterWrapper.test(itemParse);
+	}
+}
+/* harmony default export */ const stringify_json = (StringifyJSONItemFilter);
+
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/stringify-json.js
 
 /**
  * @function isStringifyJSON
- * @alias isJSONStr
  * @alias isJSONStringified
  * @alias isJSONStringify
  * @alias isStringifiedJSON
- * @alias isStrJSON
- * @description Determine item is type of stringify JSON or not.
- * @param {any} item Item that need to determine.
+ * @description Determine item with the filter of type of stringify JSON.
+ * @param {unknown} item Item that need to determine.
  * @param {object} [param1={}] Options.
- * @param {boolean} [param1.arrayRoot] Type of array as the root of the stringify JSON.
- * @param {boolean} [param1.empty] An empty stringify JSON.
- * @param {RegExp} [param1.keysPattern] Ensure pattern in the stringify JSON keys.
+ * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty stringify JSON.
+ * @param {boolean} [param1.arrayRoot] Whether type of array as the root of the stringify JSON.
+ * @param {RegExp} [param1.keysPattern] Whether a pattern matchable stringify JSON keys.
  * @param {number} [param1.maximumEntries=Infinity] Maximum entries of the stringify JSON.
- * @param {number} [param1.minimumEntries=0] Minimum entries of the stringify JSON.
- * @param {boolean} [param1.strict=false] Ensure type of array is not as the root of the stringify JSON, and no illegal namespace characters in the stringify JSON keys.
- * @param {boolean} [param1.strictKeys=false] Ensure no illegal namespace characters in the stringify JSON keys.
+ * @param {number} [param1.minimumEntries=1] Minimum entries of the stringify JSON.
+ * @param {boolean} [param1.strict=false] Whether to determine type of array not as the root of the stringify JSON, and no illegal namespace characters in the stringify JSON keys.
+ * @param {boolean} [param1.strictKeys=false] Whether to determine no illegal namespace characters in the stringify JSON keys.
  * @returns {boolean} Determine result.
  */
 function isStringifyJSON(item, {
+	allowEmpty = false,
 	arrayRoot,
-	empty,
 	keysPattern,
 	maximumEntries,
 	minimumEntries,
@@ -17165,29 +17710,33 @@ function isStringifyJSON(item, {
 	strictKeys = false,
 	...aliases
 } = {}) {
-	if (typeof item !== "string") {
-		return false;
-	}
-	let itemParse;
-	try {
-		itemParse = JSON.parse(item);
-	} catch {
-		return false;
-	}
-	return is_json(itemParse, {
+	return new stringify_json({
+		allowEmpty,
 		arrayRoot,
-		empty,
 		keysPattern,
 		maximumEntries,
 		minimumEntries,
 		strict,
 		strictKeys,
 		...aliases
-	});
+	}).test(item);
 }
 /* harmony default export */ const is_stringify_json = (isStringifyJSON);
 
-;// CONCATENATED MODULE: ./node_modules/@hugoalh/advanced-determine/lib/main.mjs
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/main.js
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -17206,45 +17755,53 @@ function isStringifyJSON(item, {
 
 /* harmony default export */ const lib_main = ({
 	areEqual: are_equal,
-	isArr: is_array,
+	ArrayItemFilter: array,
+	BigIntegerItemFilter: big_integer,
+	BigIntItemFilter: big_integer,
+	FunctionItemFilter: item_filter_function,
+	GeneratorItemFilter: generator,
 	isArray: is_array,
-	isBigInt: lib_is_big_integer,
-	isBigInteger: lib_is_big_integer,
-	isDict: lib_is_plain_object,
-	isDictionary: lib_is_plain_object,
-	isFn: is_function,
+	isBigInt: is_big_integer,
+	isBigInteger: is_big_integer,
 	isFunction: is_function,
 	isGenerator: is_generator,
 	isJSON: is_json,
-	isJSONStr: is_stringify_json,
 	isJSONStringified: is_stringify_json,
 	isJSONStringify: is_stringify_json,
-	isList: is_array,
 	isMap: is_map,
-	isNum: lib_is_number,
-	isNumber: lib_is_number,
-	isObj: is_object,
+	isNumber: is_number,
 	isObject: is_object,
-	isObjectPlain: lib_is_plain_object,
-	isObjPlain: lib_is_plain_object,
-	isPlainObj: lib_is_plain_object,
-	isPlainObject: lib_is_plain_object,
+	isObjectPlain: is_plain_object,
+	isPlainObject: is_plain_object,
 	isRegEx: is_regular_expression,
 	isRegExp: is_regular_expression,
 	isRegularExpression: is_regular_expression,
 	isSet: is_set,
-	isStr: is_string,
 	isString: is_string,
 	isStringifiedJSON: is_stringify_json,
 	isStringifyJSON: is_stringify_json,
-	isStrJSON: is_stringify_json,
+	JSONItemFilter: json,
+	JSONStringifiedItemFilter: stringify_json,
+	JSONStringifyItemFilter: stringify_json,
+	MapItemFilter: map,
+	NumberItemFilter: number,
+	ObjectItemFilter: object,
+	ObjectPlainItemFilter: plain_object,
+	PlainObjectItemFilter: plain_object,
+	RegExItemFilter: regular_expression,
+	RegExpItemFilter: regular_expression,
+	RegularExpressionItemFilter: regular_expression,
+	SetItemFilter: set,
+	StringifiedJSONItemFilter: stringify_json,
+	StringifyJSONItemFilter: stringify_json,
+	StringItemFilter: string,
 	typeOf: type_of
 });
 
 
 /***/ }),
 
-/***/ 7037:
+/***/ 4261:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -17255,7 +17812,7 @@ __nccwpck_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: backgroundColorNames, backgroundColors, chalkStderr, colorNames, colors, default, foregroundColorNames, foregroundColors, modifierNames, modifiers, supportsColor, supportsColorStderr
 
-;// CONCATENATED MODULE: ./node_modules/chalk/source/vendor/ansi-styles/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/chalk@5.2.0/node_modules/chalk/source/vendor/ansi-styles/index.js
 const ANSI_BACKGROUND_OFFSET = 10;
 
 const wrapAnsi16 = (offset = 0) => code => `\u001B[${code + offset}m`;
@@ -17486,13 +18043,13 @@ var external_node_process_ = __nccwpck_require__(7742);
 const external_node_os_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:os");
 ;// CONCATENATED MODULE: external "node:tty"
 const external_node_tty_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:tty");
-;// CONCATENATED MODULE: ./node_modules/chalk/source/vendor/supports-color/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/chalk@5.2.0/node_modules/chalk/source/vendor/supports-color/index.js
 
 
 
 
 // From: https://github.com/sindresorhus/has-flag/blob/main/index.js
-function hasFlag(flag, argv = external_node_process_.argv) {
+function hasFlag(flag, argv = globalThis.Deno ? globalThis.Deno.args : external_node_process_.argv) {
 	const prefix = flag.startsWith('-') ? '' : (flag.length === 1 ? '-' : '--');
 	const position = argv.indexOf(prefix + flag);
 	const terminatorPosition = argv.indexOf('--');
@@ -17569,6 +18126,12 @@ function _supportsColor(haveStream, {streamIsTTY, sniffFlags = true} = {}) {
 		}
 	}
 
+	// Check for Azure DevOps pipelines.
+	// Has to be above the `!streamIsTTY` check.
+	if ('TF_BUILD' in env && 'AGENT_NAME' in env) {
+		return 1;
+	}
+
 	if (haveStream && !streamIsTTY && forceColor === undefined) {
 		return 0;
 	}
@@ -17594,7 +18157,11 @@ function _supportsColor(haveStream, {streamIsTTY, sniffFlags = true} = {}) {
 	}
 
 	if ('CI' in env) {
-		if (['TRAVIS', 'CIRCLECI', 'APPVEYOR', 'GITLAB_CI', 'GITHUB_ACTIONS', 'BUILDKITE', 'DRONE'].some(sign => sign in env) || env.CI_NAME === 'codeship') {
+		if ('GITHUB_ACTIONS' in env) {
+			return 3;
+		}
+
+		if (['TRAVIS', 'CIRCLECI', 'APPVEYOR', 'GITLAB_CI', 'BUILDKITE', 'DRONE'].some(sign => sign in env) || env.CI_NAME === 'codeship') {
 			return 1;
 		}
 
@@ -17605,12 +18172,11 @@ function _supportsColor(haveStream, {streamIsTTY, sniffFlags = true} = {}) {
 		return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;
 	}
 
-	// Check for Azure DevOps pipelines
-	if ('TF_BUILD' in env && 'AGENT_NAME' in env) {
-		return 1;
+	if (env.COLORTERM === 'truecolor') {
+		return 3;
 	}
 
-	if (env.COLORTERM === 'truecolor') {
+	if (env.TERM === 'xterm-kitty') {
 		return 3;
 	}
 
@@ -17618,10 +18184,13 @@ function _supportsColor(haveStream, {streamIsTTY, sniffFlags = true} = {}) {
 		const version = Number.parseInt((env.TERM_PROGRAM_VERSION || '').split('.')[0], 10);
 
 		switch (env.TERM_PROGRAM) {
-			case 'iTerm.app':
+			case 'iTerm.app': {
 				return version >= 3 ? 3 : 2;
-			case 'Apple_Terminal':
+			}
+
+			case 'Apple_Terminal': {
 				return 2;
+			}
 			// No default
 		}
 	}
@@ -17657,7 +18226,7 @@ const supportsColor = {
 
 /* harmony default export */ const supports_color = (supportsColor);
 
-;// CONCATENATED MODULE: ./node_modules/chalk/source/utilities.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/chalk@5.2.0/node_modules/chalk/source/utilities.js
 // TODO: When targeting Node.js 16, use `String.prototype.replaceAll`.
 function stringReplaceAll(string, substring, replacer) {
 	let index = string.indexOf(substring);
@@ -17692,7 +18261,7 @@ function stringEncaseCRLFWithFirstIndex(string, prefix, postfix, index) {
 	return returnValue;
 }
 
-;// CONCATENATED MODULE: ./node_modules/chalk/source/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/chalk@5.2.0/node_modules/chalk/source/index.js
 
 
 
@@ -17905,14 +18474,14 @@ const chalkStderr = createChalk({level: stderrColor ? stderrColor.level : 0});
 
 /***/ }),
 
-/***/ 3213:
+/***/ 1564:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export File */
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(1410);
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(8967);
 
 
 const _File = class File extends _index_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z {
@@ -17966,7 +18535,7 @@ const File = _File
 
 /***/ }),
 
-/***/ 2777:
+/***/ 7253:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -17981,13 +18550,13 @@ __nccwpck_require__.d(__webpack_exports__, {
 const external_node_fs_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:fs");
 ;// CONCATENATED MODULE: external "node:path"
 const external_node_path_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:path");
-// EXTERNAL MODULE: ./node_modules/node-domexception/index.js
-var node_domexception = __nccwpck_require__(7760);
-// EXTERNAL MODULE: ./node_modules/fetch-blob/file.js
-var file = __nccwpck_require__(3213);
-// EXTERNAL MODULE: ./node_modules/fetch-blob/index.js
-var fetch_blob = __nccwpck_require__(1410);
-;// CONCATENATED MODULE: ./node_modules/fetch-blob/from.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/node-domexception@1.0.0/node_modules/node-domexception/index.js
+var node_domexception = __nccwpck_require__(1351);
+// EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/file.js
+var file = __nccwpck_require__(1564);
+// EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/index.js
+var fetch_blob = __nccwpck_require__(8967);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/from.js
 
 
 
@@ -18092,14 +18661,14 @@ class BlobDataItem {
 
 /***/ }),
 
-/***/ 1410:
+/***/ 8967:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* unused harmony export Blob */
-/* harmony import */ var _streams_cjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(8572);
+/* harmony import */ var _streams_cjs__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4348);
 /*! fetch-blob. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
 
 // TODO (jimmywarting): in the feature use conditional loading with top level await (requires 14.x)
@@ -18354,7 +18923,7 @@ const Blob = _Blob
 
 /***/ }),
 
-/***/ 8010:
+/***/ 2000:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 /* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
@@ -18362,8 +18931,8 @@ const Blob = _Blob
 /* harmony export */   "au": () => (/* binding */ formDataToBlob)
 /* harmony export */ });
 /* unused harmony export File */
-/* harmony import */ var fetch_blob__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(1410);
-/* harmony import */ var fetch_blob_file_js__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(3213);
+/* harmony import */ var fetch_blob__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(8967);
+/* harmony import */ var fetch_blob_file_js__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(1564);
 /*! formdata-polyfill. MIT License. Jimmy Wärting <https://jimmy.warting.se/opensource> */
 
 
@@ -18408,7 +18977,7 @@ return new B(c,{type:"multipart/form-data; boundary="+b})}
 
 /***/ }),
 
-/***/ 85:
+/***/ 9647:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -18429,7 +18998,7 @@ const external_node_zlib_namespaceObject = __WEBPACK_EXTERNAL_createRequire(impo
 const external_node_stream_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:stream");
 ;// CONCATENATED MODULE: external "node:buffer"
 const external_node_buffer_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:buffer");
-;// CONCATENATED MODULE: ./node_modules/data-uri-to-buffer/dist/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/data-uri-to-buffer@4.0.1/node_modules/data-uri-to-buffer/dist/index.js
 /**
  * Returns a `Buffer` instance from the given data URI `uri`.
  *
@@ -18458,7 +19027,7 @@ function dataUriToBuffer(uri) {
         if (meta[i] === 'base64') {
             base64 = true;
         }
-        else {
+        else if (meta[i]) {
             typeFull += `;${meta[i]}`;
             if (meta[i].indexOf('charset=') === 0) {
                 charset = meta[i].substring(8);
@@ -18485,11 +19054,11 @@ function dataUriToBuffer(uri) {
 //# sourceMappingURL=index.js.map
 // EXTERNAL MODULE: external "node:util"
 var external_node_util_ = __nccwpck_require__(7261);
-// EXTERNAL MODULE: ./node_modules/fetch-blob/index.js
-var fetch_blob = __nccwpck_require__(1410);
-// EXTERNAL MODULE: ./node_modules/formdata-polyfill/esm.min.js
-var esm_min = __nccwpck_require__(8010);
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/errors/base.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/index.js
+var fetch_blob = __nccwpck_require__(8967);
+// EXTERNAL MODULE: ./node_modules/.pnpm/formdata-polyfill@4.0.10/node_modules/formdata-polyfill/esm.min.js
+var esm_min = __nccwpck_require__(2000);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/errors/base.js
 class FetchBaseError extends Error {
 	constructor(message, type) {
 		super(message);
@@ -18508,7 +19077,7 @@ class FetchBaseError extends Error {
 	}
 }
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/errors/fetch-error.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/errors/fetch-error.js
 
 
 
@@ -18536,7 +19105,7 @@ class FetchError extends FetchBaseError {
 	}
 }
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/utils/is.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/is.js
 /**
  * Is.js
  *
@@ -18625,7 +19194,7 @@ const isSameProtocol = (destination, original) => {
 	return orig === dest;
 };
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/body.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/body.js
 
 /**
  * Body.js
@@ -18749,7 +19318,7 @@ class Body {
 			return formData;
 		}
 
-		const {toFormData} = await __nccwpck_require__.e(/* import() */ 37).then(__nccwpck_require__.bind(__nccwpck_require__, 4037));
+		const {toFormData} = await __nccwpck_require__.e(/* import() */ 161).then(__nccwpck_require__.bind(__nccwpck_require__, 8161));
 		return toFormData(this.body, ct);
 	}
 
@@ -19024,7 +19593,7 @@ const writeToStream = async (dest, {body}) => {
 	}
 };
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/headers.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/headers.js
 /**
  * Headers.js
  *
@@ -19293,7 +19862,7 @@ function fromRawHeaders(headers = []) {
 	);
 }
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/utils/is-redirect.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/is-redirect.js
 const redirectStatus = new Set([301, 302, 303, 307, 308]);
 
 /**
@@ -19306,7 +19875,7 @@ const isRedirect = code => {
 	return redirectStatus.has(code);
 };
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/response.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/response.js
 /**
  * Response.js
  *
@@ -19470,7 +20039,7 @@ Object.defineProperties(Response.prototype, {
 
 ;// CONCATENATED MODULE: external "node:url"
 const external_node_url_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:url");
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/utils/get-search.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/get-search.js
 const getSearch = parsedURL => {
 	if (parsedURL.search) {
 		return parsedURL.search;
@@ -19483,7 +20052,7 @@ const getSearch = parsedURL => {
 
 ;// CONCATENATED MODULE: external "node:net"
 const external_node_net_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:net");
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/utils/referrer.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/referrer.js
 
 
 /**
@@ -19825,7 +20394,7 @@ function parseReferrerPolicyFromHeader(headers) {
 	return policy;
 }
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/request.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/request.js
 /**
  * Request.js
  *
@@ -20142,7 +20711,7 @@ const getNodeRequestOptions = request => {
 	};
 };
 
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/errors/abort-error.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/errors/abort-error.js
 
 
 /**
@@ -20154,9 +20723,9 @@ class AbortError extends FetchBaseError {
 	}
 }
 
-// EXTERNAL MODULE: ./node_modules/fetch-blob/from.js + 2 modules
-var from = __nccwpck_require__(2777);
-;// CONCATENATED MODULE: ./node_modules/node-fetch/src/index.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/from.js + 2 modules
+var from = __nccwpck_require__(7253);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/index.js
 /**
  * Index.js
  *
@@ -20571,15 +21140,15 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 
 /***/ }),
 
-/***/ 7005:
+/***/ 7771:
 /***/ ((__webpack_module__, __unused_webpack___webpack_exports__, __nccwpck_require__) => {
 
-__nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__) => {
-/* harmony import */ var chalk__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7037);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(2186);
-/* harmony import */ var _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(1673);
-/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(85);
-/* harmony import */ var yaml__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(4083);
+__nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony import */ var chalk__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4261);
+/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(7733);
+/* harmony import */ var _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(5137);
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(9647);
+/* harmony import */ var yaml__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(3277);
 
 
 
@@ -20590,15 +21159,15 @@ try {
 	const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\da-zA-Z][\da-zA-Z_-]*)?[\da-zA-Z])$/u;
 	(0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.startGroup)(`Import inputs.`);
 	let eventName = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("eventname");
-	if (!(0,_hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .isString */ .HD)(eventName, { pattern: /^(?:[\da-zA-Z][\da-zA-Z_]*)?[\da-zA-Z]$/u })) {
+	if (!(new _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .StringItemFilter */ .Pf({ pattern: /^(?:[\da-zA-Z][\da-zA-Z_]*)?[\da-zA-Z]$/u }).test(eventName))) {
 		throw new TypeError(`\`${eventName}\` is not a valid IFTTT webhook event name!`);
 	}
 	console.log(`${chalk.bold("Event Name:")} ${eventName}`);
-	if (!(0,_hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .isString */ .HD)(eventName, { lowerCase: true })) {
+	if (!(new _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .StringItemFilter */ .Pf({ lowerCase: true }).test(eventName))) {
 		(0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.warning)(`Event name \`${eventName}\` is recommended to keep in lower case to prevent issues!`);
 	}
 	let keyRaw = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("key");
-	if (!(0,_hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .isString */ .HD)(keyRaw, { pattern: iftttMakerURLRegExp })) {
+	if (!(new _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .StringItemFilter */ .Pf({ pattern: iftttMakerURLRegExp }).test(keyRaw))) {
 		throw new TypeError(`Input \`key\` is not a valid IFTTT webhook key!`);
 	}
 	let key = keyRaw.match(iftttMakerURLRegExp).groups.key;
@@ -20608,8 +21177,14 @@ try {
 		throw new TypeError(`Input \`arbitrary\` must be type of boolean!`);
 	}
 	let payloadRaw = (0,_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput)("payload");
-	let payload = (0,_hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .isStringifyJSON */ .rE)(payloadRaw, { arrayRoot: false }) ? JSON.parse(payloadRaw) : yaml__WEBPACK_IMPORTED_MODULE_3__.parse(payloadRaw);
-	if (!(0,_hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .isJSON */ .pM)(payload, { arrayRoot: false })) {
+	let payload = new _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .StringifyJSONItemFilter */ .yA({
+		allowEmpty: true,
+		arrayRoot: false
+	}).test(payloadRaw) ? JSON.parse(payloadRaw) : yaml__WEBPACK_IMPORTED_MODULE_3__.parse(payloadRaw);
+	if (!(new _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__/* .JSONItemFilter */ .eP({
+		allowEmpty: true,
+		arrayRoot: false
+	}).test(payload))) {
 		throw new TypeError(`\`${payload}\` is not a valid IFTTT webhook JSON/YAML/YML payload!`);
 	}
 	let payloadStringify = JSON.stringify(payload);
@@ -20621,7 +21196,7 @@ try {
 		follow: 1,
 		headers: {
 			"Content-Type": "application/json",
-			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.0 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
+			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.1 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
 		},
 		method: "POST",
 		redirect: "follow"
@@ -20645,8 +21220,8 @@ try {
 	process.exit(1);
 }
 
-__webpack_handle_async_dependencies__();
-}, 1);
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } }, 1);
 
 /***/ })
 
@@ -20688,75 +21263,70 @@ __webpack_handle_async_dependencies__();
 /************************************************************************/
 /******/ /* webpack/runtime/async module */
 /******/ (() => {
-/******/ 	var webpackThen = typeof Symbol === "function" ? Symbol("webpack then") : "__webpack_then__";
+/******/ 	var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
 /******/ 	var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
-/******/ 	var completeQueue = (queue) => {
-/******/ 		if(queue) {
+/******/ 	var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 	var resolveQueue = (queue) => {
+/******/ 		if(queue && !queue.d) {
+/******/ 			queue.d = 1;
 /******/ 			queue.forEach((fn) => (fn.r--));
 /******/ 			queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
 /******/ 		}
 /******/ 	}
-/******/ 	var completeFunction = (fn) => (!--fn.r && fn());
-/******/ 	var queueFunction = (queue, fn) => (queue ? queue.push(fn) : completeFunction(fn));
 /******/ 	var wrapDeps = (deps) => (deps.map((dep) => {
 /******/ 		if(dep !== null && typeof dep === "object") {
-/******/ 			if(dep[webpackThen]) return dep;
+/******/ 			if(dep[webpackQueues]) return dep;
 /******/ 			if(dep.then) {
 /******/ 				var queue = [];
+/******/ 				queue.d = 0;
 /******/ 				dep.then((r) => {
 /******/ 					obj[webpackExports] = r;
-/******/ 					completeQueue(queue);
-/******/ 					queue = 0;
+/******/ 					resolveQueue(queue);
+/******/ 				}, (e) => {
+/******/ 					obj[webpackError] = e;
+/******/ 					resolveQueue(queue);
 /******/ 				});
 /******/ 				var obj = {};
-/******/ 											obj[webpackThen] = (fn, reject) => (queueFunction(queue, fn), dep['catch'](reject));
+/******/ 				obj[webpackQueues] = (fn) => (fn(queue));
 /******/ 				return obj;
 /******/ 			}
 /******/ 		}
 /******/ 		var ret = {};
-/******/ 							ret[webpackThen] = (fn) => (completeFunction(fn));
-/******/ 							ret[webpackExports] = dep;
-/******/ 							return ret;
+/******/ 		ret[webpackQueues] = x => {};
+/******/ 		ret[webpackExports] = dep;
+/******/ 		return ret;
 /******/ 	}));
 /******/ 	__nccwpck_require__.a = (module, body, hasAwait) => {
-/******/ 		var queue = hasAwait && [];
+/******/ 		var queue;
+/******/ 		hasAwait && ((queue = []).d = 1);
+/******/ 		var depQueues = new Set();
 /******/ 		var exports = module.exports;
 /******/ 		var currentDeps;
 /******/ 		var outerResolve;
 /******/ 		var reject;
-/******/ 		var isEvaluating = true;
-/******/ 		var nested = false;
-/******/ 		var whenAll = (deps, onResolve, onReject) => {
-/******/ 			if (nested) return;
-/******/ 			nested = true;
-/******/ 			onResolve.r += deps.length;
-/******/ 			deps.map((dep, i) => (dep[webpackThen](onResolve, onReject)));
-/******/ 			nested = false;
-/******/ 		};
 /******/ 		var promise = new Promise((resolve, rej) => {
 /******/ 			reject = rej;
-/******/ 			outerResolve = () => (resolve(exports), completeQueue(queue), queue = 0);
+/******/ 			outerResolve = resolve;
 /******/ 		});
 /******/ 		promise[webpackExports] = exports;
-/******/ 		promise[webpackThen] = (fn, rejectFn) => {
-/******/ 			if (isEvaluating) { return completeFunction(fn); }
-/******/ 			if (currentDeps) whenAll(currentDeps, fn, rejectFn);
-/******/ 			queueFunction(queue, fn);
-/******/ 			promise['catch'](rejectFn);
-/******/ 		};
+/******/ 		promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
 /******/ 		module.exports = promise;
 /******/ 		body((deps) => {
-/******/ 			if(!deps) return outerResolve();
 /******/ 			currentDeps = wrapDeps(deps);
-/******/ 			var fn, result;
-/******/ 			var promise = new Promise((resolve, reject) => {
-/******/ 				fn = () => (resolve(result = currentDeps.map((d) => (d[webpackExports]))));
+/******/ 			var fn;
+/******/ 			var getResult = () => (currentDeps.map((d) => {
+/******/ 				if(d[webpackError]) throw d[webpackError];
+/******/ 				return d[webpackExports];
+/******/ 			}))
+/******/ 			var promise = new Promise((resolve) => {
+/******/ 				fn = () => (resolve(getResult));
 /******/ 				fn.r = 0;
-/******/ 				whenAll(currentDeps, fn, reject);
+/******/ 				var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 				currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
 /******/ 			});
-/******/ 			return fn.r ? promise : result;
-/******/ 		}).then(outerResolve, reject);
-/******/ 		isEvaluating = false;
+/******/ 			return fn.r ? promise : getResult();
+/******/ 		}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 		queue && (queue.d = 0);
 /******/ 	};
 /******/ })();
 /******/ 
@@ -20878,6 +21448,6 @@ __webpack_handle_async_dependencies__();
 /******/ // startup
 /******/ // Load entry module and return exports
 /******/ // This entry module used 'module' so it can't be inlined
-/******/ var __webpack_exports__ = __nccwpck_require__(7005);
+/******/ var __webpack_exports__ = __nccwpck_require__(7771);
 /******/ __webpack_exports__ = await __webpack_exports__;
 /******/ 

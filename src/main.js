@@ -1,6 +1,6 @@
 import { Chalk } from "chalk";
 import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput as ghactionsGetBooleanInput, getInput as ghactionsGetInput, setOutput as ghactionsSetOutput, setSecret as ghactionsSetSecret, startGroup as ghactionsStartGroup, warning as ghactionsWarning } from "@actions/core";
-import { isJSON as adIsJSON, isString as adIsString, isStringifyJSON as adIsStringifyJSON } from "@hugoalh/advanced-determine";
+import { JSONItemFilter, StringifyJSONItemFilter, StringItemFilter } from "@hugoalh/advanced-determine";
 import nodeFetch from "node-fetch";
 import yaml from "yaml";
 try {
@@ -8,15 +8,15 @@ try {
 	const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\da-zA-Z][\da-zA-Z_-]*)?[\da-zA-Z])$/u;
 	ghactionsStartGroup(`Import inputs.`);
 	let eventName = ghactionsGetInput("eventname");
-	if (!adIsString(eventName, { pattern: /^(?:[\da-zA-Z][\da-zA-Z_]*)?[\da-zA-Z]$/u })) {
+	if (!(new StringItemFilter({ pattern: /^(?:[\da-zA-Z][\da-zA-Z_]*)?[\da-zA-Z]$/u }).test(eventName))) {
 		throw new TypeError(`\`${eventName}\` is not a valid IFTTT webhook event name!`);
 	}
 	console.log(`${chalk.bold("Event Name:")} ${eventName}`);
-	if (!adIsString(eventName, { lowerCase: true })) {
+	if (!(new StringItemFilter({ lowerCase: true }).test(eventName))) {
 		ghactionsWarning(`Event name \`${eventName}\` is recommended to keep in lower case to prevent issues!`);
 	}
 	let keyRaw = ghactionsGetInput("key");
-	if (!adIsString(keyRaw, { pattern: iftttMakerURLRegExp })) {
+	if (!(new StringItemFilter({ pattern: iftttMakerURLRegExp }).test(keyRaw))) {
 		throw new TypeError(`Input \`key\` is not a valid IFTTT webhook key!`);
 	}
 	let key = keyRaw.match(iftttMakerURLRegExp).groups.key;
@@ -26,8 +26,14 @@ try {
 		throw new TypeError(`Input \`arbitrary\` must be type of boolean!`);
 	}
 	let payloadRaw = ghactionsGetInput("payload");
-	let payload = adIsStringifyJSON(payloadRaw, { arrayRoot: false }) ? JSON.parse(payloadRaw) : yaml.parse(payloadRaw);
-	if (!adIsJSON(payload, { arrayRoot: false })) {
+	let payload = new StringifyJSONItemFilter({
+		allowEmpty: true,
+		arrayRoot: false
+	}).test(payloadRaw) ? JSON.parse(payloadRaw) : yaml.parse(payloadRaw);
+	if (!(new JSONItemFilter({
+		allowEmpty: true,
+		arrayRoot: false
+	}).test(payload))) {
 		throw new TypeError(`\`${payload}\` is not a valid IFTTT webhook JSON/YAML/YML payload!`);
 	}
 	let payloadStringify = JSON.stringify(payload);
@@ -39,7 +45,7 @@ try {
 		follow: 1,
 		headers: {
 			"Content-Type": "application/json",
-			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.0 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
+			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.1 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
 		},
 		method: "POST",
 		redirect: "follow"

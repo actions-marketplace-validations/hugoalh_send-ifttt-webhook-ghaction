@@ -6,7 +6,6 @@
 
 [`TriggerIFTTTWebhookApplet.GitHubAction`](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction)
 
-![GitHub Action](https://img.shields.io/badge/GitHub%20Action-2088FF?logo=github-actions&logoColor=ffffff&style=flat-square "GitHub Action")
 ![授權條款](https://img.shields.io/static/v1?label=%E6%8E%88%E6%AC%8A%E6%A2%9D%E6%AC%BE&message=MIT&style=flat-square "授權條款")
 [![GitHub星](https://img.shields.io/github/stars/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=%E6%98%9F&logo=github&logoColor=ffffff&style=flat-square "GitHub星")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/stargazers)
 [![GitHub貢獻者](https://img.shields.io/github/contributors/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=%E8%B2%A2%E7%8D%BB%E8%80%85&logo=github&logoColor=ffffff&style=flat-square "GitHub貢獻者")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/graphs/contributors)
@@ -25,7 +24,7 @@
 
 ## 📚 文檔
 
-> <b>⚠ 重要：</b>此文檔基於v5.0.0；如果要查看其他發佈／標籤／版本的文檔，請瀏覽[發佈／標籤／版本列表](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/tags)並選擇正確的發佈／標籤／版本。
+> <b>⚠ 重要：</b>此文檔基於v5.0.0；如果要查看其他版本的文檔，請瀏覽[版本列表](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/tags)並選擇正確的版本。
 
 ### 開始
 
@@ -41,7 +40,7 @@ jobs:
   job_id:
     runs-on: "________" # 任何
     steps:
-      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@<tag/version>"
+      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@<Version>"
 ```
 
 ### 📥 輸入
