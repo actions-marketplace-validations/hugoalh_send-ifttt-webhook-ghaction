@@ -15334,7 +15334,7 @@ try {
 
 /***/ }),
 
-/***/ 5137:
+/***/ 9164:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -15349,7 +15349,7 @@ __nccwpck_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: external "node:assert"
 const external_node_assert_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:assert");
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/object-meta.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/object-meta.js
 /**
  * @access private
  * @class ObjectMeta
@@ -15405,7 +15405,7 @@ class ObjectMeta {
 }
 /* harmony default export */ const object_meta = (ObjectMeta);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/type-of.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/type-of.js
 /**
  * @function typeOf
  * @description Determine item type of the unevaluated operand.
@@ -15433,7 +15433,7 @@ function typeOf(item) {
 }
 /* harmony default export */ const type_of = (typeOf);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/are-equal.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/are-equal.js
 
 
 
@@ -15656,7 +15656,7 @@ function areEqual(...items) {
 }
 /* harmony default export */ const are_equal = (areEqual);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/check-item.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/check-item.js
 /**
  * @access private
  * @function checkNumber
@@ -15714,7 +15714,7 @@ function undefinish(...inputs) {
 }
 /* harmony default export */ const main = (undefinish);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/array.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/array.js
 
 
 /**
@@ -15833,37 +15833,30 @@ class ArrayItemFilter {
 }
 /* harmony default export */ const array = (ArrayItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/integer-types-range.js
-const grid8 = 2n ** 8n;
-const grid16 = 2n ** 16n;
-const grid32 = 2n ** 32n;
-const grid64 = 2n ** 64n;
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/integer-types-range.js
 /**
  * @access private
  * @function integerTypesRangeInt
- * @param {bigint} grid Grid.
+ * @param {bigint} base
  * @returns {[bigint, bigint]}
  */
-function integerTypesRangeInt(grid) {
-	let gridHalf = grid / 2n;
+function integerTypesRangeInt(base) {
+	let gridHalf = (2n ** base) / 2n;
 	return [-gridHalf, gridHalf - 1n];
 }
 /**
  * @access private
  * @function integerTypesRangeUInt
- * @param {bigint} grid Grid.
+ * @param {bigint} base
  * @returns {[bigint, bigint]}
  */
-function integerTypesRangeUInt(grid) {
-	return [0n, grid - 1n];
+function integerTypesRangeUInt(base) {
+	return [0n, (2n ** base) - 1n];
 }
-/**
- * @typedef {boolean} AsNumber Whether to return result as type of number.
- */
 /**
  * @access private
  * @function integerTypesRangeOutput
- * @template {AsNumber} T
+ * @template {boolean} T
  * @param {[bigint, bigint]} output Output.
  * @param {T} [asNumber=false] Whether to return result as type of number.
  * @returns {T extends true ? [number, number] : [bigint, bigint]}
@@ -15880,7 +15873,7 @@ function integerTypesRangeOutput(output, asNumber = false) {
  * @access private
  * @function integerTypesRange
  * @param {string} name Name of the integer type.
- * @param {AsNumber} [asNumber=false] Whether to return result as type of number.
+ * @param {boolean} [asNumber=false] Whether to return result as type of number.
  * @returns {ReturnType<typeof integerTypesRangeOutput>}
  */
 function integerTypesRange(name, asNumber = false) {
@@ -15889,22 +15882,25 @@ function integerTypesRange(name, asNumber = false) {
 		case "Char":
 		case "int8":
 		case "Int8":
-			return integerTypesRangeOutput(integerTypesRangeInt(grid8), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeInt(8n), asNumber);
 		case "int16":
 		case "Int16":
 		case "short":
 		case "Short":
-			return integerTypesRangeOutput(integerTypesRangeInt(grid16), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeInt(16n), asNumber);
 		case "int32":
 		case "Int32":
 		case "rune":
 		case "Rune":
-			return integerTypesRangeOutput(integerTypesRangeInt(grid32), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeInt(32n), asNumber);
 		case "int64":
 		case "Int64":
 		case "long":
 		case "Long":
-			return integerTypesRangeOutput(integerTypesRangeInt(grid64), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeInt(64n), asNumber);
+		case "int128":
+		case "Int128":
+			return integerTypesRangeOutput(integerTypesRangeInt(128n), asNumber);
 		case "byte":
 		case "Byte":
 		case "uchar":
@@ -15913,32 +15909,36 @@ function integerTypesRange(name, asNumber = false) {
 		case "uint8":
 		case "Uint8":
 		case "UInt8":
-			return integerTypesRangeOutput(integerTypesRangeUInt(grid8), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeUInt(8n), asNumber);
 		case "uint16":
 		case "Uint16":
 		case "UInt16":
 		case "ushort":
 		case "Ushort":
 		case "UShort":
-			return integerTypesRangeOutput(integerTypesRangeUInt(grid16), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeUInt(16n), asNumber);
 		case "uint32":
 		case "Uint32":
 		case "UInt32":
-			return integerTypesRangeOutput(integerTypesRangeUInt(grid32), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeUInt(32n), asNumber);
 		case "uint64":
 		case "Uint64":
 		case "UInt64":
 		case "ulong":
 		case "Ulong":
 		case "ULong":
-			return integerTypesRangeOutput(integerTypesRangeUInt(grid64), asNumber);
+			return integerTypesRangeOutput(integerTypesRangeUInt(64n), asNumber);
+		case "uint128":
+		case "Uint128":
+		case "UInt128":
+			return integerTypesRangeOutput(integerTypesRangeUInt(128n), asNumber);
 		default:
 			throw new RangeError(`\`${name}\` is not a valid interger type.`);
 	}
 }
 /* harmony default export */ const integer_types_range = (integerTypesRange);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/internal/is-prime-number.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/is-prime-number.js
 /**
  * @access private
  * @function bigIntegerSquareRoot
@@ -15993,7 +15993,7 @@ function isPrimeNumber(item) {
 }
 /* harmony default export */ const is_prime_number = (isPrimeNumber);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/big-integer.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/big-integer.js
 
 
 
@@ -16157,7 +16157,7 @@ class BigIntegerItemFilter {
 
 // EXTERNAL MODULE: external "node:util"
 var external_node_util_ = __nccwpck_require__(7261);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/function.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/function.js
 
 
 /**
@@ -16218,7 +16218,7 @@ class FunctionItemFilter {
 }
 /* harmony default export */ const item_filter_function = (FunctionItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/object.js
 /**
  * @class ObjectItemFilter
  * @description Determine item with the filter of type of object.
@@ -16241,7 +16241,7 @@ class ObjectItemFilter {
 }
 /* harmony default export */ const object = (ObjectItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/generator.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/generator.js
 
 
 
@@ -16289,7 +16289,7 @@ class GeneratorItemFilter {
 }
 /* harmony default export */ const generator = (GeneratorItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/array.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/array.js
 
 /**
  * @function isArray
@@ -16322,7 +16322,7 @@ function isArray(item, {
 }
 /* harmony default export */ const is_array = (isArray);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/big-integer.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/big-integer.js
 
 /**
  * @function isBigInteger
@@ -16377,7 +16377,7 @@ function isBigInteger(item, {
 }
 /* harmony default export */ const is_big_integer = (isBigInteger);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/function.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/function.js
 
 /**
  * @function isFunction
@@ -16401,7 +16401,7 @@ function isFunction(item, {
 }
 /* harmony default export */ const is_function = (isFunction);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/generator.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/generator.js
 
 /**
  * @function isGenerator
@@ -16422,7 +16422,7 @@ function isGenerator(item, {
 }
 /* harmony default export */ const is_generator = (isGenerator);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/plain-object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/plain-object.js
 
 
 
@@ -16579,7 +16579,7 @@ class PlainObjectItemFilter {
 }
 /* harmony default export */ const plain_object = (PlainObjectItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/json.js
 
 
 
@@ -16728,7 +16728,7 @@ class JSONItemFilter {
 }
 /* harmony default export */ const json = (JSONItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/json.js
 
 /**
  * @function isJSON
@@ -16767,7 +16767,7 @@ function isJSON(item, {
 }
 /* harmony default export */ const is_json = (isJSON);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/map.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/map.js
 
 
 /**
@@ -16824,7 +16824,7 @@ class MapItemFilter {
 }
 /* harmony default export */ const map = (MapItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/map.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/map.js
 
 /**
  * @function isMap
@@ -16851,7 +16851,7 @@ function isMap(item, {
 }
 /* harmony default export */ const is_map = (isMap);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/number.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/number.js
 
 
 
@@ -17072,7 +17072,7 @@ class NumberItemFilter {
 }
 /* harmony default export */ const number = (NumberItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/number.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/number.js
 
 /**
  * @function isNumber
@@ -17138,7 +17138,7 @@ function isNumber(item, {
 }
 /* harmony default export */ const is_number = (isNumber);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/object.js
 
 /**
  * @function isObject
@@ -17151,7 +17151,7 @@ function isObject(item) {
 }
 /* harmony default export */ const is_object = (isObject);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/plain-object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/plain-object.js
 
 /**
  * @function isPlainObject
@@ -17200,7 +17200,7 @@ function isPlainObject(item, {
 }
 /* harmony default export */ const is_plain_object = (isPlainObject);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/regular-expression.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/regular-expression.js
 
 /**
  * @class RegularExpressionItemFilter
@@ -17304,7 +17304,7 @@ class RegularExpressionItemFilter {
 }
 /* harmony default export */ const regular_expression = (RegularExpressionItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/regular-expression.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/regular-expression.js
 
 /**
  * @function isRegularExpression
@@ -17345,7 +17345,7 @@ function isRegularExpression(item, {
 }
 /* harmony default export */ const is_regular_expression = (isRegularExpression);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/set.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/set.js
 
 
 /**
@@ -17402,7 +17402,7 @@ class SetItemFilter {
 }
 /* harmony default export */ const set = (SetItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/set.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/set.js
 
 /**
  * @function isSet
@@ -17429,7 +17429,7 @@ function isSet(item, {
 }
 /* harmony default export */ const is_set = (isSet);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/string.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/string.js
 
 
 const newLineRegExp = /[\n\r]/gu;
@@ -17568,7 +17568,7 @@ class StringItemFilter {
 }
 /* harmony default export */ const string = (StringItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/string.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/string.js
 
 /**
  * @function isString
@@ -17616,7 +17616,7 @@ function isString(item, {
 }
 /* harmony default export */ const is_string = (isString);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/stringify-json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/stringify-json.js
 
 /**
  * @class StringifyJSONItemFilter
@@ -17681,7 +17681,7 @@ class StringifyJSONItemFilter {
 }
 /* harmony default export */ const stringify_json = (StringifyJSONItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/is/stringify-json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/stringify-json.js
 
 /**
  * @function isStringifyJSON
@@ -17723,7 +17723,7 @@ function isStringifyJSON(item, {
 }
 /* harmony default export */ const is_stringify_json = (isStringifyJSON);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.0.0/node_modules/@hugoalh/advanced-determine/lib/main.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/main.js
 
 
 
@@ -21146,7 +21146,7 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony import */ var chalk__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4261);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(7733);
-/* harmony import */ var _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(5137);
+/* harmony import */ var _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(9164);
 /* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(9647);
 /* harmony import */ var yaml__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(3277);
 
