@@ -520,8 +520,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.OidcClient = void 0;
-const http_client_1 = __nccwpck_require__(3569);
-const auth_1 = __nccwpck_require__(6931);
+const http_client_1 = __nccwpck_require__(7794);
+const auth_1 = __nccwpck_require__(4610);
 const core_1 = __nccwpck_require__(7733);
 class OidcClient {
     static createHttpClient(allowRetry = true, maxRetry = 10) {
@@ -987,7 +987,7 @@ exports.toCommandProperties = toCommandProperties;
 
 /***/ }),
 
-/***/ 6931:
+/***/ 4610:
 /***/ (function(__unused_webpack_module, exports) {
 
 
@@ -1074,7 +1074,7 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 
 /***/ }),
 
-/***/ 3569:
+/***/ 7794:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 
@@ -1111,7 +1111,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
 const http = __importStar(__nccwpck_require__(3685));
 const https = __importStar(__nccwpck_require__(5687));
-const pm = __importStar(__nccwpck_require__(2242));
+const pm = __importStar(__nccwpck_require__(1116));
 const tunnel = __importStar(__nccwpck_require__(4249));
 var HttpCodes;
 (function (HttpCodes) {
@@ -1685,7 +1685,7 @@ const lowercaseKeys = (obj) => Object.keys(obj).reduce((c, k) => ((c[k.toLowerCa
 
 /***/ }),
 
-/***/ 2242:
+/***/ 1116:
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -1716,6 +1716,10 @@ function checkBypass(reqUrl) {
     if (!reqUrl.hostname) {
         return false;
     }
+    const reqHost = reqUrl.hostname;
+    if (isLoopbackAddress(reqHost)) {
+        return true;
+    }
     const noProxy = process.env['no_proxy'] || process.env['NO_PROXY'] || '';
     if (!noProxy) {
         return false;
@@ -1741,14 +1745,47 @@ function checkBypass(reqUrl) {
         .split(',')
         .map(x => x.trim().toUpperCase())
         .filter(x => x)) {
-        if (upperReqHosts.some(x => x === upperNoProxyItem)) {
+        if (upperNoProxyItem === '*' ||
+            upperReqHosts.some(x => x === upperNoProxyItem ||
+                x.endsWith(`.${upperNoProxyItem}`) ||
+                (upperNoProxyItem.startsWith('.') &&
+                    x.endsWith(`${upperNoProxyItem}`)))) {
             return true;
         }
     }
     return false;
 }
 exports.checkBypass = checkBypass;
+function isLoopbackAddress(host) {
+    const hostLower = host.toLowerCase();
+    return (hostLower === 'localhost' ||
+        hostLower.startsWith('127.') ||
+        hostLower.startsWith('[::1]') ||
+        hostLower.startsWith('[0:0:0:0:0:0:0:1]'));
+}
 //# sourceMappingURL=proxy.js.map
+
+/***/ }),
+
+/***/ 2755:
+/***/ ((module) => {
+
+/**
+ * @function undefinish
+ * @description Undefinish coalescing.
+ * @param {...unknown} inputs
+ * @returns {unknown}
+ */
+function undefinish(...inputs) {
+	for (let input of inputs) {
+		if (typeof input !== "undefined") {
+			return input;
+		}
+	}
+	return undefined;
+}
+module.exports = undefinish;
+
 
 /***/ }),
 
@@ -15334,7 +15371,7 @@ try {
 
 /***/ }),
 
-/***/ 9164:
+/***/ 1819:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -15349,7 +15386,7 @@ __nccwpck_require__.d(__webpack_exports__, {
 
 ;// CONCATENATED MODULE: external "node:assert"
 const external_node_assert_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:assert");
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/object-meta.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/internal/object-meta.js
 /**
  * @access private
  * @class ObjectMeta
@@ -15405,7 +15442,7 @@ class ObjectMeta {
 }
 /* harmony default export */ const object_meta = (ObjectMeta);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/type-of.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/type-of.js
 /**
  * @function typeOf
  * @description Determine item type of the unevaluated operand.
@@ -15433,7 +15470,7 @@ function typeOf(item) {
 }
 /* harmony default export */ const type_of = (typeOf);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/are-equal.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/are-equal.js
 
 
 
@@ -15656,7 +15693,7 @@ function areEqual(...items) {
 }
 /* harmony default export */ const are_equal = (areEqual);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/check-item.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/internal/check-item.js
 /**
  * @access private
  * @function checkNumber
@@ -15697,24 +15734,9 @@ function checkNumberIPSWithMaximum(item, maximum) {
 }
 
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+undefinish@1.0.18/node_modules/@hugoalh/undefinish/lib/main.mjs
-/**
- * @function undefinish
- * @description Undefinish coalescing.
- * @param {...unknown} inputs
- * @returns {unknown}
- */
-function undefinish(...inputs) {
-	for (let input of inputs) {
-		if (typeof input !== "undefined") {
-			return input;
-		}
-	}
-	return undefined;
-}
-/* harmony default export */ const main = (undefinish);
-
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/array.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@hugoalh+undefinish@1.0.20/node_modules/@hugoalh/undefinish/lib/main.js
+var main = __nccwpck_require__(2755);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/array.js
 
 
 /**
@@ -15830,10 +15852,39 @@ class ArrayItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of array.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty array.
+	 * @param {number} [param1.maximumLength=Infinity] Maximum length of the array.
+	 * @param {number} [param1.minimumLength=1] Minimum length of the array.
+	 * @param {boolean} [param1.strict=false] Whether to determine no custom defined properties in the array.
+	 * @param {boolean} [param1.unique=false] Whether to determine all of the elements in the array are unique.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		maximumLength,
+		minimumLength,
+		strict = false,
+		unique = false,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			maximumLength,
+			minimumLength,
+			strict,
+			unique,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const array = (ArrayItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/integer-types-range.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/internal/integer-types-range.js
 /**
  * @access private
  * @function integerTypesRangeInt
@@ -15855,52 +15906,35 @@ function integerTypesRangeUInt(base) {
 }
 /**
  * @access private
- * @function integerTypesRangeOutput
- * @template {boolean} T
- * @param {[bigint, bigint]} output Output.
- * @param {T} [asNumber=false] Whether to return result as type of number.
- * @returns {T extends true ? [number, number] : [bigint, bigint]}
- */
-function integerTypesRangeOutput(output, asNumber = false) {
-	if (asNumber) {
-		return output.map((value) => {
-			return Number(value);
-		});
-	}
-	return output;
-}
-/**
- * @access private
  * @function integerTypesRange
  * @param {string} name Name of the integer type.
- * @param {boolean} [asNumber=false] Whether to return result as type of number.
- * @returns {ReturnType<typeof integerTypesRangeOutput>}
+ * @returns {[bigint, bigint]}
  */
-function integerTypesRange(name, asNumber = false) {
+function integerTypesRange(name) {
 	switch (name) {
 		case "char":
 		case "Char":
 		case "int8":
 		case "Int8":
-			return integerTypesRangeOutput(integerTypesRangeInt(8n), asNumber);
+			return integerTypesRangeInt(8n);
 		case "int16":
 		case "Int16":
 		case "short":
 		case "Short":
-			return integerTypesRangeOutput(integerTypesRangeInt(16n), asNumber);
+			return integerTypesRangeInt(16n);
 		case "int32":
 		case "Int32":
 		case "rune":
 		case "Rune":
-			return integerTypesRangeOutput(integerTypesRangeInt(32n), asNumber);
+			return integerTypesRangeInt(32n);
 		case "int64":
 		case "Int64":
 		case "long":
 		case "Long":
-			return integerTypesRangeOutput(integerTypesRangeInt(64n), asNumber);
+			return integerTypesRangeInt(64n);
 		case "int128":
 		case "Int128":
-			return integerTypesRangeOutput(integerTypesRangeInt(128n), asNumber);
+			return integerTypesRangeInt(128n);
 		case "byte":
 		case "Byte":
 		case "uchar":
@@ -15909,36 +15943,36 @@ function integerTypesRange(name, asNumber = false) {
 		case "uint8":
 		case "Uint8":
 		case "UInt8":
-			return integerTypesRangeOutput(integerTypesRangeUInt(8n), asNumber);
+			return integerTypesRangeUInt(8n);
 		case "uint16":
 		case "Uint16":
 		case "UInt16":
 		case "ushort":
 		case "Ushort":
 		case "UShort":
-			return integerTypesRangeOutput(integerTypesRangeUInt(16n), asNumber);
+			return integerTypesRangeUInt(16n);
 		case "uint32":
 		case "Uint32":
 		case "UInt32":
-			return integerTypesRangeOutput(integerTypesRangeUInt(32n), asNumber);
+			return integerTypesRangeUInt(32n);
 		case "uint64":
 		case "Uint64":
 		case "UInt64":
 		case "ulong":
 		case "Ulong":
 		case "ULong":
-			return integerTypesRangeOutput(integerTypesRangeUInt(64n), asNumber);
+			return integerTypesRangeUInt(64n);
 		case "uint128":
 		case "Uint128":
 		case "UInt128":
-			return integerTypesRangeOutput(integerTypesRangeUInt(128n), asNumber);
+			return integerTypesRangeUInt(128n);
 		default:
 			throw new RangeError(`\`${name}\` is not a valid interger type.`);
 	}
 }
 /* harmony default export */ const integer_types_range = (integerTypesRange);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/internal/is-prime-number.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/internal/is-prime-number.js
 /**
  * @access private
  * @function bigIntegerSquareRoot
@@ -15993,7 +16027,7 @@ function isPrimeNumber(item) {
 }
 /* harmony default export */ const is_prime_number = (isPrimeNumber);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/big-integer.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/big-integer.js
 
 
 
@@ -16152,12 +16186,62 @@ class BigIntegerItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of big integer.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.even] Whether an even big integer.
+	 * @param {boolean} [param1.exclusiveMaximum=false] Whether to exclusive maximum of the big integer.
+	 * @param {boolean} [param1.exclusiveMinimum=false] Whether to exclusive minimum of the big integer.
+	 * @param {bigint} [param1.maximum=Infinity] Maximum of the big integer.
+	 * @param {bigint} [param1.minimum=-Infinity] Minimum of the big integer.
+	 * @param {boolean} [param1.negative] Whether a negative big integer.
+	 * @param {boolean} [param1.odd] Whether an odd big integer.
+	 * @param {boolean} [param1.positive] Whether a positive big integer.
+	 * @param {boolean} [param1.prime] Whether a prime big integer.
+	 * @param {boolean} [param1.safe] Whether an IEEE-754 big integer.
+	 * @param {string} [param1.type] Type of the big integer.
+	 * @param {boolean} [param1.unsafe] Whether not an IEEE-754 big integer.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		even,
+		exclusiveMaximum,
+		exclusiveMinimum,
+		maximum,
+		minimum,
+		negative,
+		odd,
+		positive,
+		prime,
+		safe,
+		type,
+		unsafe,
+		...aliases
+	} = {}) {
+		return new this({
+			even,
+			exclusiveMaximum,
+			exclusiveMinimum,
+			maximum,
+			minimum,
+			negative,
+			odd,
+			positive,
+			prime,
+			safe,
+			type,
+			unsafe,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const big_integer = (BigIntegerItemFilter);
 
 // EXTERNAL MODULE: external "node:util"
 var external_node_util_ = __nccwpck_require__(7261);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/function.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/function.js
 
 
 /**
@@ -16215,10 +16299,30 @@ class FunctionItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of function.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.asynchronous] Whether an asynchronous function.
+	 * @param {boolean} [param1.generator] Whether a generator function.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		asynchronous,
+		generator,
+		...aliases
+	} = {}) {
+		return new this({
+			asynchronous,
+			generator,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const item_filter_function = (FunctionItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/object.js
 /**
  * @class ObjectItemFilter
  * @description Determine item with the filter of type of object.
@@ -16231,17 +16335,25 @@ class ObjectItemFilter {
 	constructor() { }// Use to add description during create instance.
 	/**
 	 * @method test
-	 * @description Determine item with the configured filter of type of object.
 	 * @param {unknown} item Item that need to determine.
 	 * @returns {boolean} Determine result.
 	 */
 	test(item) {
 		return (typeof item === "object" && !Array.isArray(item) && item !== null && !(item instanceof RegExp));
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of object.
+	 * @param {unknown} item Item that need to determine.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item) {
+		return new this().test(item);
+	}
 }
 /* harmony default export */ const object = (ObjectItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/generator.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/generator.js
 
 
 
@@ -16286,10 +16398,27 @@ class GeneratorItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of generator.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.asynchronous] Whether an asynchronous generator.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		asynchronous,
+		...aliases
+	} = {}) {
+		return new this({
+			asynchronous,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const generator = (GeneratorItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/array.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/array.js
 
 /**
  * @function isArray
@@ -16322,7 +16451,7 @@ function isArray(item, {
 }
 /* harmony default export */ const is_array = (isArray);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/big-integer.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/big-integer.js
 
 /**
  * @function isBigInteger
@@ -16377,7 +16506,7 @@ function isBigInteger(item, {
 }
 /* harmony default export */ const is_big_integer = (isBigInteger);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/function.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/function.js
 
 /**
  * @function isFunction
@@ -16401,7 +16530,7 @@ function isFunction(item, {
 }
 /* harmony default export */ const is_function = (isFunction);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/generator.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/generator.js
 
 /**
  * @function isGenerator
@@ -16422,7 +16551,7 @@ function isGenerator(item, {
 }
 /* harmony default export */ const is_generator = (isGenerator);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/plain-object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/plain-object.js
 
 
 
@@ -16576,10 +16705,54 @@ class PlainObjectItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of plain object.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty plain object.
+	 * @param {boolean} [param1.configurableEntries] Whether contain configurable entries in the plain object.
+	 * @param {boolean} [param1.enumerableEntries] Whether contain enumerable entries in the plain object.
+	 * @param {boolean} [param1.getterEntries] Whether contain getter entries in the plain object.
+	 * @param {number} [param1.maximumEntries=Infinity] Maximum entries of the plain object.
+	 * @param {number} [param1.minimumEntries=1] Minimum entries of the plain object.
+	 * @param {boolean} [param1.setterEntries] Whether contain setter entries in the plain object.
+	 * @param {boolean} [param1.strict=false] Whether to determine no custom defined properties (i.e.: getters, setters, non-configurable, non-enumerable, and non-writable) in the plain object, and no symbols in the plain object keys.
+	 * @param {boolean} [param1.symbolKeys] Whether contain symbols in the plain object keys.
+	 * @param {boolean} [param1.writableEntries] Whether contain writable entries in the plain object.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		configurableEntries,
+		enumerableEntries,
+		getterEntries,
+		maximumEntries,
+		minimumEntries,
+		setterEntries,
+		strict = false,
+		symbolKeys,
+		writableEntries,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			configurableEntries,
+			enumerableEntries,
+			getterEntries,
+			maximumEntries,
+			minimumEntries,
+			setterEntries,
+			strict,
+			symbolKeys,
+			writableEntries,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const plain_object = (PlainObjectItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/json.js
 
 
 
@@ -16725,10 +16898,45 @@ class JSONItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of JSON.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty JSON.
+	 * @param {boolean} [param1.arrayRoot] Whether type of array as the root of the JSON.
+	 * @param {RegExp} [param1.keysPattern] Whether a pattern matchable JSON keys.
+	 * @param {number} [param1.maximumEntries=Infinity] Maximum entries of the JSON.
+	 * @param {number} [param1.minimumEntries=1] Minimum entries of the JSON.
+	 * @param {boolean} [param1.strict=false] Whether to determine type of array not as the root of the JSON, and no illegal namespace characters in the JSON keys.
+	 * @param {boolean} [param1.strictKeys=false] Whether to determine no illegal namespace characters in the JSON keys.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		arrayRoot,
+		keysPattern,
+		maximumEntries,
+		minimumEntries,
+		strict = false,
+		strictKeys = false,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			arrayRoot,
+			keysPattern,
+			maximumEntries,
+			minimumEntries,
+			strict,
+			strictKeys,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const json = (JSONItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/json.js
 
 /**
  * @function isJSON
@@ -16767,7 +16975,7 @@ function isJSON(item, {
 }
 /* harmony default export */ const is_json = (isJSON);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/map.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/map.js
 
 
 /**
@@ -16821,10 +17029,33 @@ class MapItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of map.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty map.
+	 * @param {number} [param1.maximumSize=Infinity] Maximum size of the map.
+	 * @param {number} [param1.minimumSize=1] Minimum size of the map.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		maximumSize,
+		minimumSize,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			maximumSize,
+			minimumSize,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const map = (MapItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/map.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/map.js
 
 /**
  * @function isMap
@@ -16851,7 +17082,7 @@ function isMap(item, {
 }
 /* harmony default export */ const is_map = (isMap);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/number.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/number.js
 
 
 
@@ -16974,7 +17205,9 @@ class NumberItemFilter {
 			this.#exclusiveMinimum = false;
 			this.#float = undefined;
 			this.#integer = true;
-			[this.#minimum, this.#maximum] = integer_types_range(type, true);
+			let [itrMinimum, itrMaximum] = integer_types_range(type);
+			this.#maximum = Number(itrMaximum);
+			this.#minimum = Number(itrMinimum);
 		} else if (typeof type === "undefined") {
 			this.#exclusiveMaximum = exclusiveMaximum;
 			this.#exclusiveMinimum = exclusiveMinimum;
@@ -17069,10 +17302,72 @@ class NumberItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of number.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.even] Whether an even number.
+	 * @param {boolean} [param1.exclusiveMaximum=false] Whether to exclusive maximum of the number.
+	 * @param {boolean} [param1.exclusiveMinimum=false] Whether to exclusive minimum of the number.
+	 * @param {boolean} [param1.finite] Whether a finite number.
+	 * @param {boolean} [param1.float] Whether a float number.
+	 * @param {boolean} [param1.infinite] Whether an infinite number.
+	 * @param {boolean} [param1.integer] Whether an integer number.
+	 * @param {number} [param1.maximum=Infinity] Maximum of the number.
+	 * @param {number} [param1.minimum=-Infinity] Minimum of the number.
+	 * @param {boolean} [param1.negative] Whether a negative number.
+	 * @param {boolean} [param1.odd] Whether an odd number.
+	 * @param {boolean} [param1.positive] Whether a positive number.
+	 * @param {boolean} [param1.prime] Whether a prime number.
+	 * @param {boolean} [param1.safe] Whether an IEEE-754 number.
+	 * @param {string} [param1.type] Type of the integer.
+	 * @param {boolean} [param1.unsafe] Whether not an IEEE-754 number.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		even,
+		exclusiveMaximum,
+		exclusiveMinimum,
+		finite,
+		float,
+		infinite,
+		integer,
+		maximum,
+		minimum,
+		negative,
+		odd,
+		positive,
+		prime,
+		safe,
+		type,
+		unsafe,
+		...aliases
+	} = {}) {
+		return new this({
+			even,
+			exclusiveMaximum,
+			exclusiveMinimum,
+			finite,
+			float,
+			infinite,
+			integer,
+			maximum,
+			minimum,
+			negative,
+			odd,
+			positive,
+			prime,
+			safe,
+			type,
+			unsafe,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const number = (NumberItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/number.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/number.js
 
 /**
  * @function isNumber
@@ -17138,7 +17433,7 @@ function isNumber(item, {
 }
 /* harmony default export */ const is_number = (isNumber);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/object.js
 
 /**
  * @function isObject
@@ -17151,7 +17446,7 @@ function isObject(item) {
 }
 /* harmony default export */ const is_object = (isObject);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/plain-object.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/plain-object.js
 
 /**
  * @function isPlainObject
@@ -17200,7 +17495,7 @@ function isPlainObject(item, {
 }
 /* harmony default export */ const is_plain_object = (isPlainObject);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/regular-expression.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/regular-expression.js
 
 /**
  * @class RegularExpressionItemFilter
@@ -17301,10 +17596,45 @@ class RegularExpressionItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of regular expression.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.caseInsensitive] Whether a case insensitive regular expression.
+	 * @param {boolean} [param1.dotAll] Whether a dot-all regular expression.
+	 * @param {boolean} [param1.exactly] Whether an exactly regular expression.
+	 * @param {boolean} [param1.global] Whether a global regular expression.
+	 * @param {boolean} [param1.multipleLine] Whether a multiple line regular expression.
+	 * @param {boolean} [param1.sticky] Whether a sticky regular expression.
+	 * @param {boolean} [param1.unicode] Whether an unicode regular expression.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		caseInsensitive,
+		dotAll,
+		exactly,
+		global,
+		multipleLine,
+		sticky,
+		unicode,
+		...aliases
+	} = {}) {
+		return new this({
+			caseInsensitive,
+			dotAll,
+			exactly,
+			global,
+			multipleLine,
+			sticky,
+			unicode,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const regular_expression = (RegularExpressionItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/regular-expression.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/regular-expression.js
 
 /**
  * @function isRegularExpression
@@ -17345,7 +17675,7 @@ function isRegularExpression(item, {
 }
 /* harmony default export */ const is_regular_expression = (isRegularExpression);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/set.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/set.js
 
 
 /**
@@ -17399,10 +17729,33 @@ class SetItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of set.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty set.
+	 * @param {number} [param1.maximumSize=Infinity] Maximum size of the set.
+	 * @param {number} [param1.minimumSize=1] Minimum size of the set.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		maximumSize,
+		minimumSize,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			maximumSize,
+			minimumSize,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const set = (SetItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/set.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/set.js
 
 /**
  * @function isSet
@@ -17429,7 +17782,7 @@ function isSet(item, {
 }
 /* harmony default export */ const is_set = (isSet);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/string.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/string.js
 
 
 const newLineRegExp = /[\n\r]/gu;
@@ -17565,10 +17918,54 @@ class StringItemFilter {
 		}
 		return true;
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of string.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty string.
+	 * @param {boolean} [param1.ascii] Whether an ASCII string.
+	 * @param {boolean} [param1.lowerCase] Whether a lower case string.
+	 * @param {number} [param1.maximumLength=Infinity] Maximum length of the string.
+	 * @param {number} [param1.minimumLength=1] Minimum length of the string.
+	 * @param {boolean} [param1.multipleLine] Whether a multiple lines string.
+	 * @param {RegExp} [param1.pattern] Whether a pattern matchable string.
+	 * @param {boolean} [param1.preTrim=false] Whether to trim the string internally before determine.
+	 * @param {boolean} [param1.singleLine] Whether a single line string.
+	 * @param {boolean} [param1.upperCase] Whether an upper case string.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		ascii,
+		lowerCase,
+		maximumLength,
+		minimumLength,
+		multipleLine,
+		pattern,
+		preTrim = false,
+		singleLine,
+		upperCase,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			ascii,
+			lowerCase,
+			maximumLength,
+			minimumLength,
+			multipleLine,
+			pattern,
+			preTrim,
+			singleLine,
+			upperCase,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const string = (StringItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/string.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/string.js
 
 /**
  * @function isString
@@ -17616,7 +18013,7 @@ function isString(item, {
 }
 /* harmony default export */ const is_string = (isString);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/item-filter/stringify-json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/item-filter/stringify-json.js
 
 /**
  * @class StringifyJSONItemFilter
@@ -17678,10 +18075,45 @@ class StringifyJSONItemFilter {
 		}
 		return this.#jsonItemFilterWrapper.test(itemParse);
 	}
+	/**
+	 * @static test
+	 * @description Determine item with the filter of type of stringify JSON.
+	 * @param {unknown} item Item that need to determine.
+	 * @param {object} [param1={}] Options.
+	 * @param {boolean} [param1.allowEmpty=false] Whether to allow an empty stringify JSON.
+	 * @param {boolean} [param1.arrayRoot] Whether type of array as the root of the stringify JSON.
+	 * @param {RegExp} [param1.keysPattern] Whether a pattern matchable stringify JSON keys.
+	 * @param {number} [param1.maximumEntries=Infinity] Maximum entries of the stringify JSON.
+	 * @param {number} [param1.minimumEntries=1] Minimum entries of the stringify JSON.
+	 * @param {boolean} [param1.strict=false] Whether to determine type of array not as the root of the stringify JSON, and no illegal namespace characters in the stringify JSON keys.
+	 * @param {boolean} [param1.strictKeys=false] Whether to determine no illegal namespace characters in the stringify JSON keys.
+	 * @returns {boolean} Determine result.
+	 */
+	static test(item, {
+		allowEmpty = false,
+		arrayRoot,
+		keysPattern,
+		maximumEntries,
+		minimumEntries,
+		strict = false,
+		strictKeys = false,
+		...aliases
+	} = {}) {
+		return new this({
+			allowEmpty,
+			arrayRoot,
+			keysPattern,
+			maximumEntries,
+			minimumEntries,
+			strict,
+			strictKeys,
+			...aliases
+		}).test(item);
+	}
 }
 /* harmony default export */ const stringify_json = (StringifyJSONItemFilter);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/is/stringify-json.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/is/stringify-json.js
 
 /**
  * @function isStringifyJSON
@@ -17723,7 +18155,7 @@ function isStringifyJSON(item, {
 }
 /* harmony default export */ const is_stringify_json = (isStringifyJSON);
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.1.0/node_modules/@hugoalh/advanced-determine/lib/main.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@hugoalh+advanced-determine@10.2.1/node_modules/@hugoalh/advanced-determine/lib/main.js
 
 
 
@@ -18977,7 +19409,7 @@ return new B(c,{type:"multipart/form-data; boundary="+b})}
 
 /***/ }),
 
-/***/ 9647:
+/***/ 2262:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
 
 
@@ -19058,7 +19490,7 @@ var external_node_util_ = __nccwpck_require__(7261);
 var fetch_blob = __nccwpck_require__(8967);
 // EXTERNAL MODULE: ./node_modules/.pnpm/formdata-polyfill@4.0.10/node_modules/formdata-polyfill/esm.min.js
 var esm_min = __nccwpck_require__(2000);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/errors/base.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/errors/base.js
 class FetchBaseError extends Error {
 	constructor(message, type) {
 		super(message);
@@ -19077,7 +19509,7 @@ class FetchBaseError extends Error {
 	}
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/errors/fetch-error.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/errors/fetch-error.js
 
 
 
@@ -19105,7 +19537,7 @@ class FetchError extends FetchBaseError {
 	}
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/is.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/utils/is.js
 /**
  * Is.js
  *
@@ -19194,7 +19626,7 @@ const isSameProtocol = (destination, original) => {
 	return orig === dest;
 };
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/body.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/body.js
 
 /**
  * Body.js
@@ -19318,7 +19750,7 @@ class Body {
 			return formData;
 		}
 
-		const {toFormData} = await __nccwpck_require__.e(/* import() */ 161).then(__nccwpck_require__.bind(__nccwpck_require__, 8161));
+		const {toFormData} = await __nccwpck_require__.e(/* import() */ 747).then(__nccwpck_require__.bind(__nccwpck_require__, 747));
 		return toFormData(this.body, ct);
 	}
 
@@ -19593,7 +20025,7 @@ const writeToStream = async (dest, {body}) => {
 	}
 };
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/headers.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/headers.js
 /**
  * Headers.js
  *
@@ -19862,7 +20294,7 @@ function fromRawHeaders(headers = []) {
 	);
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/is-redirect.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/utils/is-redirect.js
 const redirectStatus = new Set([301, 302, 303, 307, 308]);
 
 /**
@@ -19875,7 +20307,7 @@ const isRedirect = code => {
 	return redirectStatus.has(code);
 };
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/response.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/response.js
 /**
  * Response.js
  *
@@ -20039,7 +20471,7 @@ Object.defineProperties(Response.prototype, {
 
 ;// CONCATENATED MODULE: external "node:url"
 const external_node_url_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:url");
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/get-search.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/utils/get-search.js
 const getSearch = parsedURL => {
 	if (parsedURL.search) {
 		return parsedURL.search;
@@ -20052,7 +20484,7 @@ const getSearch = parsedURL => {
 
 ;// CONCATENATED MODULE: external "node:net"
 const external_node_net_namespaceObject = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("node:net");
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/utils/referrer.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/utils/referrer.js
 
 
 /**
@@ -20394,7 +20826,7 @@ function parseReferrerPolicyFromHeader(headers) {
 	return policy;
 }
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/request.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/request.js
 /**
  * Request.js
  *
@@ -20711,7 +21143,7 @@ const getNodeRequestOptions = request => {
 	};
 };
 
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/errors/abort-error.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/errors/abort-error.js
 
 
 /**
@@ -20725,7 +21157,7 @@ class AbortError extends FetchBaseError {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/fetch-blob@3.2.0/node_modules/fetch-blob/from.js + 2 modules
 var from = __nccwpck_require__(7253);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.0/node_modules/node-fetch/src/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/node-fetch@3.3.1/node_modules/node-fetch/src/index.js
 /**
  * Index.js
  *
@@ -21146,8 +21578,8 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony import */ var chalk__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(4261);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(7733);
-/* harmony import */ var _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(9164);
-/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(9647);
+/* harmony import */ var _hugoalh_advanced_determine__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(1819);
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_4__ = __nccwpck_require__(2262);
 /* harmony import */ var yaml__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(3277);
 
 
