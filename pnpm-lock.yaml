@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@actions/core': ^1.10.0
   '@hugoalh/advanced-determine': ^10.2.1
-  '@types/node': ^18.15.0
+  '@types/node': ^18.15.2
   '@vercel/ncc': ^0.36.1
   chalk: ^5.2.0
   eslint: ^8.36.0
@@ -20,7 +20,7 @@ dependencies:
   yaml: 2.2.1
 
 devDependencies:
-  '@types/node': 18.15.0
+  '@types/node': 18.15.2
   '@vercel/ncc': 0.36.1
   eslint: 8.36.0
   eslint-plugin-only-warn: 1.1.0
@@ -131,8 +131,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@types/node/18.15.0:
-    resolution: {integrity: sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==}
+  /@types/node/18.15.2:
+    resolution: {integrity: sha512-sDPHm2wfx2QhrMDK0pOt2J4KLJMAcerqWNvnED0itPRJWvI+bK+uNHzcH1dFsBlf7G3u8tqXmRF3wkvL9yUwMw==}
     dev: true
 
   /@vercel/ncc/0.36.1:
