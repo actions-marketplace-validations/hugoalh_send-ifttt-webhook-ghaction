@@ -11,11 +11,10 @@
 > | ❌{🐛} | **No (Issue):** Not supported due to confirmed contains bugs and/or issues. |
 > | ❌{🧓} | **No (Old):** Not supported due to too old. |
 
-| **Versions** | **Status** | **Target - GitHub Actions Runner** | **Target - Docker** | **Target - NodeJS** | **Target - NPM** | **Target - PowerShell** |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| v5.0.X | L | >= v2.297.0 | *N/A* | ^ v16.13.0 | *N/A* | *N/A* |
-| v4.X.X | ❌{🐛🧓} | *N/A* | Latest Release | >= v14.15.0 | >= v6.14.8 | >= v7.2.0 |
-| < v4.0.0 | ❌{🐛🧓} | *N/A* | *N/A* | <= v12.13.0 | <= v6.12.0 | *N/A* |
+| **Versions** | **Status** | **Target - GitHub Actions Runner** | **Target - NodeJS** |
+|:-:|:-:|:-:|:-:|
+| v5.0.X | L | >= v2.297.0 | ^ v16.13.0 |
+| < v5.0.0 | ❌{🐛🧓} | *N/A* | *Multiple* |
 
 ## Report Vulnerability
 
