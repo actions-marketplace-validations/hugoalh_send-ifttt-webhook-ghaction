@@ -1,10 +1,9 @@
-import { Chalk } from "chalk";
 import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput as ghactionsGetBooleanInput, getInput as ghactionsGetInput, setOutput as ghactionsSetOutput, setSecret as ghactionsSetSecret, startGroup as ghactionsStartGroup, warning as ghactionsWarning } from "@actions/core";
 import { JSONItemFilter, StringifyJSONItemFilter, StringItemFilter } from "@hugoalh/advanced-determine";
+import chalk from "chalk";
 import nodeFetch from "node-fetch";
 import yaml from "yaml";
 try {
-	const chalk = new Chalk({ level: 3 });
 	const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\da-zA-Z][\da-zA-Z_-]*)?[\da-zA-Z])$/u;
 	ghactionsStartGroup(`Import inputs.`);
 	let eventName = ghactionsGetInput("eventname");
