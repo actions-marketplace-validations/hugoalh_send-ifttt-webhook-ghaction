@@ -1,19 +1,15 @@
-import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput as ghactionsGetBooleanInput, getInput as ghactionsGetInput, setOutput as ghactionsSetOutput, setSecret as ghactionsSetSecret, startGroup as ghactionsStartGroup, warning as ghactionsWarning } from "@actions/core";
+import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput as ghactionsGetBooleanInput, getInput as ghactionsGetInput, setOutput as ghactionsSetOutput, setSecret as ghactionsSetSecret, startGroup as ghactionsStartGroup } from "@actions/core";
 import { isJSON, isString, isStringifyJSON } from "@hugoalh/advanced-determine";
-import chalk from "chalk";
 import nodeFetch from "node-fetch";
 import yaml from "yaml";
+const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\da-zA-Z][\da-zA-Z_-]*)?[\da-zA-Z])$/u;
 try {
-	const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\da-zA-Z][\da-zA-Z_-]*)?[\da-zA-Z])$/u;
 	ghactionsStartGroup(`Import inputs.`);
 	let eventName = ghactionsGetInput("eventname");
 	if (!isString(eventName, { pattern: /^(?:[\da-zA-Z][\da-zA-Z_]*)?[\da-zA-Z]$/u })) {
 		throw new TypeError(`\`${eventName}\` is not a valid IFTTT webhook event name!`);
 	}
-	console.log(`${chalk.bold("Event Name:")} ${eventName}`);
-	if (!isString(eventName, { lowerCase: true })) {
-		ghactionsWarning(`Event name \`${eventName}\` is recommended to keep in lower case to prevent issues!`);
-	}
+	console.log(`Event Name: ${eventName}`);
 	let keyRaw = ghactionsGetInput("key");
 	if (!isString(keyRaw, { pattern: iftttMakerURLRegExp })) {
 		throw new TypeError(`Input \`key\` is not a valid IFTTT webhook key!`);
@@ -36,7 +32,7 @@ try {
 		throw new TypeError(`\`${payload}\` is not a valid IFTTT webhook JSON/YAML/YML payload!`);
 	}
 	let payloadStringify = JSON.stringify(payload);
-	console.log(`${chalk.bold("Payload:")} ${payloadStringify}`);
+	console.log(`Payload: ${payloadStringify}`);
 	ghactionsEndGroup();
 	ghactionsStartGroup(`Post network request to IFTTT.`);
 	let response = await nodeFetch(`https://maker.ifttt.com/trigger/${eventName}${arbitrary ? "/json" : ""}/with/key/${key}`, {
@@ -59,8 +55,8 @@ try {
 	if (!response.ok) {
 		throw new Error(`Unexpected response status \`${response.status} ${response.statusText}\`: ${responseText}`);
 	}
-	console.log(`${chalk.bold("Response Status:")} ${response.status} ${response.statusText}`);
-	console.log(`${chalk.bold("Response Content:")} ${responseText}`);
+	console.log(`Response Status: ${response.status} ${response.statusText}`);
+	console.log(`Response Content: ${responseText}`);
 	ghactionsEndGroup();
 } catch (error) {
 	ghactionsError(error?.message ?? error);
