@@ -4,9 +4,8 @@
 
 # Trigger IFTTT Webhook Applet (GitHub Action)
 
-[`TriggerIFTTTWebhookApplet.GitHubAction`](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction)
-
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&style=flat-square "License")
+[![GitHub Repository](https://img.shields.io/badge/Repository-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Repository")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction)
 [![GitHub Stars](https://img.shields.io/github/stars/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Stars&logo=github&logoColor=ffffff&style=flat-square "GitHub Stars")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/stargazers)
 [![GitHub Contributors](https://img.shields.io/github/contributors/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Contributors&logo=github&logoColor=ffffff&style=flat-square "GitHub Contributors")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/graphs/contributors)
 [![GitHub Issues](https://img.shields.io/github/issues-raw/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Issues&logo=github&logoColor=ffffff&style=flat-square "GitHub Issues")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/issues)
@@ -26,7 +25,7 @@ A GitHub Action to trigger IFTTT webhook applet.
 
 > **⚠ Important:** This documentation is v5.0.0 based; To view other version's documentation, please visit the [versions list](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/tags) and select the correct version.
 
-### Target
+### Getting Started
 
 - GitHub Actions Runner >= v2.297.0
   - NodeJS ^ v16.13.0
