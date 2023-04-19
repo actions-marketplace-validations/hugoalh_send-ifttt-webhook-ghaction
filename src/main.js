@@ -2,11 +2,11 @@ import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput
 import { isJSON, isString, isStringifyJSON } from "@hugoalh/advanced-determine";
 import nodeFetch from "node-fetch";
 import yaml from "yaml";
-const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\da-zA-Z][\da-zA-Z_-]*)?[\da-zA-Z])$/u;
+const iftttMakerURLRegExp = /^(?:https:\/\/maker\.ifttt\.com\/use\/)?(?<key>(?:[\dA-Za-z][\dA-Za-z_-]*)?[\dA-Za-z])$/u;
 try {
 	ghactionsStartGroup(`Import inputs.`);
 	let eventName = ghactionsGetInput("eventname");
-	if (!isString(eventName, { pattern: /^(?:[\da-zA-Z][\da-zA-Z_]*)?[\da-zA-Z]$/u })) {
+	if (!isString(eventName, { pattern: /^(?:[\dA-Za-z][\dA-Za-z_]*)?[\dA-Za-z]$/u })) {
 		throw new TypeError(`\`${eventName}\` is not a valid IFTTT webhook event name!`);
 	}
 	console.log(`Event Name: ${eventName}`);
