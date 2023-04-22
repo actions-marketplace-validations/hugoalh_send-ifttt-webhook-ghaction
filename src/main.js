@@ -9,7 +9,7 @@ try {
 	if (!isString(eventName, { pattern: /^(?:[\dA-Za-z][\dA-Za-z_]*)?[\dA-Za-z]$/u })) {
 		throw new TypeError(`\`${eventName}\` is not a valid IFTTT webhook event name!`);
 	}
-	console.log(`Event Name: ${eventName}`);
+	console.log(`Event Name: "${eventName}"`);
 	let keyRaw = ghactionsGetInput("key");
 	if (!isString(keyRaw, { pattern: iftttMakerURLRegExp })) {
 		throw new TypeError(`Input \`key\` is not a valid IFTTT webhook key!`);
@@ -20,6 +20,7 @@ try {
 	if (typeof arbitrary !== "boolean") {
 		throw new TypeError(`Input \`arbitrary\` must be type of boolean!`);
 	}
+	console.log(`Arbitrary: ${arbitrary}`);
 	let payloadRaw = ghactionsGetInput("payload");
 	let payload = isStringifyJSON(payloadRaw, {
 		allowEmpty: true,
@@ -40,7 +41,7 @@ try {
 		follow: 1,
 		headers: {
 			"Content-Type": "application/json",
-			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.2 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
+			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.3 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
 		},
 		method: "POST",
 		redirect: "follow"
