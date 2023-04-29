@@ -41,7 +41,7 @@ try {
 		follow: 1,
 		headers: {
 			"Content-Type": "application/json",
-			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.3 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
+			"User-Agent": `TriggerIFTTTWebhookApplet.GitHubAction/5.0.4 NodeJS/${process.versions.node}-${process.platform}-${process.arch}`
 		},
 		method: "POST",
 		redirect: "follow"
