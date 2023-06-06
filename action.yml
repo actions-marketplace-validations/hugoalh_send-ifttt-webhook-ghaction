@@ -2,11 +2,11 @@ name: "Send IFTTT Webhook"
 author: "hugoalh"
 description: "Send IFTTT webhook."
 inputs:
-  eventname:
-    description: "{string} Event name."
-    required: true
   key:
     description: "{string} Key."
+    required: true
+  eventname:
+    description: "{string} Event name."
     required: true
   arbitrary:
     description: "{boolean} Whether to send with an arbitrary payload."

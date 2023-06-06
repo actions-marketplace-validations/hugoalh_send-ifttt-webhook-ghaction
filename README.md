@@ -45,10 +45,6 @@ jobs:
 > |:-:|:--|
 > | 🔐 | Should be an encrypted secret. |
 
-#### `eventname`
-
-`<string>` Event name; Recommended to keep in lower case to prevent issues.
-
 #### `key`
 
 **🔐** `<string>` Key; Both long and short forms are acceptable.
@@ -57,6 +53,10 @@ jobs:
 https://maker.ifttt.com/use/ifttt-webhook-key  ⬅Long
                             ^^^^^^^^^^^^^^^^^  ⬅Short
 ```
+
+#### `eventname`
+
+`<string>` Event name.
 
 #### `arbitrary`
 
@@ -129,7 +129,7 @@ jobs:
       - uses: "hugoalh/send-ifttt-webhook-ghaction@v5.0.0"
         with:
           eventname: "greeting"
-          key: "${{secrets.IFTTT_WEBHOOKS_KEY}}"
+          key: "${{secrets.IFTTT_WEBHOOK_KEY}}"
           payload: |
             value1: "Hello, world!"
 ```
