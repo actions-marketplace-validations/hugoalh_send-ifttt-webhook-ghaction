@@ -17,6 +17,11 @@
 
 A GitHub Action to send IFTTT webhook.
 
+> **🔗 Other Edition:**
+>
+> - [Deno](https://github.com/hugoalh-studio/send-ifttt-webhook-deno)
+> - [NodeJS](https://github.com/hugoalh-studio/send-ifttt-webhook-nodejs)
+
 ## 📚 Documentation
 
 > **⚠ Important:** This documentation is v5.0.0 based; To view other version's documentation, please visit the [versions list](https://github.com/hugoalh/send-ifttt-webhook-ghaction/tags) and select the correct version.
