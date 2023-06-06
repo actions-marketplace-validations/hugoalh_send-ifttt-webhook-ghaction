@@ -1,16 +1,15 @@
 {
-	"name": "@hugoalh/trigger-ifttt-webhook-applet-ghaction",
+	"name": "@hugoalh/send-ifttt-webhook-ghaction",
 	"version": "5.0.5",
-	"description": "A GitHub Action to trigger IFTTT webhook applet.",
+	"description": "A GitHub Action to send IFTTT webhook.",
 	"keywords": [
 		"github-action",
 		"ifttt",
-		"trigger",
 		"webhook"
 	],
-	"homepage": "https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction#readme",
+	"homepage": "https://github.com/hugoalh/send-ifttt-webhook-ghaction#readme",
 	"bugs": {
-		"url": "https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/issues"
+		"url": "https://github.com/hugoalh/send-ifttt-webhook-ghaction/issues"
 	},
 	"license": "MIT",
 	"author": "hugoalh",
@@ -21,7 +20,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction.git"
+		"url": "git+https://github.com/hugoalh/send-ifttt-webhook-ghaction.git"
 	},
 	"scripts": {
 		"build": "node bundler.js"

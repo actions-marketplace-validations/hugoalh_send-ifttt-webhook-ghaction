@@ -1,29 +1,25 @@
-🌐 | [English](./README.md) / [漢語](./README-ZH.md)
-
----
-
-# Trigger IFTTT Webhook Applet (GitHub Action)
+# Send IFTTT Webhook (GitHub Action)
 
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&style=flat-square "License")
-[![GitHub Repository](https://img.shields.io/badge/Repository-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Repository")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction)
-[![GitHub Stars](https://img.shields.io/github/stars/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Stars&logo=github&logoColor=ffffff&style=flat-square "GitHub Stars")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/stargazers)
-[![GitHub Contributors](https://img.shields.io/github/contributors/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Contributors&logo=github&logoColor=ffffff&style=flat-square "GitHub Contributors")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/graphs/contributors)
-[![GitHub Issues](https://img.shields.io/github/issues-raw/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Issues&logo=github&logoColor=ffffff&style=flat-square "GitHub Issues")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Pull%20Requests&logo=github&logoColor=ffffff&style=flat-square "GitHub Pull Requests")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/pulls)
-[![GitHub Discussions](https://img.shields.io/github/discussions/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Discussions&logo=github&logoColor=ffffff&style=flat-square "GitHub Discussions")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/discussions)
-[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/hugoalh/trigger-ifttt-webhook-applet-ghaction)
+[![GitHub Repository](https://img.shields.io/badge/Repository-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub Repository")](https://github.com/hugoalh/send-ifttt-webhook-ghaction)
+[![GitHub Stars](https://img.shields.io/github/stars/hugoalh/send-ifttt-webhook-ghaction?label=Stars&logo=github&logoColor=ffffff&style=flat-square "GitHub Stars")](https://github.com/hugoalh/send-ifttt-webhook-ghaction/stargazers)
+[![GitHub Contributors](https://img.shields.io/github/contributors/hugoalh/send-ifttt-webhook-ghaction?label=Contributors&logo=github&logoColor=ffffff&style=flat-square "GitHub Contributors")](https://github.com/hugoalh/send-ifttt-webhook-ghaction/graphs/contributors)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/hugoalh/send-ifttt-webhook-ghaction?label=Issues&logo=github&logoColor=ffffff&style=flat-square "GitHub Issues")](https://github.com/hugoalh/send-ifttt-webhook-ghaction/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr-raw/hugoalh/send-ifttt-webhook-ghaction?label=Pull%20Requests&logo=github&logoColor=ffffff&style=flat-square "GitHub Pull Requests")](https://github.com/hugoalh/send-ifttt-webhook-ghaction/pulls)
+[![GitHub Discussions](https://img.shields.io/github/discussions/hugoalh/send-ifttt-webhook-ghaction?label=Discussions&logo=github&logoColor=ffffff&style=flat-square "GitHub Discussions")](https://github.com/hugoalh/send-ifttt-webhook-ghaction/discussions)
+[![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/hugoalh/send-ifttt-webhook-ghaction?label=Grade&logo=codefactor&logoColor=ffffff&style=flat-square "CodeFactor Grade")](https://www.codefactor.io/repository/github/hugoalh/send-ifttt-webhook-ghaction)
 
-| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=&style=flat-square "GitHub Latest Release Date")) | **Pre** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/hugoalh/trigger-ifttt-webhook-applet-ghaction?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
+| **Releases** | **Latest** (![GitHub Latest Release Date](https://img.shields.io/github/release-date/hugoalh/send-ifttt-webhook-ghaction?label=&style=flat-square "GitHub Latest Release Date")) | **Pre** (![GitHub Latest Pre-Release Date](https://img.shields.io/github/release-date-pre/hugoalh/send-ifttt-webhook-ghaction?label=&style=flat-square "GitHub Latest Pre-Release Date")) |
 |:-:|:-:|:-:|
-| [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub")](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/hugoalh/trigger-ifttt-webhook-applet-ghaction/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/hugoalh/trigger-ifttt-webhook-applet-ghaction?sort=semver&label=&style=flat-square "GitHub Latest Release Version") | ![GitHub Latest Pre-Release Version](https://img.shields.io/github/release/hugoalh/trigger-ifttt-webhook-applet-ghaction?include_prereleases&sort=semver&label=&style=flat-square "GitHub Latest Pre-Release Version") |
+| [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff&style=flat-square "GitHub")](https://github.com/hugoalh/send-ifttt-webhook-ghaction/releases) ![GitHub Total Downloads](https://img.shields.io/github/downloads/hugoalh/send-ifttt-webhook-ghaction/total?label=&style=flat-square "GitHub Total Downloads") | ![GitHub Latest Release Version](https://img.shields.io/github/release/hugoalh/send-ifttt-webhook-ghaction?sort=semver&label=&style=flat-square "GitHub Latest Release Version") | ![GitHub Latest Pre-Release Version](https://img.shields.io/github/release/hugoalh/send-ifttt-webhook-ghaction?include_prereleases&sort=semver&label=&style=flat-square "GitHub Latest Pre-Release Version") |
 
 ## 📝 Description
 
-A GitHub Action to trigger IFTTT webhook applet.
+A GitHub Action to send IFTTT webhook.
 
 ## 📚 Documentation
 
-> **⚠ Important:** This documentation is v5.0.0 based; To view other version's documentation, please visit the [versions list](https://github.com/hugoalh/trigger-ifttt-webhook-applet-ghaction/tags) and select the correct version.
+> **⚠ Important:** This documentation is v5.0.0 based; To view other version's documentation, please visit the [versions list](https://github.com/hugoalh/send-ifttt-webhook-ghaction/tags) and select the correct version.
 
 ### Getting Started
 
@@ -35,7 +31,7 @@ jobs:
   job_id:
     runs-on: "________" # Any
     steps:
-      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@<Version>"
+      - uses: "hugoalh/send-ifttt-webhook-ghaction@<Version>"
 ```
 
 ### 📥 Input
@@ -59,7 +55,7 @@ https://maker.ifttt.com/use/ifttt-webhook-key  ⬅Long
 
 #### `arbitrary`
 
-**\[Optional\]** `<boolean = false>` Whether to trigger with an arbitrary payload.
+**\[Optional\]** `<boolean = false>` Whether to send with an arbitrary payload.
 
 #### `payload`
 
@@ -122,10 +118,10 @@ https://maker.ifttt.com/use/ifttt-webhook-key  ⬅Long
 ```yml
 jobs:
   job_id:
-    name: "Trigger IFTTT Webhook Applet"
+    name: "Send IFTTT Webhook"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "hugoalh/trigger-ifttt-webhook-applet-ghaction@v5.0.0"
+      - uses: "hugoalh/send-ifttt-webhook-ghaction@v5.0.0"
         with:
           eventname: "greeting"
           key: "${{secrets.IFTTT_WEBHOOKS_KEY}}"

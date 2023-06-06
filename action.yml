@@ -1,6 +1,6 @@
-name: "Trigger IFTTT Webhook Applet"
+name: "Send IFTTT Webhook"
 author: "hugoalh"
-description: "Trigger IFTTT webhook applet."
+description: "Send IFTTT webhook."
 inputs:
   eventname:
     description: "{string} Event name."
@@ -9,7 +9,7 @@ inputs:
     description: "{string} Key."
     required: true
   arbitrary:
-    description: "{boolean} Whether to trigger with an arbitrary payload."
+    description: "{boolean} Whether to send with an arbitrary payload."
     required: false
     default: "false"
   payload:
