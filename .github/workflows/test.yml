@@ -1,0 +1,13 @@
+name: "Test"
+on:
+  workflow_dispatch:
+jobs:
+  main:
+    name: "Main"
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: "Send IFTTT Webhook"
+      uses: "hugoalh/send-ifttt-webhook-ghaction@main"
+      with:
+        key: "${{secrets.IFTTT_WEBHOOK_KEY}}"
+        eventname: "test"
