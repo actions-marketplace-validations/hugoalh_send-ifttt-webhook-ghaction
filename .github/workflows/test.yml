@@ -1,6 +1,22 @@
 name: "Test"
 on:
   workflow_dispatch:
+    inputs:
+      value1:
+        type: "string"
+        description: "{string} value1"
+        required: false
+        default: ""
+      value2:
+        type: "string"
+        description: "{string} value2"
+        required: false
+        default: ""
+      value3:
+        type: "string"
+        description: "{string} value3"
+        required: false
+        default: ""
 jobs:
   main:
     name: "Main"
@@ -12,6 +28,6 @@ jobs:
         key: "${{secrets.IFTTT_WEBHOOK_KEY}}"
         eventname: "test"
         payload: |-
-          value1: "Hello, world!"
-          value2: "foo"
-          value3: "bar"
+          value1: "${{inputs.value1}}"
+          value2: "${{inputs.value2}}"
+          value3: "${{inputs.value3}}"
