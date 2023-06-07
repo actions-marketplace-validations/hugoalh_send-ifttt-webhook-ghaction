@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@actions/core': ^1.10.0
-  '@hugoalh/send-ifttt-webhook': ^0.1.0
+  '@hugoalh/send-ifttt-webhook': ^0.2.0
   '@types/node': ^20.2.5
   '@vercel/ncc': ^0.36.1
   eslint: ^8.42.0
@@ -12,7 +12,7 @@ specifiers:
 
 dependencies:
   '@actions/core': 1.10.0
-  '@hugoalh/send-ifttt-webhook': 0.1.0
+  '@hugoalh/send-ifttt-webhook': 0.2.0
   yaml: 2.3.1
 
 devDependencies:
@@ -74,8 +74,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@hugoalh/send-ifttt-webhook/0.1.0:
-    resolution: {integrity: sha512-sdUdGS8s8bFNdskMBI39NhvlQG0EKDP8segheGM8PDdqxzaKkG1+P02DphQKbTWDMtyyy/yqJHW6gxeDnXTXIQ==}
+  /@hugoalh/send-ifttt-webhook/0.2.0:
+    resolution: {integrity: sha512-kIleef//3wqU0+lBvrgtzG6I9Yi72FjAza2Tt5Su4lQ/JCIOmfZNLGLIGxp0NApoWNiRW8njLmU/uqiOEFFWDg==}
     engines: {node: ^12.20.0 || ^14.15.0 || >=16.13.0}
     dependencies:
       node-fetch: 3.3.1

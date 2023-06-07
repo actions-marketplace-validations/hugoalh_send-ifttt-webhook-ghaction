@@ -9,11 +9,8 @@ try {
 	let payload = yaml.parse(ghactionsGetInput("payload", { required: true })) ?? {};
 	ghactionsEndGroup();
 	ghactionsStartGroup(`Send a webhook to IFTTT.`);
-	let response = await new IFTTTWebhook(key).send({
-		arbitrary,
-		eventName,
-		payload
-	});
+	let iftttWebhookInstance = new IFTTTWebhook(key);
+	let response = await (arbitrary ? iftttWebhookInstance.sendArbitrary(eventName, payload) : iftttWebhookInstance.send(eventName, payload));
 	let responseText = await response.text();
 	ghactionsSetOutput("response", responseText);
 	ghactionsSetOutput("status_code", response.status);
