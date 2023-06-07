@@ -11,3 +11,7 @@ jobs:
       with:
         key: "${{secrets.IFTTT_WEBHOOK_KEY}}"
         eventname: "test"
+        payload: |-
+          value1: "Hello, world!"
+          value2: "foo"
+          value3: "bar"
