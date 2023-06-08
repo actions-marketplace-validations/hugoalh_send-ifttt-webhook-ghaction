@@ -1,9 +1,12 @@
-import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput as ghactionsGetBooleanInput, getInput as ghactionsGetInput, setOutput as ghactionsSetOutput, startGroup as ghactionsStartGroup } from "@actions/core";
-import IFTTTWebhook from "@hugoalh/send-ifttt-webhook";
+import { endGroup as ghactionsEndGroup, error as ghactionsError, getBooleanInput as ghactionsGetBooleanInput, getInput as ghactionsGetInput, setOutput as ghactionsSetOutput, setSecret as ghactionsSetSecret, startGroup as ghactionsStartGroup } from "@actions/core";
+import { iftttMakerURLRegExp, IFTTTWebhook } from "@hugoalh/send-ifttt-webhook";
 import yaml from "yaml";
 try {
 	ghactionsStartGroup(`Import inputs.`);
 	let key: string = ghactionsGetInput("key", { required: true });
+	if (iftttMakerURLRegExp.test(key)) {
+		ghactionsSetSecret(key.match(iftttMakerURLRegExp).groups.key);
+	}
 	let eventName: string = ghactionsGetInput("eventname", { required: true });
 	let arbitrary: boolean = ghactionsGetBooleanInput("arbitrary", { required: true });
 	let payload: object = yaml.parse(ghactionsGetInput("payload", { required: true })) ?? {};
