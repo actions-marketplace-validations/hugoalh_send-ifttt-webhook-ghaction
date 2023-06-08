@@ -1,3 +1,7 @@
+🌐 | [English](./README.md) / [漢語](./README-ZH.md)
+
+---
+
 # Send IFTTT Webhook (GitHub Action)
 
 ![License](https://img.shields.io/static/v1?label=License&message=MIT&style=flat-square "License")
@@ -128,8 +132,8 @@ jobs:
     steps:
       - uses: "hugoalh/send-ifttt-webhook-ghaction@v5.0.0"
         with:
-          eventname: "greeting"
           key: "${{secrets.IFTTT_WEBHOOK_KEY}}"
+          eventname: "greeting"
           payload: |
             value1: "Hello, world!"
 ```

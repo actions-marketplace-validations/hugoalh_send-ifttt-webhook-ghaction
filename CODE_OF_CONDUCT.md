@@ -1,3 +1,7 @@
+🌐 | [English](./CODE_OF_CONDUCT.md) / [漢語](./CODE_OF_CONDUCT-ZH.md)
+
+---
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
